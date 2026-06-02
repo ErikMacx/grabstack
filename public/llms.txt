@@ -13,4 +13,4 @@ GrabStack is an independent, always-current field guide to AI tools, agents and 
 - Terrain (/terrain): Types of AI access (chat → agent → autonomous) and a status glossary.
 - The Capitals (/capitals): The dominant labs and flagship models.
 - The Cemetery (/cemetery): Deprecated, shut-down, and acquired tools.
-- The Cartographer (/cartographer): About, methodology, and update cadence.
+- Method (/method): About, methodology, and update cadence.
