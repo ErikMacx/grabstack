@@ -44,6 +44,7 @@ const updates = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.string(),
+    reviewBy: z.string(),
     summary: z.string(),
     tools: z.array(z.string()).default([]),
   }),
