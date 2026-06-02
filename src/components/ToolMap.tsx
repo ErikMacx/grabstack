@@ -1,5 +1,8 @@
 import { useState, useMemo } from "react";
 
+const SUGGEST_URL =
+  "mailto:hello@grabstack.com?subject=Suggest%20a%20tool";
+
 interface Tool {
   id: string;
   name: string;
@@ -9,6 +12,8 @@ interface Tool {
   claim: string;
   metrics: string[];
   updated: string;
+  reviewed: string;
+  source: string;
 }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -38,6 +43,19 @@ const STATUS_LABELS: Record<string, string> = {
   acquired: "Acquired",
 };
 
+const STATUS_TOOLTIPS: Record<string, string> = {
+  flagship: "The maker's headline product — the one they stake their reputation on.",
+  "top-ranked": "Consistently at the top of independent benchmarks or expert rankings.",
+  "category-leader": "The default choice in its category — the one most people reach for first.",
+  "everyday-default": "Settled, stable, widely adopted — disappears into your workflow.",
+  "open-weight": "Model weights are publicly available for download and self-hosting.",
+  active: "Actively developed and shipping updates, but not yet a category leader.",
+  beta: "Publicly accessible but still in testing — expect rough edges.",
+  unreleased: "Announced or leaked but not yet available to the public.",
+  deprecated: "The maker has officially ended development or shut down the service.",
+  acquired: "Bought by another company — may be absorbed, rebranded, or left to wither.",
+};
+
 const STATUS_COLORS: Record<string, string> = {
   flagship: "bg-[#FF5A36] text-white",
   "top-ranked": "bg-[#FF5A36]/80 text-white",
@@ -50,6 +68,25 @@ const STATUS_COLORS: Record<string, string> = {
   deprecated: "bg-white/10 text-[#9CA3AF] line-through",
   acquired: "bg-white/10 text-[#9CA3AF]",
 };
+
+function appendRef(url: string): string {
+  if (!url) return url;
+  try {
+    const u = new URL(url);
+    u.searchParams.set("ref", "grabstack");
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
+function isDueForReview(reviewed: string): boolean {
+  try {
+    return new Date(reviewed) < new Date();
+  } catch {
+    return false;
+  }
+}
 
 export default function ToolMap({ tools }: { tools: Tool[] }) {
   const [query, setQuery] = useState("");
@@ -161,8 +198,9 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((tool) => {
           const isOpen = expanded.has(tool.id);
+          const due = isDueForReview(tool.reviewed);
           return (
-            <button
+            <div
               key={tool.id}
               onClick={() => setExpanded(toggleSet(expanded, tool.id))}
               className="cursor-pointer rounded-lg border border-white/10 bg-[#22242B] p-4 text-left transition-colors hover:border-white/20"
@@ -172,12 +210,29 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
                   <h3 className="text-sm font-semibold text-[#F7F4EE]">{tool.name}</h3>
                   <p className="text-xs text-[#9CA3AF]">{tool.maker}</p>
                 </div>
-                <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight ${STATUS_COLORS[tool.status] ?? "bg-white/10 text-[#F7F4EE]"}`}>
+                <a
+                  href={`/terrain#${tool.status}`}
+                  title={STATUS_TOOLTIPS[tool.status] ?? tool.status}
+                  onClick={(e) => e.stopPropagation()}
+                  className={`status-tooltip shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight no-underline ${STATUS_COLORS[tool.status] ?? "bg-white/10 text-[#F7F4EE]"}`}
+                  data-tooltip={STATUS_TOOLTIPS[tool.status] ?? ""}
+                >
                   {STATUS_LABELS[tool.status] ?? tool.status}
-                </span>
+                </a>
               </div>
 
               <p className="mt-2 text-xs leading-relaxed text-[#F7F4EE]/80">{tool.claim}</p>
+
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-[#9CA3AF]">
+                <span>Updated {tool.updated}</span>
+                <span>·</span>
+                <span>Review by {tool.reviewed}</span>
+                {due && (
+                  <span className="rounded-full bg-amber-800/40 px-1.5 py-0.5 text-amber-400">
+                    Due for review
+                  </span>
+                )}
+              </div>
 
               {isOpen && (
                 <div className="mt-3 border-t border-white/10 pt-3">
@@ -193,19 +248,34 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
                       ))}
                     </ul>
                   )}
-                  <p className="mt-2 text-[10px] text-[#9CA3AF]">
-                    Updated {tool.updated}
-                  </p>
+                  {tool.source && (
+                    <a
+                      href={appendRef(tool.source)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="mt-2 inline-block text-xs text-[#FF5A36] hover:underline"
+                    >
+                      Source →
+                    </a>
+                  )}
                 </div>
               )}
-            </button>
+            </div>
           );
         })}
       </div>
 
+      {/* Empty search suggest */}
       {filtered.length === 0 && (
         <p className="py-12 text-center text-sm text-[#9CA3AF]">
-          No tools match your filters.
+          No match for &ldquo;{query || "your filters"}&rdquo; yet — GrabStack tracks the tools we judge worth tracking, not the whole internet. Think it belongs?{" "}
+          <a
+            href={SUGGEST_URL}
+            className="text-[#FF5A36] hover:underline"
+          >
+            Suggest it →
+          </a>
         </p>
       )}
     </div>

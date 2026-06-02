@@ -1,14 +1,141 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { REGION_STATUSES, STATUS_DEFINITIONS } from "../lib/constants";
+
+const allTools = await getCollection("tools");
+const allUpdates = await getCollection("updates");
+
+// Wire: latest 5
+const wireEntries = allUpdates
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 5);
+
+// Capitals: flagship + top-ranked
+const capitals = allTools
+  .filter((t) => (REGION_STATUSES.capitals as readonly string[]).includes(t.data.status))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Cemetery: deprecated + acquired
+const cemetery = allTools
+  .filter((t) => (REGION_STATUSES.cemetery as readonly string[]).includes(t.data.status))
+  .slice(0, 4);
+
+const sections = [
+  { label: "The Map", href: "/map", desc: "The active frontier — what's cutting edge right now, by category." },
+  { label: "The List", href: "/list", desc: "The full catalogue — every tool we track, settled and searchable." },
+  { label: "Routes", href: "/routes", desc: "Stacks by job — tool combinations that work together." },
+  { label: "Terrain", href: "/terrain", desc: "How to read AI: the types of access, plus a plain-English glossary." },
+];
 ---
 
 <Base>
-  <section class="py-12 sm:py-20">
-    <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">
-      The honest, always-current field guide to AI&nbsp;tools, agents &amp;&nbsp;stacks<span class="text-accent">.</span>
-    </h1>
-    <p class="mt-4 max-w-2xl text-lg text-muted">
-      Snapshot-dated, citable, filterable. For builders, operators and founders. <em>Signal, not noise.</em>
+  <!-- Hero -->
+  <section class="py-12 sm:py-20 text-center">
+    <a href="/" aria-label="GrabStack home" class="inline-block">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 96" role="img" aria-label="GrabStack" class="mx-auto h-12 w-auto sm:h-16">
+        <g transform="translate(2 4) scale(0.92)">
+          <path d="M30 18 H16 V78 H30" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M66 18 H80 V78 H66" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="30" y="56" width="36" height="11" rx="5.5" fill="#F7F4EE"/>
+          <rect x="30" y="42" width="36" height="11" rx="5.5" fill="#F7F4EE"/>
+          <rect x="32" y="24" width="36" height="11" rx="5.5" fill="#FF5A36" transform="rotate(-7 50 29.5)"/>
+        </g>
+        <text x="104" y="62" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="47" letter-spacing="-1.8">
+          <tspan fill="#F7F4EE" font-weight="500">Grab</tspan><tspan fill="#F7F4EE" font-weight="800">Stack</tspan><tspan fill="#FF5A36" font-weight="800">.</tspan>
+        </text>
+      </svg>
+    </a>
+    <p class="mt-4 text-lg text-paper/80 sm:text-xl">
+      Signal, not noise — the living guide to AI tools, agents and stacks.
     </p>
+  </section>
+
+  <!-- From The Wire -->
+  {wireEntries.length > 0 && (
+    <section class="mb-12">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-lg font-semibold text-paper">From The Wire</h2>
+        <a href="/wire" class="text-sm text-accent hover:underline">All dispatches →</a>
+      </div>
+      <div class="mt-4 space-y-3">
+        {wireEntries.map((entry) => (
+          <article class="rounded-lg border border-white/10 bg-surface p-4">
+            <h3 class="text-sm font-semibold text-paper">{entry.data.title}</h3>
+            <p class="mt-1 text-xs text-muted">
+              Posted {entry.data.date} · Review by {entry.data.reviewBy}
+            </p>
+            <p class="mt-2 text-sm text-paper/80">{entry.data.summary}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- The Capitals -->
+  {capitals.length > 0 && (
+    <section class="mb-12">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-lg font-semibold text-paper">The Capitals</h2>
+        <a href="/capitals" class="text-sm text-accent hover:underline">See all →</a>
+      </div>
+      <p class="mt-1 text-sm text-muted">The key players — the dominant labs and flagship models.</p>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {capitals.map((t) => (
+          <div class="rounded-lg border border-white/10 bg-surface p-4">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <h3 class="text-sm font-semibold text-paper">{t.data.name}</h3>
+                <p class="text-xs text-muted">{t.data.maker}</p>
+              </div>
+              <a
+                href={`/terrain#${t.data.status}`}
+                class:list={[
+                  "status-tooltip shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight no-underline",
+                  t.data.status === "flagship" ? "bg-accent text-white" : "bg-accent/80 text-white",
+                ]}
+                data-tooltip={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
+              >
+                {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
+              </a>
+            </div>
+            <p class="mt-2 text-xs leading-relaxed text-paper/80">{t.data.claim}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- The Cemetery teaser -->
+  {cemetery.length > 0 && (
+    <section class="mb-12">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-lg font-semibold text-paper">The Cemetery</h2>
+        <a href="/cemetery" class="text-sm text-accent hover:underline">See all →</a>
+      </div>
+      <p class="mt-1 text-sm text-muted">The dead and the zombies — tools that died or quietly stopped mattering.</p>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        {cemetery.map((t) => (
+          <div class="rounded-lg border border-white/10 bg-surface p-4 opacity-75">
+            <h3 class="text-sm font-semibold text-paper">{t.data.name}</h3>
+            <p class="text-xs text-muted">{t.data.maker}</p>
+            <p class="mt-2 text-xs text-paper/60">{t.data.claim}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Entry tiles -->
+  <section class="mb-12">
+    <h2 class="text-lg font-semibold text-paper">Explore</h2>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+      {sections.map(({ label, href, desc }) => (
+        <a href={href} class="group rounded-lg border border-white/10 bg-surface p-5 transition-colors hover:border-white/20">
+          <h3 class="text-sm font-semibold text-paper group-hover:text-accent transition-colors">{label}</h3>
+          <p class="mt-1 text-xs text-muted">{desc}</p>
+        </a>
+      ))}
+    </div>
   </section>
 </Base>
