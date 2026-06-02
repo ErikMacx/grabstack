@@ -1,0 +1,56 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="The Cartographer — GrabStack" description="Who makes GrabStack, and how we judge.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      The Cartographer<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      Who makes GrabStack, and how we judge.
+    </p>
+  </section>
+
+  <div class="space-y-8">
+    <!-- Identity -->
+    <section class="rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">Who</h2>
+      <p class="mt-2 text-sm leading-relaxed text-paper/80">
+        GrabStack is an independent field guide to AI tools, agents and stacks. It exists because
+        the space moves fast, most directories rot, and honest assessment is rare. We're not
+        venture-backed, we carry no affiliate links, and we say when something is overhyped.
+      </p>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="scroll-mt-24 rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">How we judge</h2>
+      <div class="mt-2 space-y-3 text-sm leading-relaxed text-paper/80">
+        <p>
+          Every tool in GrabStack carries a status, a dated claim, and a review-by date. We
+          evaluate based on real-world utility, benchmark performance where available, community
+          adoption, and whether the tool actually ships updates.
+        </p>
+        <p>
+          We include adjacent, non-AI tools when they're part of a working stack — the goal is the honest picture, not a purity test.
+        </p>
+        <p>
+          When a tool dies, gets acquired, or quietly stops mattering, we move it to
+          <a href="/cemetery" class="text-accent hover:underline">The Cemetery</a> rather than
+          deleting it. Honest records matter more than clean catalogues.
+        </p>
+      </div>
+    </section>
+
+    <!-- Update cadence -->
+    <section class="rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">Update cadence</h2>
+      <p class="mt-2 text-sm leading-relaxed text-paper/80">
+        Every entry has a review-by date. When that date passes, the entry is flagged for review.
+        <a href="/wire" class="text-accent hover:underline">The Wire</a> publishes dated field
+        reports as things change. The goal is freshness, not volume.
+      </p>
+    </section>
+  </div>
+</Base>

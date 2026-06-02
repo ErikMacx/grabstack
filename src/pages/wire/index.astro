@@ -1,0 +1,58 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allUpdates = await getCollection("updates");
+const updates = allUpdates.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+function isDueForReview(reviewBy: string): boolean {
+  try {
+    return new Date(reviewBy) < new Date();
+  } catch {
+    return false;
+  }
+}
+---
+
+<Base title="The Wire — GrabStack" description="Fresh field reports, dated.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      The Wire<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      Fresh field reports, dated.
+    </p>
+  </section>
+
+  <div class="space-y-6">
+    {updates.map((entry) => {
+      const due = isDueForReview(entry.data.reviewBy);
+      return (
+        <article class="rounded-lg border border-white/10 bg-surface p-5">
+          <h2 class="text-lg font-semibold text-paper">{entry.data.title}</h2>
+          <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted">
+            <span>Posted {entry.data.date}</span>
+            <span>·</span>
+            <span>Review by {entry.data.reviewBy}</span>
+            {due && (
+              <span class="rounded-full bg-amber-800/40 px-1.5 py-0.5 text-amber-400">
+                Due for review
+              </span>
+            )}
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-paper/80">
+            {entry.data.summary}
+          </p>
+        </article>
+      );
+    })}
+  </div>
+
+  {updates.length === 0 && (
+    <p class="py-12 text-center text-sm text-muted">
+      No dispatches yet — check back soon.
+    </p>
+  )}
+</Base>

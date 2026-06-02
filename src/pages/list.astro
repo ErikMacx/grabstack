@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import ToolMap from "../components/ToolMap";
+import { getCollection } from "astro:content";
+
+const allTools = await getCollection("tools");
+
+const tools = allTools.map((t) => ({
+  id: t.id,
+  name: t.data.name,
+  maker: t.data.maker,
+  category: t.data.category,
+  status: t.data.status,
+  claim: t.data.claim,
+  metrics: t.data.metrics,
+  updated: t.data.updated,
+  reviewed: t.data.reviewed,
+  source: t.data.source,
+}));
+---
+
+<Base title="The List — GrabStack" description="The full catalogue — every tool we track, settled and searchable.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      The List<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      The full catalogue — every tool we track, settled and searchable.
+    </p>
+  </section>
+
+  <ToolMap client:load tools={tools} />
+</Base>

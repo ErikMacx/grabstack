@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import { STATUS_DEFINITIONS, ACCESS_LADDER } from "../lib/constants";
+
+const statusEntries = Object.entries(STATUS_DEFINITIONS);
+---
+
+<Base title="Terrain — GrabStack" description="How to read AI: the types of access, plus a plain-English glossary.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      Terrain<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      How to read AI: the types of access, plus a plain-English glossary.
+    </p>
+  </section>
+
+  <!-- Access ladder -->
+  <section class="mb-12">
+    <h2 class="text-lg font-semibold text-paper">Types of AI access</h2>
+    <p class="mt-1 text-sm text-muted">From simplest to most autonomous — the ladder of what AI can do for you.</p>
+    <div class="mt-4 space-y-3">
+      {ACCESS_LADDER.map((level, i) => (
+        <div id={level.slug} class="scroll-mt-24 rounded-lg border border-white/10 bg-surface p-4">
+          <div class="flex items-baseline gap-3">
+            <span class="text-xs font-bold text-accent">{i + 1}</span>
+            <h3 class="text-sm font-semibold text-paper">{level.term}</h3>
+          </div>
+          <p class="mt-1 text-sm text-paper/80">
+            {level.definition.replace(/<!--.*?-->/g, "").trim()}
+          </p>
+          <p class="mt-1 text-[10px] text-muted italic"><!-- TODO: Eric to refine --></p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Status glossary -->
+  <section>
+    <h2 class="text-lg font-semibold text-paper">Status glossary</h2>
+    <p class="mt-1 text-sm text-muted">Every status label we use on tools, and what it means.</p>
+    <div class="mt-4 space-y-3">
+      {statusEntries.map(([slug, { label, definition }]) => (
+        <div id={slug} class="scroll-mt-24 rounded-lg border border-white/10 bg-surface p-4">
+          <h3 class="text-sm font-semibold text-paper">{label}</h3>
+          <p class="mt-1 text-sm text-paper/80">
+            {definition.replace(/<!--.*?-->/g, "").trim()}
+          </p>
+          <p class="mt-1 text-[10px] text-muted italic"><!-- TODO: Eric to refine --></p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

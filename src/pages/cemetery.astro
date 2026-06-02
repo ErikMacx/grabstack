@@ -1,0 +1,62 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { REGION_STATUSES, STATUS_DEFINITIONS, appendRef } from "../lib/constants";
+
+const allTools = await getCollection("tools");
+const tools = allTools
+  .filter((t) => (REGION_STATUSES.cemetery as readonly string[]).includes(t.data.status))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<Base title="The Cemetery — GrabStack" description="The dead and the zombies — tools that died or quietly stopped mattering.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      The Cemetery<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      The dead and the zombies — tools that died or quietly stopped mattering.
+    </p>
+  </section>
+
+  {tools.length > 0 ? (
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map((t) => (
+        <div class="rounded-lg border border-white/10 bg-surface p-4 opacity-75">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="text-sm font-semibold text-paper">{t.data.name}</h3>
+              <p class="text-xs text-muted">{t.data.maker}</p>
+            </div>
+            <a
+              href={`/terrain#${t.data.status}`}
+              title={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
+              class="status-tooltip shrink-0 rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold leading-tight text-muted no-underline line-through"
+              data-tooltip={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
+            >
+              {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
+            </a>
+          </div>
+          <p class="mt-2 text-xs leading-relaxed text-paper/60">{t.data.claim}</p>
+          <div class="mt-2 text-[10px] text-muted">
+            Updated {t.data.updated}
+          </div>
+          {t.data.source && (
+            <a
+              href={appendRef(t.data.source)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-2 inline-block text-xs text-accent hover:underline"
+            >
+              Source →
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p class="py-12 text-center text-sm text-muted">
+      Nothing here yet — which is either good news or means we haven't been paying attention.
+    </p>
+  )}
+</Base>
