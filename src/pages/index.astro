@@ -1,17 +1,14 @@
 ---
-
+import Base from "../layouts/Base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <section class="py-12 sm:py-20">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">
+      The honest, always-current field guide to AI&nbsp;tools, agents &amp;&nbsp;stacks<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-muted">
+      Snapshot-dated, citable, filterable. For builders, operators and founders. <em>Signal, not noise.</em>
+    </p>
+  </section>
+</Base>

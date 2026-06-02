@@ -1,0 +1,102 @@
+---
+const navLinks = [
+  { label: "Map", href: "/map" },
+  { label: "Updates", href: "/updates" },
+  { label: "Stacks", href: "/stacks" },
+  { label: "Learn", href: "/learn" },
+  { label: "State of AI", href: "/state-of" },
+  { label: "About", href: "/about" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-ink/95 backdrop-blur-sm">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+    <!-- Logo -->
+    <a href="/" aria-label="GrabStack home" class="shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 96" role="img" aria-label="GrabStack" class="h-8 w-auto sm:h-9">
+        <g transform="translate(2 4) scale(0.92)">
+          <path d="M30 18 H16 V78 H30" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M66 18 H80 V78 H66" fill="none" stroke="#F7F4EE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="30" y="56" width="36" height="11" rx="5.5" fill="#F7F4EE"/>
+          <rect x="30" y="42" width="36" height="11" rx="5.5" fill="#F7F4EE"/>
+          <rect x="32" y="24" width="36" height="11" rx="5.5" fill="#FF5A36" transform="rotate(-7 50 29.5)"/>
+        </g>
+        <text x="104" y="62" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="47" letter-spacing="-1.8">
+          <tspan fill="#F7F4EE" font-weight="500">Grab</tspan><tspan fill="#F7F4EE" font-weight="800">Stack</tspan><tspan fill="#FF5A36" font-weight="800">.</tspan>
+        </text>
+      </svg>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="hidden items-center gap-1 md:flex">
+      {navLinks.map(({ label, href }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+              currentPath.startsWith(href)
+                ? "text-accent"
+                : "text-paper/70 hover:text-paper",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile menu button -->
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      class="rounded-md p-2 text-paper/70 hover:text-paper md:hidden"
+    >
+      <svg id="icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      <svg id="icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden border-t border-white/10 md:hidden">
+    <ul class="mx-auto max-w-6xl space-y-1 px-5 py-4">
+      {navLinks.map(({ label, href }) => (
+        <li>
+          <a
+            href={href}
+            class:list={[
+              "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+              currentPath.startsWith(href)
+                ? "text-accent"
+                : "text-paper/70 hover:text-paper",
+            ]}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle")!;
+  const menu = document.getElementById("mobile-menu")!;
+  const iconOpen = document.getElementById("icon-open")!;
+  const iconClose = document.getElementById("icon-close")!;
+
+  toggle.addEventListener("click", () => {
+    const open = menu.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!open));
+    iconOpen.classList.toggle("hidden");
+    iconClose.classList.toggle("hidden");
+  });
+</script>

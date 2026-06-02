@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+  --color-ink: #1A1C22;
+  --color-paper: #F7F4EE;
+  --color-accent: #FF5A36;
+  --color-surface: #22242B;
+  --color-muted: #9CA3AF;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
