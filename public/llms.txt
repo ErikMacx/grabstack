@@ -1,0 +1,16 @@
+# GrabStack
+
+> Signal, not noise — the living guide to AI tools, agents and stacks.
+
+GrabStack is an independent, always-current field guide to AI tools, agents and stacks. Every entry carries a date and a review-by deadline. No affiliate links. Honest assessments.
+
+## Sections
+
+- The Wire (/wire): Fresh, dated field reports on what changed and why it matters.
+- The Map (/map): The active frontier — cutting-edge tools, filterable by category and status.
+- The List (/list): The full searchable catalogue of every tool we track.
+- Routes (/routes): Curated tool stacks by job — combinations that work together.
+- Terrain (/terrain): Types of AI access (chat → agent → autonomous) and a status glossary.
+- The Capitals (/capitals): The dominant labs and flagship models.
+- The Cemetery (/cemetery): Deprecated, shut-down, and acquired tools.
+- The Cartographer (/cartographer): About, methodology, and update cadence.
