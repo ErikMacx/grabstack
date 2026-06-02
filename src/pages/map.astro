@@ -14,16 +14,18 @@ const tools = allTools.map((t) => ({
   claim: t.data.claim,
   metrics: t.data.metrics,
   updated: t.data.updated,
+  reviewed: t.data.reviewed,
+  source: t.data.source,
 }));
 ---
 
-<Base title="The Map — GrabStack" description="The filterable AI tools landscape. Search, filter by category and status, drill down.">
+<Base title="The Map — GrabStack" description="The active frontier — what's cutting edge right now, by category.">
   <section class="py-6 sm:py-10">
     <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
       The Map<span class="text-accent">.</span>
     </h1>
     <p class="mt-2 max-w-xl text-sm text-muted">
-      The filterable landscape — what exists, by job. Click any card to drill down.
+      The active frontier — what's cutting edge right now, by category.
     </p>
   </section>
 
