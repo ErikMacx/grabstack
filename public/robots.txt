@@ -1,6 +1,3 @@
-User-agent: *
-Allow: /
-
 User-agent: GPTBot
 Allow: /
 
@@ -13,4 +10,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://grabstack.pages.dev/sitemap-index.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://grabstack.com/sitemap-index.xml
