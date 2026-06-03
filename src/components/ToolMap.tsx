@@ -57,16 +57,16 @@ const STATUS_TOOLTIPS: Record<string, string> = {
 };
 
 const STATUS_COLORS: Record<string, string> = {
-  flagship: "bg-[#FF5A36] text-white",
-  "top-ranked": "bg-[#FF5A36]/80 text-white",
-  "category-leader": "bg-[#FF5A36]/60 text-white",
-  "everyday-default": "bg-emerald-600 text-white",
-  "open-weight": "bg-sky-600 text-white",
-  active: "bg-white/15 text-[#F7F4EE]",
-  beta: "bg-amber-600 text-white",
-  unreleased: "bg-white/10 text-[#F7F4EE]/70",
-  deprecated: "bg-white/10 text-[#9CA3AF] line-through",
-  acquired: "bg-white/10 text-[#9CA3AF]",
+  flagship: "border-2 border-accent text-accent font-bold",
+  "top-ranked": "border border-accent text-accent",
+  "category-leader": "border border-accent/70 text-accent",
+  "everyday-default": "border border-emerald-400 text-emerald-400",
+  "open-weight": "border border-sky-400 text-sky-400",
+  active: "bg-white/10 text-paper",
+  beta: "border border-amber-400 text-amber-400",
+  unreleased: "bg-white/10 text-paper/70",
+  deprecated: "bg-white/10 text-muted line-through",
+  acquired: "bg-white/10 text-muted",
 };
 
 function appendRef(url: string): string {
@@ -123,7 +123,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
     <div>
       {/* Search */}
       <div className="relative">
-        <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#9CA3AF]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+        <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>
         <input
@@ -131,7 +131,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
           placeholder="Search tools, makers, claims…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-lg border border-white/15 bg-[#22242B] py-2.5 pl-10 pr-4 text-sm text-[#F7F4EE] placeholder:text-[#9CA3AF] focus:border-[#FF5A36] focus:outline-none focus:ring-1 focus:ring-[#FF5A36]"
+          className="w-full rounded-lg border border-white/15 bg-surface py-2.5 pl-10 pr-4 text-sm text-paper placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
         />
       </div>
 
@@ -143,10 +143,10 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
             <button
               key={cat}
               onClick={() => setActiveCategories(toggleSet(activeCategories, cat))}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+              className={`font-mono rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                 activeCategories.has(cat)
-                  ? "bg-[#FF5A36] text-white"
-                  : "bg-white/10 text-[#F7F4EE]/70 hover:bg-white/15"
+                  ? "bg-accent text-ink"
+                  : "bg-white/10 text-paper/70 hover:bg-white/15"
               }`}
             >
               {CATEGORY_LABELS[cat] ?? cat}
@@ -155,7 +155,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
           {activeCategories.size > 0 && (
             <button
               onClick={() => setActiveCategories(new Set())}
-              className="rounded-full px-3 py-1 text-xs text-[#9CA3AF] hover:text-[#F7F4EE]"
+              className="font-mono rounded-full px-3 py-1 text-xs text-muted hover:text-paper"
             >
               Clear
             </button>
@@ -168,10 +168,10 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
             <button
               key={s}
               onClick={() => setActiveStatuses(toggleSet(activeStatuses, s))}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+              className={`font-mono rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                 activeStatuses.has(s)
-                  ? "bg-[#FF5A36] text-white"
-                  : "bg-white/10 text-[#F7F4EE]/70 hover:bg-white/15"
+                  ? "bg-accent text-ink"
+                  : "bg-white/10 text-paper/70 hover:bg-white/15"
               }`}
             >
               {STATUS_LABELS[s] ?? s}
@@ -180,7 +180,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
           {activeStatuses.size > 0 && (
             <button
               onClick={() => setActiveStatuses(new Set())}
-              className="rounded-full px-3 py-1 text-xs text-[#9CA3AF] hover:text-[#F7F4EE]"
+              className="font-mono rounded-full px-3 py-1 text-xs text-muted hover:text-paper"
             >
               Clear
             </button>
@@ -189,7 +189,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
       </div>
 
       {/* Count */}
-      <p className="mt-4 text-sm text-[#9CA3AF]">
+      <p className="mt-4 font-mono text-sm text-muted">
         {filtered.length} tool{filtered.length !== 1 && "s"}
         {(activeCategories.size > 0 || activeStatuses.size > 0 || query) && " matching"}
       </p>
@@ -203,27 +203,27 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
             <div
               key={tool.id}
               onClick={() => setExpanded(toggleSet(expanded, tool.id))}
-              className="cursor-pointer rounded-lg border border-white/10 bg-[#22242B] p-4 text-left transition-colors hover:border-white/20"
+              className="cursor-pointer rounded-lg border border-white/10 bg-surface p-4 text-left transition-colors hover:border-white/20"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h3 className="text-sm font-semibold text-[#F7F4EE]">{tool.name}</h3>
-                  <p className="text-xs text-[#9CA3AF]">{tool.maker}</p>
+                  <h3 className="font-heading text-sm font-semibold text-paper">{tool.name}</h3>
+                  <p className="font-mono text-xs text-muted">{tool.maker}</p>
                 </div>
                 <a
-                  href={`/terrain#${tool.status}`}
+                  href={`/about#methodology`}
                   title={STATUS_TOOLTIPS[tool.status] ?? tool.status}
                   onClick={(e) => e.stopPropagation()}
-                  className={`status-tooltip shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight no-underline ${STATUS_COLORS[tool.status] ?? "bg-white/10 text-[#F7F4EE]"}`}
+                  className={`status-tooltip shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight no-underline ${STATUS_COLORS[tool.status] ?? "bg-white/10 text-paper"}`}
                   data-tooltip={STATUS_TOOLTIPS[tool.status] ?? ""}
                 >
                   {STATUS_LABELS[tool.status] ?? tool.status}
                 </a>
               </div>
 
-              <p className="mt-2 text-xs leading-relaxed text-[#F7F4EE]/80">{tool.claim}</p>
+              <p className="mt-2 text-sm leading-relaxed text-paper/80">{tool.claim}</p>
 
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px] text-[#9CA3AF]">
+              <div className="mt-2 flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
                 <span>Updated {tool.updated}</span>
                 <span>·</span>
                 <span>Review by {tool.reviewed}</span>
@@ -236,13 +236,13 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
 
               {isOpen && (
                 <div className="mt-3 border-t border-white/10 pt-3">
-                  <p className="text-[10px] uppercase tracking-wide text-[#9CA3AF]">
+                  <p className="font-mono text-xs uppercase tracking-wide text-muted">
                     {CATEGORY_LABELS[tool.category] ?? tool.category}
                   </p>
                   {tool.metrics.length > 0 && (
                     <ul className="mt-1.5 space-y-0.5">
                       {tool.metrics.map((m, i) => (
-                        <li key={i} className="text-xs text-[#F7F4EE]/70">
+                        <li key={i} className="font-mono text-xs text-paper/70">
                           • {m}
                         </li>
                       ))}
@@ -254,7 +254,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="mt-2 inline-block text-xs text-[#FF5A36] hover:underline"
+                      className="mt-2 inline-block text-xs text-accent hover:underline"
                     >
                       Source →
                     </a>
@@ -268,11 +268,11 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
 
       {/* Empty search suggest */}
       {filtered.length === 0 && (
-        <p className="py-12 text-center text-sm text-[#9CA3AF]">
+        <p className="py-12 text-center text-sm text-muted">
           No match for &ldquo;{query || "your filters"}&rdquo; yet — GrabStack tracks the tools we judge worth tracking, not the whole internet. Think it belongs?{" "}
           <a
             href={SUGGEST_URL}
-            className="text-[#FF5A36] hover:underline"
+            className="text-accent hover:underline"
           >
             Suggest it →
           </a>

@@ -29,16 +29,16 @@ const tools = allTools
               <p class="text-xs text-muted">{t.data.maker}</p>
             </div>
             <a
-              href={`/terrain#${t.data.status}`}
+              href={`/about#methodology`}
               title={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
-              class="status-tooltip shrink-0 rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold leading-tight text-muted no-underline line-through"
+              class="status-tooltip shrink-0 rounded-full bg-white/10 px-2 py-0.5 font-mono text-xs font-semibold leading-tight text-muted no-underline line-through"
               data-tooltip={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
             >
               {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
             </a>
           </div>
-          <p class="mt-2 text-xs leading-relaxed text-paper/60">{t.data.claim}</p>
-          <div class="mt-2 text-[10px] text-muted">
+          <p class="mt-2 text-xs leading-relaxed text-paper/70">{t.data.claim}</p>
+          <div class="mt-2 font-mono text-xs text-muted">
             Updated {t.data.updated}
           </div>
           {t.data.source && (

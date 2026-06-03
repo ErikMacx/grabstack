@@ -22,10 +22,11 @@ const cemetery = allTools
   .slice(0, 4);
 
 const sections = [
-  { label: "The Map", href: "/map", desc: "The active frontier — what's cutting edge right now, by category." },
-  { label: "The List", href: "/list", desc: "The full catalogue — every tool we track, settled and searchable." },
-  { label: "Routes", href: "/routes", desc: "Stacks by job — tool combinations that work together." },
-  { label: "Terrain", href: "/terrain", desc: "How to read AI: the types of access, plus a plain-English glossary." },
+  { label: "Frontier", href: "/frontier", desc: "The leading edge, explained — the apps, models and software at the cutting edge, and how to find the gold." },
+  { label: "Landscape", href: "/landscape", desc: "The forces shaping AI — the trends, debates and challenges, ranked and re-rankable by lens." },
+  { label: "Apps", href: "/apps", desc: "The full, searchable list of every major AI application." },
+  { label: "Stacks", href: "/stacks", desc: "Tool combinations that work together — curated by profession and industry." },
+  { label: "Learning", href: "/learning", desc: "What to learn, and in what order — courses, programmes and concepts mapped to the competency you need." },
 ];
 ---
 
@@ -89,10 +90,10 @@ const sections = [
                 <p class="text-xs text-muted">{t.data.maker}</p>
               </div>
               <a
-                href={`/terrain#${t.data.status}`}
+                href={`/about#methodology`}
                 class:list={[
-                  "status-tooltip shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight no-underline",
-                  t.data.status === "flagship" ? "bg-accent text-white" : "bg-accent/80 text-white",
+                  "status-tooltip shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight no-underline",
+                  t.data.status === "flagship" ? "border-2 border-accent text-accent font-bold" : "border border-accent text-accent",
                 ]}
                 data-tooltip={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
               >
@@ -119,7 +120,7 @@ const sections = [
           <div class="rounded-lg border border-white/10 bg-surface p-4 opacity-75">
             <h3 class="text-sm font-semibold text-paper">{t.data.name}</h3>
             <p class="text-xs text-muted">{t.data.maker}</p>
-            <p class="mt-2 text-xs text-paper/60">{t.data.claim}</p>
+            <p class="mt-2 text-xs text-paper/70">{t.data.claim}</p>
           </div>
         ))}
       </div>

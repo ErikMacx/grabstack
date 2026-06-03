@@ -71,4 +71,16 @@ const glossary = defineCollection({
   }),
 });
 
-export const collections = { tools, updates, "state-of": stateOf, glossary };
+const stacks = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "src/content/stacks" }),
+  schema: z.object({
+    title: z.string(),
+    profession: z.string(),
+    summary: z.string(),
+    tools: z.array(z.string()).default([]),
+    updated: z.string(),
+    reviewed: z.string(),
+  }),
+});
+
+export const collections = { tools, updates, "state-of": stateOf, glossary, stacks };

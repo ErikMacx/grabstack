@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-ink: #1A1C22;
-  --color-paper: #F7F4EE;
+  --color-paper: #ECE8E0;
   --color-accent: #FF5A36;
-  --color-surface: #22242B;
-  --color-muted: #9CA3AF;
+  --color-surface: #23262F;
+  --color-muted: #B7B2A8;
+  --font-body: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
 }
 
 .status-tooltip {
@@ -18,10 +22,11 @@
   bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  background: #1A1C22;
+  background: var(--color-ink);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #F7F4EE;
-  font-size: 11px;
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
   padding: 6px 10px;
@@ -39,9 +44,19 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   background-color: var(--color-ink);
   color: var(--color-paper);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.6;
 }

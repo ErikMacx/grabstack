@@ -1,11 +1,16 @@
 ---
 const navLinks = [
+  { label: "Frontier", href: "/frontier" },
+  { label: "Landscape", href: "/landscape" },
   { label: "The Wire", href: "/wire" },
-  { label: "The Map", href: "/map" },
-  { label: "The List", href: "/list" },
-  { label: "Routes", href: "/routes" },
-  { label: "Terrain", href: "/terrain" },
-  { label: "Method", href: "/method" },
+  { label: "Apps", href: "/apps" },
+  { label: "Stacks", href: "/stacks" },
+  { label: "Learning", href: "/learning" },
+];
+
+const utilityLinks = [
+  { label: "About", href: "/about" },
+  { label: "Glossary", href: "/glossary" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -30,23 +35,39 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <!-- Desktop links -->
-    <ul class="hidden items-center gap-1 lg:flex">
-      {navLinks.map(({ label, href }) => (
-        <li>
-          <a
-            href={href}
-            class:list={[
-              "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
-              currentPath.startsWith(href)
-                ? "text-accent"
-                : "text-paper/70 hover:text-paper",
-            ]}
-          >
-            {label}
-          </a>
-        </li>
+    <div class="hidden items-center gap-4 lg:flex">
+      <ul class="flex items-center gap-1">
+        {navLinks.map(({ label, href }) => (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                currentPath.startsWith(href)
+                  ? "text-accent"
+                  : "text-paper/70 hover:text-paper",
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <span class="h-4 w-px bg-white/15"></span>
+      {utilityLinks.map(({ label, href }) => (
+        <a
+          href={href}
+          class:list={[
+            "text-xs font-medium transition-colors",
+            currentPath.startsWith(href)
+              ? "text-accent"
+              : "text-muted hover:text-paper",
+          ]}
+        >
+          {label}
+        </a>
       ))}
-    </ul>
+    </div>
 
     <!-- Mobile menu button -->
     <button
@@ -83,6 +104,21 @@ const currentPath = Astro.url.pathname;
           </a>
         </li>
       ))}
+      <li class="border-t border-white/10 pt-2 mt-2">
+        {utilityLinks.map(({ label, href }) => (
+          <a
+            href={href}
+            class:list={[
+              "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
+              currentPath.startsWith(href)
+                ? "text-accent"
+                : "text-muted hover:text-paper",
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+      </li>
     </ul>
   </div>
 </header>

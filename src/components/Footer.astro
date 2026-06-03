@@ -1,16 +1,18 @@
 ---
 const mainNav = [
+  { label: "Frontier", href: "/frontier" },
+  { label: "Landscape", href: "/landscape" },
   { label: "The Wire", href: "/wire" },
-  { label: "The Map", href: "/map" },
-  { label: "The List", href: "/list" },
-  { label: "Routes", href: "/routes" },
-  { label: "Terrain", href: "/terrain" },
+  { label: "Apps", href: "/apps" },
+  { label: "Stacks", href: "/stacks" },
+  { label: "Learning", href: "/learning" },
 ];
 
-const featuredNav = [
+const secondaryNav = [
   { label: "The Capitals", href: "/capitals" },
   { label: "The Cemetery", href: "/cemetery" },
-  { label: "Method", href: "/method" },
+  { label: "About", href: "/about" },
+  { label: "Glossary", href: "/glossary" },
 ];
 
 const year = new Date().getFullYear();
@@ -27,8 +29,8 @@ const year = new Date().getFullYear();
           </a>
         ))}
       </nav>
-      <nav aria-label="Featured sections" class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-        {featuredNav.map(({ label, href }) => (
+      <nav aria-label="Secondary navigation" class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        {secondaryNav.map(({ label, href }) => (
           <a href={href} class="text-muted hover:text-paper transition-colors">
             {label}
           </a>
@@ -49,7 +51,7 @@ const year = new Date().getFullYear();
         />
         <button
           type="submit"
-          class="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent/85"
+          class="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-accent/85"
         >
           Subscribe
         </button>

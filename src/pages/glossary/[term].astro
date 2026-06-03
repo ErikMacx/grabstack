@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const glossary = await getCollection("glossary");
+  return glossary.map((entry) => ({
+    params: { term: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base
+  title={`${entry.data.term} — Glossary — GrabStack`}
+  description={entry.data.definition}
+>
+  <section class="py-6 sm:py-10">
+    <p class="text-xs text-muted">
+      <a href="/glossary" class="text-accent hover:underline">Glossary</a> ›
+    </p>
+    <h1 class="mt-2 text-2xl font-bold tracking-tight sm:text-4xl">
+      {entry.data.term}<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      {entry.data.definition}
+    </p>
+  </section>
+
+  <div class="rounded-lg border border-white/10 bg-surface p-6">
+    <div class="prose-invert prose-sm max-w-none text-paper/80 leading-relaxed">
+      <Content />
+    </div>
+    <p class="mt-4 font-mono text-xs text-muted">
+      Updated {entry.data.updated}
+    </p>
+  </div>
+</Base>

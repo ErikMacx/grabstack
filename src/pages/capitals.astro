@@ -29,11 +29,11 @@ const tools = allTools
             <p class="text-xs text-muted">{t.data.maker}</p>
           </div>
           <a
-            href={`/terrain#${t.data.status}`}
+            href={`/about#methodology`}
             title={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
             class:list={[
-              "status-tooltip shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-tight no-underline",
-              t.data.status === "flagship" ? "bg-accent text-white" : "bg-accent/80 text-white",
+              "status-tooltip shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight no-underline",
+              t.data.status === "flagship" ? "border-2 border-accent text-accent font-bold" : "border border-accent text-accent",
             ]}
             data-tooltip={STATUS_DEFINITIONS[t.data.status]?.definition.replace(/<!--.*?-->/g, "").trim() ?? ""}
           >
@@ -41,7 +41,7 @@ const tools = allTools
           </a>
         </div>
         <p class="mt-2 text-xs leading-relaxed text-paper/80">{t.data.claim}</p>
-        <div class="mt-2 text-[10px] text-muted">
+        <div class="mt-2 font-mono text-xs text-muted">
           Updated {t.data.updated} · Review by {t.data.reviewed}
         </div>
         {t.data.source && (

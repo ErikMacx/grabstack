@@ -1,0 +1,45 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allTerms = await getCollection("glossary");
+const terms = allTerms.sort((a, b) =>
+  a.data.term.localeCompare(b.data.term, "en", { sensitivity: "base" }),
+);
+---
+
+<Base title="Glossary — GrabStack" description="A living glossary of AI terms, linked to the tools that use them.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      Glossary<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      A living glossary of AI terms, linked to the tools that use them.
+    </p>
+  </section>
+
+  {terms.length > 0 ? (
+    <div class="space-y-3">
+      {terms.map((entry) => (
+        <a
+          href={`/glossary/${entry.id}`}
+          class="group block rounded-lg border border-white/10 bg-surface p-4 transition-colors hover:border-white/20"
+        >
+          <h2 class="text-sm font-semibold text-paper group-hover:text-accent transition-colors">
+            {entry.data.term}
+          </h2>
+          <p class="mt-1 text-xs leading-relaxed text-paper/70">
+            {entry.data.definition}
+          </p>
+          <p class="mt-2 font-mono text-xs text-muted">
+            Updated {entry.data.updated}
+          </p>
+        </a>
+      ))}
+    </div>
+  ) : (
+    <p class="py-12 text-center text-sm text-muted">
+      Glossary terms are being assembled — check back soon.
+    </p>
+  )}
+</Base>

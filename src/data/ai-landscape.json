@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "title": "AI Landscape",
+    "section": "The Landscape",
+    "subtitle": "As of June 2026, these are the debates shaping AI — ranked, and re-rankable. Change the lens to see which questions rise to the top through each set of eyes.",
+    "asOf": "June 2026",
+    "tagline": "Signal, not noise",
+    "howItWorks": "Each debate carries a score from 0–100 under every lens — an editorial weighting of how central that question is when viewed through that set of priorities. Switch lenses and the table re-sorts; the chip beside each rank shows how far a debate climbs or falls against its Overall position, so you can see exactly what a perspective elevates. Heat is our read on real-world momentum, not rank movement.",
+    "sources": "Built from mid-2026 reporting — Stanford AI Index 2026, CFR, MIT Sloan / Project NANDA, Common Sense Media, EU AI Act and US federal/state trackers, and public statements from Amodei, Altman, Huang, Sutskever, LeCun, Bengio, Bezos, Son and Powell. A living snapshot; positions shift fast."
+  },
+  "battlegrounds": {
+    "A": "Money & Physics",
+    "B": "Tech Frontier",
+    "C": "Power & Geopolitics",
+    "D": "Human Stakes",
+    "E": "Value Contest"
+  },
+  "lenses": [
+    { "id": "overall",  "label": "Overall",            "gloss": "Raw importance and intensity of debate across the whole field right now." },
+    { "id": "business", "label": "Business Imperative","gloss": "What a company leader should prioritise — risk, ROI, and where to place the bet." },
+    { "id": "agents",   "label": "Building Agents",    "gloss": "What matters most if you're building autonomous agents and AI products." },
+    { "id": "economy",  "label": "Economy",            "gloss": "The macro stakes — labour, capital, productivity and growth." },
+    { "id": "geo",      "label": "Geopolitics",        "gloss": "Where AI meets national power, security and global competition." },
+    { "id": "safety",   "label": "Safety & Security",  "gloss": "Risk, control, misuse and the protection of vulnerable users." },
+    { "id": "climate",  "label": "Climate",            "gloss": "Energy demand, infrastructure footprint and environmental cost." },
+    { "id": "society",  "label": "Society & People",   "gloss": "How AI reshapes work, information, relationships and everyday life." }
+  ],
+  "debates": [
+    {
+      "id": 1, "bg": "A", "heat": "hot",
+      "title": "Bubble or supercycle?",
+      "tension": "Is the $800B+ of AI infrastructure a rational, telecom-style build-out — or a self-referential bubble inflating on its own balance sheets?",
+      "bull": { "label": "Infrastructure supercycle", "text": "Real revenue, cash flow 3x 1999, capex headed from $600B toward $4T." },
+      "bear": { "label": "Circular-financed bubble", "text": "Nvidia funds OpenAI funds Nvidia; loss-making labs leveraged on each other." },
+      "matters": "The largest capital bet in tech history. A disorderly unwind would strand data centres and ripple through credit markets; a justified one re-rates the economy.",
+      "signal": "AI-lab revenue from outside the financing circle; Oracle and Microsoft CDS spreads.",
+      "reality": "OpenAI is reported to be losing ~$14B in 2026 against a multi-year capex commitment north of $1 trillion.",
+      "also": "Bezos's framing: an industrial bubble, not a financial one — even excess leaves productive infrastructure behind.",
+      "scores": { "overall": 95, "business": 78, "agents": 45, "economy": 92, "geo": 60, "safety": 35, "climate": 70, "society": 55 }
+    },
+    {
+      "id": 2, "bg": "A", "heat": "hot",
+      "title": "The ROI / productivity paradox",
+      "tension": "Everyone is buying AI; almost no one can prove it's working. Is the gap a measurement lag or a value mirage?",
+      "bull": { "label": "Real per-task gains", "text": "Super-users see large gains; the failures are organisational, not the model." },
+      "bear": { "label": "Pilots show no P&L", "text": "~95% deliver no measurable profit; many firms are abandoning projects." },
+      "matters": "Decides whether 2026–27 is a deployment boom or a budget retrenchment — and whether the buyers are enterprises or the labs themselves.",
+      "signal": "Share of firms with audited, P&L-level returns — not anecdotes or token-count vanity metrics.",
+      "reality": "MIT's Project NANDA found ~95% of generative-AI pilots delivered no measurable P&L impact.",
+      "also": "The pilot-to-production gap: programs lose 12–19 points of accuracy moving from curated pilots to real users.",
+      "scores": { "overall": 88, "business": 98, "agents": 90, "economy": 85, "geo": 35, "safety": 30, "climate": 25, "society": 50 }
+    },
+    {
+      "id": 3, "bg": "A", "heat": "hot",
+      "title": "The power wall",
+      "tension": "Is electricity the hard ceiling on AI growth, or is 'the grid can't keep up' an overstated headline?",
+      "bull": { "label": "Efficiency outpaces demand", "text": "Deals slowing, a third of capacity built; grids size for peak; ~10x/yr efficiency." },
+      "bear": { "label": "The grid is the ceiling", "text": "Transformer backlogs and interconnection queues force on-site gas and nuclear." },
+      "matters": "Power is now the location-and-timing constraint on the whole industry — and it lands on ordinary people as higher electricity bills and local siting fights.",
+      "signal": "Which constraint actually binds first — interconnection, transformers, or generation.",
+      "reality": "Data centres could approach ~1,050 TWh in 2026 — which would rank them as the world's fifth-largest electricity 'nation.'",
+      "also": "",
+      "scores": { "overall": 80, "business": 55, "agents": 40, "economy": 78, "geo": 65, "safety": 30, "climate": 100, "society": 60 }
+    },
+    {
+      "id": 4, "bg": "B", "heat": "cool",
+      "title": "Has scaling hit a wall?",
+      "tension": "Is the 'bigger model + more data + more compute' recipe exhausted?",
+      "bull": { "label": "New axes keep gains coming", "text": "Post-training (RL) and test-time 'thinking' are fresh scaling dimensions." },
+      "bear": { "label": "Pre-training has peaked", "text": "Sutskever: 'peak data'; bigger runs delivering smaller-than-expected gains." },
+      "matters": "Determines whether the moat is raw compute (favouring incumbents) or algorithmic cleverness (favouring smaller, cheaper challengers).",
+      "signal": "Whether inference-scaling gains themselves start to saturate — early papers already flag diminishing returns.",
+      "reality": "Sara Hooker's 2026 essay 'On the Slow Death of Scaling' documents small models rapidly closing the gap.",
+      "also": "",
+      "scores": { "overall": 78, "business": 50, "agents": 72, "economy": 55, "geo": 55, "safety": 35, "climate": 68, "society": 35 }
+    },
+    {
+      "id": 5, "bg": "B", "heat": "hot",
+      "title": "Architecture wars: scale vs. world models",
+      "tension": "Will today's autoregressive transformers reach general intelligence, or are they a dead end needing a new foundation?",
+      "bull": { "label": "Scale is (mostly) all you need", "text": "Reasoning models keep solving what prior LLMs couldn't — a 'country of geniuses' in waiting." },
+      "bear": { "label": "LLMs are a dead end", "text": "LeCun and Bengio: word-predictors lack a world model; need new architectures." },
+      "matters": "Hundreds of billions are committed on each side. The likely resolution — hybrid systems pairing LLMs with world-model components — reshapes the whole stack.",
+      "signal": "A world-model system demonstrating a capability (robust physical reasoning, long-horizon planning) scaled LLMs visibly cannot.",
+      "reality": "Yann LeCun left Meta and reportedly raised over $1B to pursue world models over bigger chatbots.",
+      "also": "",
+      "scores": { "overall": 70, "business": 42, "agents": 80, "economy": 40, "geo": 45, "safety": 40, "climate": 50, "society": 30 }
+    },
+    {
+      "id": 6, "bg": "B", "heat": "hot",
+      "title": "Reasoning vs. reliability",
+      "tension": "When a model 'reasons', is it genuinely reasoning — and does thinking longer make it more truthful or just more convincingly wrong?",
+      "bull": { "label": "Genuine, improving reasoning", "text": "Reasoning models solve problems that defeated earlier systems." },
+      "bear": { "label": "Confident pattern-matching", "text": "Longer traces can amplify persuasion over truth; hallucination persists." },
+      "matters": "Reliability — not raw capability — is the real blocker to autonomous agents in high-stakes domains like law, medicine and finance.",
+      "signal": "Error-recovery and calibrated-uncertainty rates on long-horizon agent tasks, not single-prompt demos.",
+      "reality": "Inference-time scaling improves some tasks but does not fix hallucination — and can make errors more plausible.",
+      "also": "",
+      "scores": { "overall": 82, "business": 80, "agents": 96, "economy": 50, "geo": 35, "safety": 78, "climate": 30, "society": 65 }
+    },
+    {
+      "id": 7, "bg": "B", "heat": "steady",
+      "title": "AGI timelines: imminent, distant, or undefined?",
+      "tension": "How close is transformative AI — and is 'when' even the right question?",
+      "bull": { "label": "Imminent — this decade", "text": "Some labs talk 2026–27; early-2026 sentiment swung toward an intelligence explosion." },
+      "bear": { "label": "Decades away — or undefined", "text": "Median estimates sit ~2047–2061; the disagreement is about what intelligence is." },
+      "matters": "Timelines drive everything downstream — investment horizons, regulation urgency, education and career choices, national-security posture.",
+      "signal": "Autonomous multi-step task-completion benchmarks — track capability, not pundit dates.",
+      "reality": "Expert surveys split hard: ~10% say human-level AI by 2027, ~10% say after 2100.",
+      "also": "A growing camp argues the right stance is 'broad timelines' — a wide distribution, not a single date.",
+      "scores": { "overall": 75, "business": 48, "agents": 60, "economy": 62, "geo": 75, "safety": 80, "climate": 35, "society": 72 }
+    },
+    {
+      "id": 8, "bg": "C", "heat": "hot",
+      "title": "Open weights vs. closed models",
+      "tension": "Will the frontier be owned (proprietary APIs) or commoditised (downloadable open-weight models)?",
+      "bull": { "label": "Open weights commoditise the frontier", "text": "Cheap, downloadable, community-tuned; the price of intelligence keeps collapsing." },
+      "bear": { "label": "Closed labs keep the edge", "text": "The true frontier, safety controls and best products stay proprietary." },
+      "matters": "If models commoditise, durable value migrates away from the model toward applications, data, distribution and trust.",
+      "signal": "Incumbent price cuts following each wave of Chinese open-weight releases.",
+      "reality": "Four frontier-competitive Chinese open models shipped in a single 12-day window in May 2026, at under a third of top proprietary pricing.",
+      "also": "",
+      "scores": { "overall": 76, "business": 75, "agents": 85, "economy": 60, "geo": 82, "safety": 70, "climate": 58, "society": 45 }
+    },
+    {
+      "id": 9, "bg": "C", "heat": "hot",
+      "title": "The US–China race & export controls",
+      "tension": "Are US chip export controls widening America's lead, or accelerating Chinese self-sufficiency?",
+      "bull": { "label": "Controls preserve the US lead", "text": "The US still leads the absolute frontier; go on offense against distillation." },
+      "bear": { "label": "Controls backfired", "text": "China has effectively closed the gap and replaced the supply chain domestically." },
+      "matters": "Shapes national security, supply chains, and which country's values get embedded in the world's default AI.",
+      "signal": "The adversarial-distillation fight, and the pace of China's domestic-chip ramp.",
+      "reality": "Per the Stanford AI Index 2026, Chinese labs have 'effectively closed' the performance gap on many benchmarks.",
+      "also": "",
+      "scores": { "overall": 85, "business": 50, "agents": 45, "economy": 80, "geo": 100, "safety": 78, "climate": 45, "society": 50 }
+    },
+    {
+      "id": 10, "bg": "C", "heat": "hot",
+      "title": "Regulation: preemption vs. the patchwork",
+      "tension": "Should AI be governed by one light-touch federal standard, or by a thicket of state and regional rules?",
+      "bull": { "label": "One light-touch federal rule", "text": "Replace the 50-state patchwork to cut compliance cost and uncertainty." },
+      "bear": { "label": "State & EU guardrails must hold", "text": "Local rules protect consumers, kids and rights where federal action stalls." },
+      "matters": "Compliance cost and legal uncertainty now shape where and how products can ship. The open question for every builder: which obligations will survive the courts?",
+      "signal": "A US federal preemption statute passing; the EU's first major GPAI enforcement action.",
+      "reality": "The EU AI Act's high-risk rules take full effect in August 2026, with penalties up to 7% of global turnover.",
+      "also": "US preemption carve-outs preserve state authority over child safety, infrastructure and procurement.",
+      "scores": { "overall": 84, "business": 85, "agents": 78, "economy": 72, "geo": 90, "safety": 82, "climate": 55, "society": 78 }
+    },
+    {
+      "id": 11, "bg": "D", "heat": "hot",
+      "title": "Jobs: white-collar bloodbath or augmentation?",
+      "tension": "Does AI eliminate knowledge work — especially entry-level — or expand it?",
+      "bull": { "label": "Augmentation expands work", "text": "Jevons paradox: cheaper cognition creates more to do; past tech added jobs." },
+      "bear": { "label": "Entry-level collapse", "text": "Half of entry-level white-collar at risk; grad hiring already down sharply." },
+      "matters": "The most direct way AI touches ordinary lives, and it drives the entire reskilling, education and safety-net agenda.",
+      "signal": "Real-time entry-level hiring and earnings in AI-exposed roles — now tracked monthly.",
+      "reality": "Amodei's warning that AI could erase 50% of entry-level white-collar jobs is now being softened — as IPOs loom.",
+      "also": "Emerging synthesis: AI replaces tasks, not whole jobs — but the bottom of the white-collar pyramid is the exposed special case.",
+      "scores": { "overall": 90, "business": 72, "agents": 50, "economy": 98, "geo": 60, "safety": 45, "climate": 30, "society": 100 }
+    },
+    {
+      "id": 12, "bg": "D", "heat": "steady",
+      "title": "Safety & existential risk",
+      "tension": "Is advanced AI a controllable tool or an uncontrollable agent — and should we speed up or slow down?",
+      "bull": { "label": "Controllable tool", "text": "Risks are manageable; acceleration can itself reduce other catastrophic risks." },
+      "bear": { "label": "Uncontrollable agent", "text": "Loss-of-control and scheming risks rival nuclear war for some researchers." },
+      "matters": "Governs how fast labs ship, how much they invest in control, and whether governments treat frontier work as a national-security project.",
+      "signal": "Documented dangerous emergent behaviour (deception, self-preservation) versus its continued absence.",
+      "reality": "Roughly 40% of surveyed researchers assign greater than 10% odds to catastrophic outcomes from AI.",
+      "also": "A pragmatic middle — 'd/acc', defensive acceleration — is gaining ground over the doomer-vs-e/acc tribalism.",
+      "scores": { "overall": 80, "business": 40, "agents": 70, "economy": 45, "geo": 85, "safety": 100, "climate": 30, "society": 82 }
+    },
+    {
+      "id": 13, "bg": "D", "heat": "hot",
+      "title": "AI companions, youth & mental health",
+      "tension": "Is emotionally engaging AI a net good (accessible support, antidote to loneliness) or net harm (dependency by design)?",
+      "bull": { "label": "Accessible support at scale", "text": "Private, non-judgmental, always-on help for people with nowhere else to turn." },
+      "bear": { "label": "Addiction & harm by design", "text": "Guardrails degrade in long chats; engagement incentives endanger minors." },
+      "matters": "Where AI's design incentives collide most directly with human wellbeing — and the template for how consumer AI gets regulated.",
+      "signal": "Whether 'engagement-optimised' companion design becomes legally untenable for minors.",
+      "reality": "~3 in 4 teens use AI for companionship; the bipartisan GUARD Act would bar under-18s from companion bots.",
+      "also": "",
+      "scores": { "overall": 74, "business": 55, "agents": 40, "economy": 40, "geo": 35, "safety": 92, "climate": 20, "society": 95 }
+    },
+    {
+      "id": 14, "bg": "E", "heat": "hot",
+      "title": "The open web vs. the answer engine",
+      "tension": "When AI answers directly, what happens to the publishers, sites and creators whose content trained and feeds it?",
+      "bull": { "label": "Fair-value licensing emerges", "text": "Deals and attribution can route value back to sources; some are signing." },
+      "bear": { "label": "Answer engines starve publishers", "text": "Zero-click search collapses referral traffic; review sites hit worst." },
+      "matters": "Existential for the content economy and decisive for any discovery, review or media product — the rules set now define the terrain, and set precedent for art, music and code.",
+      "signal": "The Penske and dictionary rulings; whether licensing or litigation becomes the norm.",
+      "reality": "Publishers report referral-traffic losses of 20%, 30%, even 90% to AI answer engines.",
+      "also": "",
+      "scores": { "overall": 78, "business": 88, "agents": 55, "economy": 75, "geo": 40, "safety": 55, "climate": 25, "society": 85 }
+    },
+    {
+      "id": 15, "bg": "E", "heat": "hot",
+      "title": "Where does durable value live — is there a moat?",
+      "tension": "As models commoditise, does value accrue to the model, the application, or distribution — and are 'wrappers' doomed?",
+      "bull": { "label": "Durable value in apps & data", "text": "Proprietary data, workflow integration and distribution outlast the model." },
+      "bear": { "label": "No moat — models eat features", "text": "Collapsing prices cull thin wrappers; the frontier lab absorbs the rest." },
+      "matters": "The founder's question. It decides where a new entrant can build something defensible rather than something a frontier lab absorbs in its next release.",
+      "signal": "App-layer retention and pricing power that holds independent of the underlying model.",
+      "reality": "The thin-'wrapper' economy is being culled as per-token prices fall toward commodity levels.",
+      "also": "",
+      "scores": { "overall": 76, "business": 95, "agents": 88, "economy": 70, "geo": 45, "safety": 35, "climate": 30, "society": 45 }
+    },
+    {
+      "id": 16, "bg": "E", "heat": "steady",
+      "title": "Where does the 'context' live?",
+      "tension": "Models are commodities; your data and context are not. Should intelligence centre in the model, or in the data layer around it?",
+      "bull": { "label": "A neutral semantic layer wins", "text": "A governed, model-agnostic context/data layer becomes the control point." },
+      "bear": { "label": "The system of record owns it", "text": "The app that owns the data (and the customer) keeps context close." },
+      "matters": "Whoever owns the context layer owns the customer relationship and the recurring revenue — where much B2B AI value will be captured.",
+      "signal": "Whether a dominant semantic/context standard emerges, or every application hoards its own.",
+      "reality": "The fight beneath memory, RAG and ever-longer context windows: everyone agrees AI needs context; nobody agrees where it lives.",
+      "also": "",
+      "scores": { "overall": 68, "business": 82, "agents": 90, "economy": 55, "geo": 40, "safety": 55, "climate": 35, "society": 45 }
+    }
+  ]
+}

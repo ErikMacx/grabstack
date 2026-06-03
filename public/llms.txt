@@ -6,11 +6,13 @@ GrabStack is an independent, always-current field guide to AI tools, agents and 
 
 ## Sections
 
-- The Wire (/wire): Fresh, dated field reports on what changed and why it matters.
-- The Map (/map): The active frontier — cutting-edge tools, filterable by category and status.
-- The List (/list): The full searchable catalogue of every tool we track.
-- Routes (/routes): Curated tool stacks by job — combinations that work together.
-- Terrain (/terrain): Types of AI access (chat → agent → autonomous) and a status glossary.
+- Frontier (/frontier): The leading edge, explained — the apps, models and software at the cutting edge, and how to find the gold.
+- Landscape (/landscape): The forces shaping AI — the trends, debates and challenges, ranked and re-rankable by lens.
+- The Wire (/wire): Dated AI news — what just launched, shipped, or shut down.
+- Apps (/apps): The full, searchable list of every major AI application.
+- Stacks (/stacks): Tool combinations that work together — curated by profession and industry.
+- Learning (/learning): What to learn, and in what order — courses, programmes and concepts mapped to the competency you need.
 - The Capitals (/capitals): The dominant labs and flagship models.
 - The Cemetery (/cemetery): Deprecated, shut-down, and acquired tools.
-- Method (/method): About, methodology, and update cadence.
+- About (/about): Who makes GrabStack, methodology, and update cadence.
+- Glossary (/glossary): A living glossary of AI terms, linked to the tools that use them.

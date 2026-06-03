@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="About — GrabStack" description="Who makes GrabStack, and how we judge.">
+  <section class="py-6 sm:py-10">
+    <h1 class="text-2xl font-bold tracking-tight sm:text-4xl">
+      About<span class="text-accent">.</span>
+    </h1>
+    <p class="mt-2 max-w-xl text-sm text-muted">
+      Who makes GrabStack, and how we judge.
+    </p>
+  </section>
+
+  <div class="space-y-8">
+    <!-- Identity -->
+    <section class="rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">Who</h2>
+      <div class="mt-2 space-y-3 text-sm leading-relaxed text-paper/80">
+        <p>
+          GrabStack is written by <strong>Eric McLean</strong> — an author and an AI &amp; business consultant.
+        </p>
+        <p>
+          He works where strategy meets delivery: organisational development and change, product development, and growth — mostly across technology, telecoms and financial services. The background is blue-chip and C-suite, the kind of rooms where these calls actually get made. His current focus is AI agent teams and the competencies that make them work — which is exactly the territory this guide maps.
+        </p>
+        <p>
+          He also writes at <a href="https://pentagonphysics.com?ref=grabstack" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">PentagonPhysics.com</a>.
+        </p>
+        <p>
+          GrabStack exists for one reason: most AI coverage is noise — restated press releases, stale lists, everything hedged. The aim here is the opposite. Insight beyond the average. Signal, not noise.
+        </p>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="scroll-mt-24 rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">How we judge</h2>
+      <div class="mt-2 space-y-3 text-sm leading-relaxed text-paper/80">
+        <p>
+          Every tool in GrabStack carries a status, a dated claim, and a review-by date. We
+          evaluate based on real-world utility, benchmark performance where available, community
+          adoption, and whether the tool actually ships updates.
+        </p>
+        <p>
+          We include adjacent, non-AI tools when they're part of a working stack — the goal is the honest picture, not a purity test.
+        </p>
+        <p>
+          When a tool dies, gets acquired, or quietly stops mattering, we move it to
+          <a href="/cemetery" class="text-accent hover:underline">The Cemetery</a> rather than
+          deleting it. Honest records matter more than clean catalogues.
+        </p>
+      </div>
+    </section>
+
+    <!-- Update cadence -->
+    <section class="rounded-lg border border-white/10 bg-surface p-6">
+      <h2 class="text-lg font-semibold text-paper">Update cadence</h2>
+      <p class="mt-2 text-sm leading-relaxed text-paper/80">
+        Every entry has a review-by date. When that date passes, the entry is flagged for review.
+        <a href="/wire" class="text-accent hover:underline">The Wire</a> publishes dated field
+        reports as things change. The goal is freshness, not volume.
+      </p>
+    </section>
+  </div>
+</Base>
