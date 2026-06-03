@@ -1,5 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const allStacks = await getCollection("stacks");
+const stacks = allStacks.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Base title="Stacks — GrabStack" description="Tool combinations that work together — curated by profession and industry.">
@@ -12,14 +16,16 @@ import Base from "../layouts/Base.astro";
     </p>
   </section>
 
-  <div class="rounded-lg border border-white/10 bg-surface p-6">
-    <p class="text-sm leading-relaxed text-paper/80">
-      Stacks are curated tool combinations built for specific professions and industries — what an estate agent
-      actually uses, what a solo dev ships with, what a marketing team runs on. Each stack names the tools,
-      explains why they fit together, and carries a date so you know it's current.
-    </p>
-    <p class="mt-4 text-sm text-muted">
-      We're assembling the first stacks now. Check <a href="/wire" class="text-accent hover:underline">The Wire</a> for updates.
-    </p>
+  <p class="mb-6 text-sm text-muted font-mono">{stacks.length} stacks</p>
+
+  <div class="grid gap-3 sm:grid-cols-2">
+    {stacks.map((s) => (
+      <a href={`/stacks/${s.id}`} class="group rounded-lg border border-white/10 bg-surface p-5 transition-colors hover:border-white/20">
+        <h3 class="font-sans text-base font-semibold text-paper group-hover:text-accent transition-colors">{s.data.title}</h3>
+        <p class="mt-1 text-sm text-muted italic">{s.data.profession}</p>
+        <p class="mt-2 text-sm leading-relaxed text-paper/80">{s.data.summary}</p>
+        <p class="mt-2 font-mono text-xs text-muted">Updated {s.data.updated}</p>
+      </a>
+    ))}
   </div>
 </Base>

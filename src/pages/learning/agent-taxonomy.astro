@@ -1,37 +1,175 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { ACCESS_LADDER } from "../../lib/constants";
 ---
 
-<Base title="Agent Taxonomy — Learning — GrabStack" description="A faceted taxonomy of AI agents — types, access levels, and how they differ.">
+<Base title="A Taxonomy of AI Agents — Learning — GrabStack" description="Seven axes that locate any AI agent — autonomy, initiative, loop, reach, scope, social and role.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
-      Agent Taxonomy<span class="text-accent">.</span>
+      A Taxonomy of AI Agents<span class="text-accent">.</span>
     </h1>
     <p class="mt-2 max-w-xl text-base text-muted">
-      A faceted taxonomy of AI agents — content to follow.
+      Seven axes that locate any AI agent — autonomy, initiative, loop, reach, scope, social and role.
     </p>
-    <p class="mt-1 text-xs text-muted">
-      Part of <a href="/learning" class="text-accent hover:underline">Learning</a>.
+    <p class="mt-1 font-mono text-xs text-muted">
+      By Eric McLean · 2 June 2026 · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
     </p>
   </section>
 
-  <!-- Access ladder (moved from Terrain) -->
-  <section class="mb-12">
-    <h2 class="text-lg font-semibold text-paper">Types of AI access</h2>
-    <p class="mt-1 text-sm text-muted">From simplest to most autonomous — the ladder of what AI can do for you.</p>
-    <div class="mt-4 space-y-3">
-      {ACCESS_LADDER.map((level, i) => (
-        <div id={level.slug} class="scroll-mt-24 rounded-lg border border-white/10 bg-surface p-4">
-          <div class="flex items-baseline gap-3">
-            <span class="text-xs font-bold text-accent">{i + 1}</span>
-            <h3 class="text-sm font-semibold text-paper">{level.term}</h3>
-          </div>
-          <p class="mt-1 text-sm text-paper/80">
-            {level.definition.replace(/<!--.*?-->/g, "").trim()}
-          </p>
-        </div>
-      ))}
-    </div>
-  </section>
+  <div class="space-y-8 max-w-3xl">
+    <!-- Intro -->
+    <section class="space-y-4 text-base leading-relaxed text-paper/80">
+      <p>
+        "Agent" has become one of the least useful words in technology. It's used for a chatbot that waits for your next message, a coding tool that works unsupervised for twenty minutes, and a coordinated team of bots splitting a job between them. Those are not the same animal.
+      </p>
+      <p>
+        To talk about agents usefully — to buy one, build one, or trust one — you have to classify them. And the honest way isn't a single ladder. In biology, a species sits in exactly one place on one tree. An agent doesn't: it can be highly autonomous <em>and</em> tool-using <em>and</em> part of a team, all at once. So agents are best placed along several independent axes. Locate an agent on each, and you have its true shape.
+      </p>
+      <p>Here are the seven axes that locate any agent.</p>
+    </section>
+
+    <!-- Axes -->
+    <section class="space-y-4">
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">1. Autonomy — how much it decides for itself</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Assistant (you drive every step) → Agent (you set the goal, it executes the steps) → Autonomous (it sets its own sub-goals and pursues them). A plain chat assistant sits at one end; a goal-chasing system at the other; a coding agent lives in the productive middle — given a brief, it plans and executes, but inside boundaries you set.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">2. Initiative — who starts the work</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Reactive (waits to be asked) versus proactive (acts on a trigger, a schedule, or a standing goal). Most agents today are reactive. The live frontier is proactive: enterprise agents that act on an event — a new support case, a changed record — without anyone prompting them.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">3. Loop — how it reaches an answer</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Single-shot (one pass: prompt in, answer out) versus iterative (plan → act → observe → adjust, repeatedly, until done). The leap from autocomplete to a real agent is essentially the leap from single-shot to loop. The "run until the tests pass" pattern in modern coding agents is the loop made literal.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">4. Reach — what it can actually touch</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Text only → tools and APIs → your apps and computer (browser, files, shell) → the physical world (robotics). A chatbot answers; a tool-using agent calls services; a computer-use agent drives a screen the way you would. Reach is where capability — and risk — climbs fastest.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">5. Scope — how wide its remit</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Specialist (one job, done deeply) versus generalist (many jobs, shallower). A coding agent is a specialist; a desktop operator is a generalist. Specialists are the more reliable bet today; generalists are where the ambition, and the failure rate, both live.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">6. Social — alone or in a team</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          Solo versus team — multiple agents orchestrated, whether a planner directing workers or peers dividing a job. Frameworks exist specifically to build teams, and products increasingly fork parallel agents to work one problem at once. This is the axis most people underestimate, and the one that most resembles how human organisations actually function.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-white/10 bg-surface p-5">
+        <h2 class="font-sans text-lg font-semibold text-paper">7. Role — the job it's hired to do</h2>
+        <p class="mt-2 text-base leading-relaxed text-paper/80">
+          The first six are spectrums; this is a label. Classify the agent by the role it fills — researcher, coder, analyst, support rep, coordinator — and by the competencies that role demands. This is the lens that turns "an agent" into "a member of a team," and it's where building agents stops looking like configuring software and starts looking like designing jobs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section>
+      <h2 class="font-sans text-lg font-semibold text-paper mb-4">The axes applied</h2>
+      <p class="mb-4 text-base text-paper/80">A snapshot of where today's better-known agents sit. The axes are durable; the examples are not — that's the point.</p>
+      <div class="overflow-x-auto rounded-lg border border-white/10">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-white/10 bg-surface">
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Agent</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Autonomy</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Initiative</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Loop</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Reach</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Scope</th>
+              <th class="font-sans px-3 py-2 text-left font-semibold text-paper">Social</th>
+            </tr>
+          </thead>
+          <tbody class="font-mono text-xs text-paper/70">
+            <tr class="border-b border-white/[.06]">
+              <td class="px-3 py-2 text-paper">ChatGPT / Claude, chat</td>
+              <td class="px-3 py-2">Assistant</td>
+              <td class="px-3 py-2">Reactive</td>
+              <td class="px-3 py-2">Single-shot</td>
+              <td class="px-3 py-2">Text</td>
+              <td class="px-3 py-2">Generalist</td>
+              <td class="px-3 py-2">Solo</td>
+            </tr>
+            <tr class="border-b border-white/[.06]">
+              <td class="px-3 py-2 text-paper">Claude Code / Codex</td>
+              <td class="px-3 py-2">Agent</td>
+              <td class="px-3 py-2">Reactive</td>
+              <td class="px-3 py-2">Iterative</td>
+              <td class="px-3 py-2">Your computer</td>
+              <td class="px-3 py-2">Specialist</td>
+              <td class="px-3 py-2">Solo*</td>
+            </tr>
+            <tr class="border-b border-white/[.06]">
+              <td class="px-3 py-2 text-paper">Computer-use agents</td>
+              <td class="px-3 py-2">Agent → Auto</td>
+              <td class="px-3 py-2">Reactive</td>
+              <td class="px-3 py-2">Iterative</td>
+              <td class="px-3 py-2">Apps & computer</td>
+              <td class="px-3 py-2">Generalist</td>
+              <td class="px-3 py-2">Solo</td>
+            </tr>
+            <tr class="border-b border-white/[.06]">
+              <td class="px-3 py-2 text-paper">Manus / AutoGPT</td>
+              <td class="px-3 py-2">Autonomous</td>
+              <td class="px-3 py-2">Proactive</td>
+              <td class="px-3 py-2">Iterative</td>
+              <td class="px-3 py-2">Tools & web</td>
+              <td class="px-3 py-2">Generalist</td>
+              <td class="px-3 py-2">Solo / sub-agents</td>
+            </tr>
+            <tr class="border-b border-white/[.06]">
+              <td class="px-3 py-2 text-paper">Agentforce (enterprise)</td>
+              <td class="px-3 py-2">Autonomous</td>
+              <td class="px-3 py-2">Event-driven</td>
+              <td class="px-3 py-2">Iterative</td>
+              <td class="px-3 py-2">Enterprise apps</td>
+              <td class="px-3 py-2">Specialist</td>
+              <td class="px-3 py-2">Team</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 text-paper">CrewAI / LangGraph</td>
+              <td class="px-3 py-2">Configurable</td>
+              <td class="px-3 py-2">Configurable</td>
+              <td class="px-3 py-2">Iterative</td>
+              <td class="px-3 py-2">Tools & APIs</td>
+              <td class="px-3 py-2">Configurable</td>
+              <td class="px-3 py-2">Team</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2 font-mono text-xs text-muted">*increasingly parallelised into teams.</p>
+    </section>
+
+    <!-- How to use it -->
+    <section class="space-y-4 text-base leading-relaxed text-paper/80">
+      <h2 class="font-sans text-lg font-semibold text-paper">How to use it</h2>
+      <p>
+        The point isn't to file agents tidily. It's to ask better questions before you trust one. "It's an AI agent" tells you nothing. "It's a reactive, single-shot, text-only assistant" tells you exactly what it will and won't do.
+      </p>
+      <p>
+        So before adopting any agent, place it on these seven axes — then watch the gap between where the marketing puts it (<em>autonomous! does everything!</em>) and where it actually sits (a reactive specialist with a narrow reach). That gap is the noise. The axes are how you read past it.
+      </p>
+    </section>
+
+    <p class="font-mono text-xs text-muted">
+      First published 2 June 2026. Review by September 2026 — agent capabilities move fast. The axes are durable; the examples are dated on purpose.
+    </p>
+  </div>
 </Base>
