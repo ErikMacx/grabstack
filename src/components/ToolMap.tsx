@@ -30,6 +30,20 @@ const CATEGORY_LABELS: Record<string, string> = {
   "work-agents": "Work Agents",
 };
 
+const CATEGORY_VERDICTS: Record<string, string> = {
+  "coding-agents": "The sharpest category on the board — Claude Code and Cursor lead, but the gap is closing fast. The real differentiator is agentic reliability, not raw benchmarks.",
+  "computer-use": "Early and rough. Most computer-use agents demo well but break in production. Watch for the first one that handles a full workflow without babysitting.",
+  "frontier-models": "A three-way race between Anthropic, OpenAI and Google, with open-weight challengers closing the gap every quarter. Price is collapsing; capability is not.",
+  hardware: "Nvidia still owns the training stack. The interesting action is at the edge — on-device inference and custom silicon for specific workloads.",
+  "image-generation": "Effectively solved for most commercial use cases. The frontier is now video and 3D — still images are a commodity.",
+  "meeting-productivity": "Crowded and converging. Most tools do the same thing; the winners will be the ones embedded in your existing workflow, not standalone apps.",
+  "personal-agents": "The promise is huge, the execution is thin. No personal agent has cracked the trust problem — you need to hand over your life to use one properly.",
+  "search-research": "AI-powered search is real and shipping. The open question is whether it starves the publishers whose content it synthesises.",
+  "video-generation": "Moving fast but not production-ready for most teams. Quality is impressive in demos; consistency and control lag behind.",
+  "voice-music": "Voice cloning and music generation are ahead of the legal frameworks. Capability outpaces permission — tread carefully.",
+  "work-agents": "The enterprise promise: agents that do your job's busywork. The reality: most pilots stall at integration. The winners will own the workflow, not the model.",
+};
+
 const STATUS_LABELS: Record<string, string> = {
   flagship: "Flagship",
   "top-ranked": "Top Ranked",
@@ -188,6 +202,20 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
         </div>
       </div>
 
+      {/* Category verdict */}
+      {activeCategories.size === 1 && (() => {
+        const cat = [...activeCategories][0];
+        const verdict = CATEGORY_VERDICTS[cat];
+        return verdict ? (
+          <div className="mt-4 rounded-lg border border-accent/20 bg-accent/[.04] px-4 py-3">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[.1em] text-accent mb-1">
+              {CATEGORY_LABELS[cat] ?? cat} — editorial verdict
+            </p>
+            <p className="text-sm leading-relaxed text-paper/80">{verdict}</p>
+          </div>
+        ) : null;
+      })()}
+
       {/* Count */}
       <p className="mt-4 font-mono text-sm text-muted">
         {filtered.length} tool{filtered.length !== 1 && "s"}
@@ -207,7 +235,7 @@ export default function ToolMap({ tools }: { tools: Tool[] }) {
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
-                  <h3 className="font-heading text-sm font-semibold text-paper">{tool.name}</h3>
+                  <h3 className="font-sans text-sm font-semibold text-paper">{tool.name}</h3>
                   <p className="font-mono text-xs text-muted">{tool.maker}</p>
                 </div>
                 <a

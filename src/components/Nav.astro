@@ -42,7 +42,7 @@ const currentPath = Astro.url.pathname;
             <a
               href={href}
               class:list={[
-                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                "font-sans rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
                 currentPath.startsWith(href)
                   ? "text-accent"
                   : "text-paper/70 hover:text-paper",
@@ -58,7 +58,7 @@ const currentPath = Astro.url.pathname;
         <a
           href={href}
           class:list={[
-            "text-xs font-medium transition-colors",
+            "font-sans text-xs font-medium transition-colors",
             currentPath.startsWith(href)
               ? "text-accent"
               : "text-muted hover:text-paper",
@@ -94,7 +94,7 @@ const currentPath = Astro.url.pathname;
           <a
             href={href}
             class:list={[
-              "block rounded-md px-3 py-2 text-base font-medium transition-colors",
+              "font-sans block rounded-md px-3 py-2 text-base font-medium transition-colors",
               currentPath.startsWith(href)
                 ? "text-accent"
                 : "text-paper/70 hover:text-paper",
@@ -109,7 +109,7 @@ const currentPath = Astro.url.pathname;
           <a
             href={href}
             class:list={[
-              "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
+              "font-sans block rounded-md px-3 py-2 text-sm font-medium transition-colors",
               currentPath.startsWith(href)
                 ? "text-accent"
                 : "text-muted hover:text-paper",

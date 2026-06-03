@@ -142,7 +142,7 @@ export default function AILandscape() {
         <p className="font-mono text-xs font-medium uppercase tracking-[.2em] text-muted">
           {meta.tagline}
         </p>
-        <h1 className="font-heading mt-1 text-3xl font-extrabold leading-tight text-paper sm:text-4xl">
+        <h1 className="font-sans mt-1 text-3xl font-extrabold leading-tight text-paper sm:text-4xl">
           {meta.section}
           <span className="text-accent">.</span>
         </h1>
@@ -195,14 +195,14 @@ export default function AILandscape() {
               {/* ── Row ───────────────────────────────────────── */}
               <div className="flex items-start gap-3 sm:gap-4">
                 {/* Rank */}
-                <span className="text-accent font-heading text-[28px] font-extrabold leading-none tabular-nums min-w-[2ch] text-right select-none">
+                <span className="text-accent font-sans text-[28px] font-extrabold leading-none tabular-nums min-w-[2ch] text-right select-none">
                   {rank}
                 </span>
 
                 <div className="min-w-0 flex-1">
                   {/* Title line */}
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <h2 className="font-heading text-base font-bold text-paper leading-snug">
+                    <h2 className="font-sans text-base font-bold text-paper leading-snug">
                       {d.title}
                     </h2>
                     <span className="font-mono rounded bg-white/[.08] px-1.5 py-[1px] text-xs font-medium text-muted">
@@ -251,7 +251,7 @@ export default function AILandscape() {
                 <div className="mt-4 rounded-lg border border-white/10 bg-[#2A2D36] p-5 space-y-5">
                   {/* Title + lead question */}
                   <div>
-                    <h3 className="font-heading text-base font-bold text-paper">
+                    <h3 className="font-sans text-base font-bold text-paper">
                       {d.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-paper/80">
