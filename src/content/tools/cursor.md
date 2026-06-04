@@ -3,12 +3,14 @@ name: Cursor
 maker: Cursor
 category: coding-agents
 status: category-leader
-claim: The leading AI-native IDE and daily driver; Cursor 3 shipped Build in Parallel
-  and Composer 2.5.
-metrics: []
+claim: 'Enterprise multi-team management GA; new pricing at $32–$96/seat/mo. SpaceX
+  plans $60 B acquisition post-IPO (expected close July).'
+metrics:
+- Standard $32/seat/mo
+- Premium $96/seat/mo
 source: ''
-updated: '2026-06-02'
-reviewed: '2026-06-02'
+updated: '2026-06-04'
+reviewed: '2026-07-04'
 ---
 
-The leading AI-native IDE and daily driver; Cursor 3 shipped Build in Parallel and Composer 2.5.
+Enterprise multi-team management GA with separate security, governance and budgets. New pricing: Standard $32/seat/mo, Premium $96/seat/mo (annual). SpaceX plans $60 B acquisition post-IPO (expected close July).

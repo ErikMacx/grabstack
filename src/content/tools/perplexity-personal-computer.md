@@ -2,14 +2,14 @@
 name: Perplexity Personal Computer
 maker: Perplexity
 category: personal-agents
-status: beta
-claim: An always-on AI on a dedicated Mac mini that monitors triggers and carries
-  work forward 24/7, with a kill switch and full audit trail.
+status: active
+claim: 'Exited waitlist — now available to all Mac users (Perplexity Max, $200/mo).
+  Runs 24/7 on Mac mini, controllable from iPhone.'
 metrics:
-- Beta / waitlist
+- $200/mo (Perplexity Max)
 source: ''
-updated: '2026-06-02'
-reviewed: '2026-06-02'
+updated: '2026-06-04'
+reviewed: '2026-07-04'
 ---
 
-An always-on AI on a dedicated Mac mini that monitors triggers and carries work forward 24/7, with a kill switch and full audit trail.
+Exited waitlist — now available to all Mac users (Perplexity Max, $200/mo). Runs 24/7 on Mac mini, controllable from iPhone. Kill switch and full audit trail.

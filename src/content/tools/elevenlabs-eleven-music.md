@@ -3,13 +3,15 @@ name: ElevenLabs / Eleven Music
 maker: ElevenLabs
 category: voice-music
 status: active
-claim: The voice leader for realism and cloning; launched an iOS music app with a
-  marketplace, on licensed data.
+claim: 'Crossed $500 M ARR; Music v2 model with better vocals/instrumentation and
+  inpainting, API pricing cut up to 50 %. Series D extension adds BlackRock, NVIDIA,
+  Wellington.'
 metrics:
-- Music app Apr 2026
+- $500M ARR
+- Music v2 model
 source: ''
-updated: '2026-06-02'
-reviewed: '2026-06-02'
+updated: '2026-06-04'
+reviewed: '2026-07-04'
 ---
 
-The voice leader for realism and cloning; launched an iOS music app with a marketplace, on licensed data.
+Crossed $500 M ARR (announced May 6). Music v2 model — better vocals/instrumentation, inpainting, API pricing cut up to 50 %. Series D extension adds BlackRock, NVIDIA, Wellington, Santander. Warsaw hub expansion. Stan Lee voice licensed for Iconic Marketplace.

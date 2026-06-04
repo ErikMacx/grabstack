@@ -3,13 +3,14 @@ name: Claude Code
 maker: Anthropic
 category: coding-agents
 status: top-ranked
-claim: 'Terminal-native agent that consistently ranks #1 across independent benchmarks;
-  works in terminal, IDE and browser.'
+claim: 'Powered by Opus 4.8 — SWE-bench Pro 69.2 %, Verified 88.6 %. Dynamic workflows
+  with parallel subagents; fast mode 3x cheaper.'
 metrics:
-- ~80.9% SWE-bench Verified
+- SWE-bench Pro 69.2%
+- ~88.6% SWE-bench Verified
 source: ''
-updated: '2026-06-02'
-reviewed: '2026-06-02'
+updated: '2026-06-04'
+reviewed: '2026-07-04'
 ---
 
-Terminal-native agent that consistently ranks #1 across independent benchmarks; works in terminal, IDE and browser.
+Powered by Opus 4.8 — SWE-bench Pro 69.2 %, Verified 88.6 %. Dynamic workflows with parallel subagents. Fast mode 3x cheaper. Auto mode on Bedrock/Vertex/Foundry. New billing overhaul June 15: agent SDK / headless / GH Actions move to a separate credit pool at full API rates.
