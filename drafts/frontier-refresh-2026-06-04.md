@@ -1,0 +1,1 @@
+I need WebSearch permission to proceed. You should see a permission prompt — once you approve it, I'll run all the research searches across every category. The Frontier Refresh can't run without web access since it requires sourced, dated findings from the past 7 days.
