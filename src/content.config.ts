@@ -50,16 +50,17 @@ const updates = defineCollection({
   }),
 });
 
-const stateOf = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "src/content/state-of" }),
-  schema: z.object({
-    title: z.string(),
-    topic: z.string(),
-    claim: z.string(),
-    updated: z.string(),
-    reviewed: z.string(),
-  }),
-});
+// state-of collection — uncomment when content is added to src/content/state-of/
+// const stateOf = defineCollection({
+//   loader: glob({ pattern: "**/*.md", base: "src/content/state-of" }),
+//   schema: z.object({
+//     title: z.string(),
+//     topic: z.string(),
+//     claim: z.string(),
+//     updated: z.string(),
+//     reviewed: z.string(),
+//   }),
+// });
 
 const glossary = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "src/content/glossary" }),
@@ -83,4 +84,4 @@ const stacks = defineCollection({
   }),
 });
 
-export const collections = { tools, updates, "state-of": stateOf, glossary, stacks };
+export const collections = { tools, updates, glossary, stacks };

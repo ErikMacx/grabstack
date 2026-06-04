@@ -23,14 +23,18 @@ const wireEntries = allUpdates
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 
-const sections = [
-  { label: "Frontier", href: "/frontier", desc: "The live edge of AI — what's real, what's worth your time, judged not listed." },
-  { label: "Landscape", href: "/landscape", desc: "The forces shaping AI — the trends, debates and challenges, ranked and re-rankable by lens." },
-  { label: "The Wire", href: "/wire", desc: "Dated AI news — what just launched, shipped, or shut down." },
-  { label: "Apps", href: "/apps", desc: "The full, searchable list of every major AI application." },
-  { label: "Stacks", href: "/stacks", desc: "Tool combinations that work together — curated by profession and industry." },
-  { label: "Learning", href: "/learning", desc: "What to learn, and in what order — courses, programmes and concepts mapped to the competency you need." },
-];
+// Apps count
+const appsCount = allTools.length;
+
+// Stacks
+const allStacks = await getCollection("stacks");
+const stacksCount = allStacks.length;
+
+// Top 3 apps by status weight for teaser
+const topApps = allTools
+  .filter((t) => t.data.status === "flagship" || t.data.status === "top-ranked")
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .slice(0, 6);
 
 const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
 ---
@@ -59,6 +63,38 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
       The AI world, made legible<span class="text-accent">.</span>
     </p>
   </section>
+
+  <!-- Frontier teaser -->
+  {frontierTools.length > 0 && (
+    <section class="mb-14">
+      <div class="flex items-baseline justify-between">
+        <h2 class="font-sans text-lg font-semibold text-paper">Frontier</h2>
+        <a href="/frontier" class="font-sans text-sm text-accent hover:underline">Full frontier →</a>
+      </div>
+      <p class="mt-1 text-base text-muted">The live edge — what's cutting edge right now.</p>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {frontierTools.map((t) => (
+          <div class="rounded-lg border border-white/10 bg-surface p-4">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <h3 class="font-sans text-sm font-semibold text-paper">{t.data.name}</h3>
+                <p class="font-mono text-xs text-muted">{t.data.maker}</p>
+              </div>
+              <span
+                class:list={[
+                  "shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight",
+                  t.data.status === "flagship" ? "border-2 border-accent text-accent font-bold" : "border border-accent text-accent",
+                ]}
+              >
+                {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
+              </span>
+            </div>
+            <p class="mt-2 text-sm leading-relaxed text-paper/80">{t.data.claim}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- Landscape teaser: top 3 debates -->
   <section class="mb-14">
@@ -99,38 +135,6 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
     </div>
   </section>
 
-  <!-- Frontier teaser -->
-  {frontierTools.length > 0 && (
-    <section class="mb-14">
-      <div class="flex items-baseline justify-between">
-        <h2 class="font-sans text-lg font-semibold text-paper">Frontier</h2>
-        <a href="/frontier" class="font-sans text-sm text-accent hover:underline">Full frontier →</a>
-      </div>
-      <p class="mt-1 text-base text-muted">The live edge — what's cutting edge right now.</p>
-      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {frontierTools.map((t) => (
-          <div class="rounded-lg border border-white/10 bg-surface p-4">
-            <div class="flex items-start justify-between gap-2">
-              <div>
-                <h3 class="font-sans text-sm font-semibold text-paper">{t.data.name}</h3>
-                <p class="font-mono text-xs text-muted">{t.data.maker}</p>
-              </div>
-              <span
-                class:list={[
-                  "shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight",
-                  t.data.status === "flagship" ? "border-2 border-accent text-accent font-bold" : "border border-accent text-accent",
-                ]}
-              >
-                {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
-              </span>
-            </div>
-            <p class="mt-2 text-sm leading-relaxed text-paper/80">{t.data.claim}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
   <!-- From The Wire -->
   {wireEntries.length > 0 && (
     <section class="mb-14">
@@ -152,17 +156,63 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
     </section>
   )}
 
-  <!-- All six sections -->
+  <!-- Apps teaser -->
   <section class="mb-14">
-    <h2 class="font-sans text-lg font-semibold text-paper">Explore</h2>
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-sans text-lg font-semibold text-paper">Apps</h2>
+      <a href="/apps" class="font-sans text-sm text-accent hover:underline">All {appsCount} apps →</a>
+    </div>
+    <p class="mt-1 text-base text-muted">The full, searchable list of every major AI application.</p>
     <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {sections.map(({ label, href, desc }) => (
-        <a href={href} class="group rounded-lg border border-white/10 bg-surface p-5 transition-colors hover:border-white/20">
-          <h3 class="font-sans text-base font-semibold text-paper group-hover:text-accent transition-colors">{label}</h3>
-          <p class="mt-1 text-sm text-muted">{desc}</p>
+      {topApps.map((t) => (
+        <div class="rounded-lg border border-white/10 bg-surface p-4">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-paper">{t.data.name}</h3>
+              <p class="font-mono text-xs text-muted">{t.data.maker}</p>
+            </div>
+            <span
+              class:list={[
+                "shrink-0 rounded-full px-2 py-0.5 font-mono text-xs font-semibold leading-tight",
+                t.data.status === "flagship" ? "border-2 border-accent text-accent font-bold" : "border border-accent text-accent",
+              ]}
+            >
+              {STATUS_DEFINITIONS[t.data.status]?.label ?? t.data.status}
+            </span>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-paper/80">{t.data.claim}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Stacks teaser -->
+  <section class="mb-14">
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-sans text-lg font-semibold text-paper">Stacks</h2>
+      <a href="/stacks" class="font-sans text-sm text-accent hover:underline">All {stacksCount} stacks →</a>
+    </div>
+    <p class="mt-1 text-base text-muted">Tool combinations that work together — curated by profession and industry.</p>
+    <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {allStacks.slice(0, 3).map((s) => (
+        <a href={`/stacks/${s.slug}`} class="group rounded-lg border border-white/10 bg-surface p-4 transition-colors hover:border-white/20">
+          <h3 class="font-sans text-sm font-semibold text-paper group-hover:text-accent transition-colors">{s.data.title}</h3>
+          <p class="font-mono text-xs text-muted mt-1">{s.data.profession}</p>
+          {s.data.summary && (
+            <p class="mt-2 text-sm leading-relaxed text-paper/80 line-clamp-2">{s.data.summary}</p>
+          )}
         </a>
       ))}
     </div>
+  </section>
+
+  <!-- Learning teaser -->
+  <section class="mb-14">
+    <div class="flex items-baseline justify-between">
+      <h2 class="font-sans text-lg font-semibold text-paper">Learning</h2>
+      <a href="/learning" class="font-sans text-sm text-accent hover:underline">All learning →</a>
+    </div>
+    <p class="mt-1 text-base text-muted">What to learn, and in what order — courses, programmes and concepts mapped to the competency you need.</p>
   </section>
 
   <!-- Curated by -->

@@ -8,6 +8,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://grabstack.com',
   integrations: [react(), sitemap(), mdx()],
 
   vite: {
