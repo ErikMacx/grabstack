@@ -195,7 +195,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
     <p class="mt-1 text-base text-muted">Tool combinations that work together — curated by profession and industry.</p>
     <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {allStacks.slice(0, 3).map((s) => (
-        <a href={`/stacks/${s.slug}`} class="group rounded-lg border border-white/10 bg-surface p-4 transition-colors hover:border-white/20">
+        <a href={`/stacks/${s.id}`} class="group rounded-lg border border-white/10 bg-surface p-4 transition-colors hover:border-white/20">
           <h3 class="font-sans text-sm font-semibold text-paper group-hover:text-accent transition-colors">{s.data.title}</h3>
           <p class="font-mono text-xs text-muted mt-1">{s.data.profession}</p>
           {s.data.summary && (
