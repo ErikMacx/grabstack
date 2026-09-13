@@ -1,6 +1,6 @@
 ---
 term: "Closed weights"
-definition: "a model whose parameters are kept private and accessed only through a provider's API (e.g."
+definition: "a model whose parameters are kept private and accessed only through a provider's API (e.g. GPT, Claude, Gemini)."
 tools: []
 updated: "2026-06-03"
 ---

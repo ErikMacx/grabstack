@@ -1,6 +1,6 @@
 ---
 term: "Benchmark"
-definition: "a standard test used to compare models (e.g."
+definition: "a standard test used to compare models (e.g. SWE-bench for coding)."
 tools: []
 updated: "2026-06-03"
 ---

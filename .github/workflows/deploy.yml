@@ -1,0 +1,43 @@
+name: Build and deploy
+
+# The fault that killed GrabStack: content was committed and pushed, but nothing
+# ever built or deployed it. Production sat on f3d4ba5 for three months while
+# main moved on. This workflow closes that gap — merge to main IS the deploy.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Advisory, never blocking: a stale entry should be shouted about, not be
+      # a reason to stop shipping the fix that accompanies it.
+      - name: Freshness report
+        run: npm run freshness || true
+
+      - run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=grabstack --branch=main

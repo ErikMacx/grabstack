@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# run logs and trawl output (noisy, machine-local)
+logs/
+drafts/
+
+# the retired Worker-based trawl, superseded by scripts/trawl.sh
+.wrangler/

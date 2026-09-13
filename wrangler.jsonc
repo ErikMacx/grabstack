@@ -1,0 +1,7 @@
+{
+  // Cloudflare Pages project serving grabstack.com / www.grabstack.com.
+  // Config-driven so `npm run deploy` needs no flags (mirrors grabs-site).
+  "name": "grabstack",
+  "compatibility_date": "2026-09-13",
+  "pages_build_output_dir": "dist"
+}

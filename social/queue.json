@@ -1,0 +1,179 @@
+{
+  "generated": "2026-09-13",
+  "note": "Generated from committed, in-review site content only. Edit or delete any entry before it publishes.",
+  "eligible": 33,
+  "excludedAsStale": 90,
+  "posts": [
+    {
+      "id": "glossary/agent",
+      "kind": "glossary",
+      "text": "Agent: an AI system that doesn't just answer, but acts: given a goal, it plans and carries out steps (calling tools, writing files, running code) with some independence.",
+      "url": "https://grabstack.com/glossary/agent",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Agent: an AI system that doesn't just answer, but acts: given a goal, it plans and carries out steps (calling tools, writing files, running code) with some independence. https://grabstack.com/glossary/agent #AI #AIglossary",
+        "bluesky": "Agent: an AI system that doesn't just answer, but acts: given a goal, it plans and carries out steps (calling tools, writing files, running code) with some independence. https://grabstack.com/glossary/agent #AI #AIglossary",
+        "mastodon": "Agent: an AI system that doesn't just answer, but acts: given a goal, it plans and carries out steps (calling tools, writing files, running code) with some independence. https://grabstack.com/glossary/agent #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/agentic",
+      "kind": "glossary",
+      "text": "Agentic: describes AI that takes initiative and completes multi-step work on its own, rather than waiting for the next instruction.",
+      "url": "https://grabstack.com/glossary/agentic",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Agentic: describes AI that takes initiative and completes multi-step work on its own, rather than waiting for the next instruction. https://grabstack.com/glossary/agentic #AI #AIglossary",
+        "bluesky": "Agentic: describes AI that takes initiative and completes multi-step work on its own, rather than waiting for the next instruction. https://grabstack.com/glossary/agentic #AI #AIglossary",
+        "mastodon": "Agentic: describes AI that takes initiative and completes multi-step work on its own, rather than waiting for the next instruction. https://grabstack.com/glossary/agentic #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/agi",
+      "kind": "glossary",
+      "text": "AGI (Artificial General Intelligence): a hypothetical AI that matches or exceeds humans across essentially all cognitive tasks.",
+      "url": "https://grabstack.com/glossary/agi",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "AGI (Artificial General Intelligence): a hypothetical AI that matches or exceeds humans across essentially all cognitive tasks. https://grabstack.com/glossary/agi #AI #AIglossary",
+        "bluesky": "AGI (Artificial General Intelligence): a hypothetical AI that matches or exceeds humans across essentially all cognitive tasks. https://grabstack.com/glossary/agi #AI #AIglossary",
+        "mastodon": "AGI (Artificial General Intelligence): a hypothetical AI that matches or exceeds humans across essentially all cognitive tasks. https://grabstack.com/glossary/agi #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/api",
+      "kind": "glossary",
+      "text": "API: the interface that lets one piece of software talk to another.",
+      "url": "https://grabstack.com/glossary/api",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "API: the interface that lets one piece of software talk to another. https://grabstack.com/glossary/api #AI #AIglossary",
+        "bluesky": "API: the interface that lets one piece of software talk to another. https://grabstack.com/glossary/api #AI #AIglossary",
+        "mastodon": "API: the interface that lets one piece of software talk to another. https://grabstack.com/glossary/api #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/benchmark",
+      "kind": "glossary",
+      "text": "Benchmark: a standard test used to compare models (e.g. SWE-bench for coding).",
+      "url": "https://grabstack.com/glossary/benchmark",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Benchmark: a standard test used to compare models (e.g. SWE-bench for coding). https://grabstack.com/glossary/benchmark #AI #AIglossary",
+        "bluesky": "Benchmark: a standard test used to compare models (e.g. SWE-bench for coding). https://grabstack.com/glossary/benchmark #AI #AIglossary",
+        "mastodon": "Benchmark: a standard test used to compare models (e.g. SWE-bench for coding). https://grabstack.com/glossary/benchmark #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/chain-of-thought",
+      "kind": "glossary",
+      "text": "Chain-of-thought: prompting (or training) a model to work through its reasoning step by step before answering, which improves results on harder problems.",
+      "url": "https://grabstack.com/glossary/chain-of-thought",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Chain-of-thought: prompting (or training) a model to work through its reasoning step by step before answering, which improves results on harder problems. https://grabstack.com/glossary/chain-of-thought #AI #AIglossary",
+        "bluesky": "Chain-of-thought: prompting (or training) a model to work through its reasoning step by step before answering, which improves results on harder problems. https://grabstack.com/glossary/chain-of-thought #AI #AIglossary",
+        "mastodon": "Chain-of-thought: prompting (or training) a model to work through its reasoning step by step before answering, which improves results on harder problems. https://grabstack.com/glossary/chain-of-thought #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/closed-weights",
+      "kind": "glossary",
+      "text": "Closed weights: a model whose parameters are kept private and accessed only through a provider's API (e.g. GPT, Claude, Gemini).",
+      "url": "https://grabstack.com/glossary/closed-weights",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Closed weights: a model whose parameters are kept private and accessed only through a provider's API (e.g. GPT, Claude, Gemini). https://grabstack.com/glossary/closed-weights #AI #AIglossary",
+        "bluesky": "Closed weights: a model whose parameters are kept private and accessed only through a provider's API (e.g. GPT, Claude, Gemini). https://grabstack.com/glossary/closed-weights #AI #AIglossary",
+        "mastodon": "Closed weights: a model whose parameters are kept private and accessed only through a provider's API (e.g. GPT, Claude, Gemini). https://grabstack.com/glossary/closed-weights #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/compute",
+      "kind": "glossary",
+      "text": "Compute: the raw processing power (mostly GPUs) used to train and run models.",
+      "url": "https://grabstack.com/glossary/compute",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Compute: the raw processing power (mostly GPUs) used to train and run models. https://grabstack.com/glossary/compute #AI #AIglossary",
+        "bluesky": "Compute: the raw processing power (mostly GPUs) used to train and run models. https://grabstack.com/glossary/compute #AI #AIglossary",
+        "mastodon": "Compute: the raw processing power (mostly GPUs) used to train and run models. https://grabstack.com/glossary/compute #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/context-window",
+      "kind": "glossary",
+      "text": "Context window: how much text a model can consider at once (prompt plus its reply), measured in tokens.",
+      "url": "https://grabstack.com/glossary/context-window",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Context window: how much text a model can consider at once (prompt plus its reply), measured in tokens. https://grabstack.com/glossary/context-window #AI #AIglossary",
+        "bluesky": "Context window: how much text a model can consider at once (prompt plus its reply), measured in tokens. https://grabstack.com/glossary/context-window #AI #AIglossary",
+        "mastodon": "Context window: how much text a model can consider at once (prompt plus its reply), measured in tokens. https://grabstack.com/glossary/context-window #AI #AIglossary"
+      }
+    },
+    {
+      "id": "glossary/distillation",
+      "kind": "glossary",
+      "text": "Distillation: training a smaller, cheaper model to mimic a larger one, capturing much of its ability at a fraction of the running cost",
+      "url": "https://grabstack.com/glossary/distillation",
+      "tags": [
+        "#AI",
+        "#AIglossary"
+      ],
+      "status": "queued",
+      "createdAt": "2026-09-13T12:12:07.500Z",
+      "variants": {
+        "x": "Distillation: training a smaller, cheaper model to mimic a larger one, capturing much of its ability at a fraction of the running cost https://grabstack.com/glossary/distillation #AI #AIglossary",
+        "bluesky": "Distillation: training a smaller, cheaper model to mimic a larger one, capturing much of its ability at a fraction of the running cost https://grabstack.com/glossary/distillation #AI #AIglossary",
+        "mastodon": "Distillation: training a smaller, cheaper model to mimic a larger one, capturing much of its ability at a fraction of the running cost https://grabstack.com/glossary/distillation #AI #AIglossary"
+      }
+    }
+  ],
+  "history": []
+}

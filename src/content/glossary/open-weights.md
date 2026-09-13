@@ -1,6 +1,6 @@
 ---
 term: "Open weights"
-definition: "a model whose parameters are released publicly, so anyone can run, inspect or adapt it (e.g."
+definition: "a model whose parameters are released publicly, so anyone can run, inspect or adapt it (e.g. Llama, many Mistral and Chinese models)."
 tools: []
 updated: "2026-06-03"
 ---

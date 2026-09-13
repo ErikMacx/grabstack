@@ -1,0 +1,23 @@
+name: Freshness check
+
+# "Regularly checked" — this is the part that reports on itself. Runs every
+# Monday and opens nothing; it just makes the staleness visible in the Actions
+# log and fails loudly so a red run is the signal that content needs a pass.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Report freshness
+        run: node scripts/freshness.mjs
+      - name: Fail if anything is overdue
+        run: node scripts/freshness.mjs --strict

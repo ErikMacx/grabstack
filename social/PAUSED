@@ -1,0 +1,12 @@
+Social publishing is PAUSED.
+
+Shipped this way on purpose: adding credentials to ~/.env.grabstack-social must
+not be enough to start posting on its own. Read the queue first, then:
+
+    npm run social:resume
+
+To stop again at any time:
+
+    npm run social:pause
+
+Delete this file to resume. Its presence alone blocks every publish.

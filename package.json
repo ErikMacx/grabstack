@@ -9,7 +9,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy",
+    "freshness": "node scripts/freshness.mjs",
+    "freshness:strict": "node scripts/freshness.mjs --strict",
+    "social:generate": "node scripts/social-generate.mjs",
+    "social:preview": "SOCIAL_DELAY_HOURS=0 node scripts/social-publish.mjs --dry-run --max 50",
+    "social:publish": "node scripts/social-publish.mjs",
+    "social:pause": "touch social/PAUSED && echo 'Social publishing PAUSED.'",
+    "social:resume": "rm -f social/PAUSED && echo 'Social publishing RESUMED.'",
+    "trawl": "scripts/trawl.sh frontier"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.1",
@@ -22,5 +31,11 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.0"
+  },
+  "overrides": {
+    "vite": "7.3.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.131.1"
   }
 }
