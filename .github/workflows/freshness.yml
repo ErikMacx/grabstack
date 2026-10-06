@@ -1,8 +1,9 @@
 name: Freshness check
 
 # "Regularly checked" — this is the part that reports on itself. Runs every
-# Monday and opens nothing; it just makes the staleness visible in the Actions
-# log and fails loudly so a red run is the signal that content needs a pass.
+# Monday and changes nothing; it makes the staleness visible in the Actions log.
+# The weekly review (weekly-review.yml) now works through whatever it lists, so
+# this no longer fails the run when entries are overdue.
 
 on:
   schedule:
@@ -19,5 +20,3 @@ jobs:
           node-version: 22
       - name: Report freshness
         run: node scripts/freshness.mjs
-      - name: Fail if anything is overdue
-        run: node scripts/freshness.mjs --strict

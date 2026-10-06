@@ -1,0 +1,84 @@
+name: Daily Wire
+
+# Every morning at 06:07 UTC, Claude adds the latest AI news to The Wire and updates any tool entry it affects,
+# following CLAUDE.md's "Daily Wire procedure". If the build passes and the run touched only content,
+# it is committed to main and deployed to Cloudflare Pages straight away. If anything fails,
+# nothing is published and GitHub emails the failure. Run it by hand from the Actions tab.
+
+on:
+  schedule:
+    - cron: "7 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: grabstack-content
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Today's date
+        id: today
+        run: |
+          echo "iso=$(date -u '+%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+          echo "label=$(date -u '+%-d %B %Y')" >> "$GITHUB_OUTPUT"
+
+      - name: Update GrabStack with Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            You are maintaining GrabStack in this repository. Today is ${{ steps.today.outputs.label }} (${{ steps.today.outputs.iso }}).
+            Read CLAUDE.md in full, then carry out the "Daily Wire procedure" exactly, obeying every editorial rule.
+            Touch only files under src/content/ and WIRE_NOTES.md.
+            Finish by running `npm run build` until it passes.
+            Do not commit or push; the workflow does that.
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite,Bash(date:*),Bash(npm run build:*),Bash(npm run freshness:*),Bash(node scripts/freshness.mjs:*),Bash(git diff:*),Bash(git status:*),Bash(ls:*),Bash(wc:*)"
+
+      - name: Show why Claude stopped
+        if: failure()
+        run: |
+          f="$RUNNER_TEMP/claude-execution-output.json"
+          if [ -f "$f" ]; then
+            python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); d=d if isinstance(d,list) else [d]; [print("Claude said:", m.get("result") or m.get("error") or "(no message)") for m in d if isinstance(m,dict) and m.get("type")=="result"]' "$f"
+          else
+            echo "No execution log was written."
+          fi
+
+      - name: Only content changed
+        run: scripts/guard_changes.sh '^(src/content/.*|WIRE_NOTES.md)$'
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit to main
+        id: publish
+        run: |
+          cat WIRE_NOTES.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+          scripts/publish.sh "Wire: ${{ steps.today.outputs.label }}"
+
+      - name: Deploy to Cloudflare Pages
+        if: steps.publish.outputs.published == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=grabstack --branch=main
