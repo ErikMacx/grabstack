@@ -1,17 +1,18 @@
 ---
-name: GPT-5.5
+name: GPT-6 Astra
 maker: OpenAI
 category: frontier-models
-status: everyday-default
-claim: 'GPT-5.5 Instant update — cleaner formatting, reduced bullet-heavy output.
-  Memory/personalisation expanding to Plus/Pro. GPT-4.5 sunset announced for June
-  27.'
+status: flagship
+claim: OpenAI's most capable model and first of the GPT-6 generation, and the first OpenAI model to meet the Critical cybersecurity threshold in its Preparedness Framework.
 metrics:
-- Launched 23 Apr 2026
-- ~60% fewer hallucinations vs prior
-source: ''
-updated: '2026-06-04'
-reviewed: '2026-07-04'
+- Terminal-Bench 4.0 57.9%
+- OSWorld 2.0 72.6%
+- GPQA Diamond 96.0%
+- $10/$50 per 1M tokens
+- 1.05M-token context
+source: https://openai.com/index/gpt-6-astra/
+updated: '2026-10-06'
+reviewed: '2026-11-05'
 ---
 
-GPT-5.5 Instant update rolled out — cleaner formatting, reduced bullet-heavy output, memory/personalisation expanding to Plus/Pro. GPT-4.5 sunset announced for June 27. A Codex log briefly referenced "gpt-5.6" before being scrubbed — not confirmed.
+GPT-6 Astra arrived in September 2026 as the first GPT-6 model, replacing the GPT-5.5/5.6 generation at the top of OpenAI's range; it costs $10/$50 per million tokens and is in ChatGPT for Plus, Pro, Business and Enterprise users, the API (gpt-6-astra), Codex, Azure and AWS Bedrock. On OpenAI's own tables it edges Claude Fable 5.1 on Terminal-Bench 4.0 (57.9% against 55.8%) and OSWorld 2.0 (72.6% against 70.2%). For most API work the cheaper tiers matter more: GPT-6.1 Sol, launched in late September, claims near-Astra results at $2/$10, about a fifth of the price, and GPT-6 Luna costs $0.10/$0.50. GPT-6.1 Sol is in ChatGPT's Work and Codex modes but not yet in ordinary ChatGPT chat.

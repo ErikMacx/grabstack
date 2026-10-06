@@ -3,16 +3,15 @@ name: Perplexity
 maker: Perplexity
 category: search-research
 status: category-leader
-claim: 'Hybrid AI computing platform announced (with Intel) — auto-distributes between
-  on-device and cloud models. Tripled annualised revenue since start of year. Comet
-  browser now on all platforms.'
+claim: 'Answer engine turned agent platform: Perplexity Computer now runs scheduled
+  and event-triggered Automations, picks models by effort level, and offers GPT-6.1
+  Sol and Claude Opus 5.5.'
 metrics:
-- 45M+ monthly users
-- ~$450M ARR
-- cited report in 2-4 min
-source: ''
-updated: '2026-06-04'
-reviewed: '2026-07-04'
+- Automations launched 29 Sep 2026
+- Effort Mode (Light to Ultra) 21 Sep 2026
+source: https://www.perplexity.ai/changelog
+updated: '2026-10-06'
+reviewed: '2026-11-05'
 ---
 
-Hybrid AI computing platform announced (with Intel) — auto-distributes between on-device and cloud models, rollout July. CEO says Perplexity tripled annualised revenue since start of year. Comet browser iOS update (phone actions, iPad sidebar, Finance Deep Dive). Comet now on all platforms + Samsung Internet; Enterprise via MDM.
+Since June, Perplexity's changelog has been almost entirely about Computer, its agent: Deep Research inside Computer (June), a Brain memory of past work (July), Model Council and shared Projects (August), Effort Mode with GPT-6 Astra and a Skills Marketplace (21 September), Automations that resume earlier work on a schedule or trigger (29 September), and GPT-6.1 Sol and Claude Opus 5.5 (5 October). It has also pushed onto local hardware with Hybrid Compute on Mac and Portable Computer on NVIDIA and AMD machines, and HP now preloads its Windows app. For builders, Perplexity is now less a search box than a multi-model agent with search as its strongest tool.
