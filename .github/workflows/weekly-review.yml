@@ -10,6 +10,11 @@ on:
   schedule:
     - cron: "37 6 * * 1"
   workflow_dispatch:
+    inputs:
+      focus:
+        description: "Optional: anything to cover first (e.g. 'the Landscape and Learning pages')"
+        required: false
+        default: ""
 
 concurrency:
   group: grabstack-content
@@ -47,7 +52,8 @@ jobs:
           prompt: |
             You are maintaining GrabStack in this repository. Today is ${{ steps.today.outputs.label }} (${{ steps.today.outputs.iso }}).
             Read CLAUDE.md in full, then carry out the "Weekly review procedure" exactly, obeying every editorial rule.
-            Touch only files under src/content/, src/data/ai-landscape.json, src/pages/learning/ (first Monday of the month only) and REVIEW_NOTES.md.
+            Focus for this run (may be empty; if given, do it first, and it may include the Learning pages on any day): ${{ github.event.inputs.focus }}
+            Touch only files under src/content/, src/data/ai-landscape.json, src/pages/learning/ and REVIEW_NOTES.md.
             Finish by running `npm run build` until it passes.
             Do not commit or push; the workflow does that.
           claude_args: |
@@ -65,7 +71,7 @@ jobs:
           fi
 
       - name: Only content changed
-        run: scripts/guard_changes.sh '^(src/content/.*|src/data/ai-landscape\.json|src/pages/learning/[^/]+\.astro|REVIEW_NOTES\.md)$'
+        run: scripts/guard_changes.sh '^(src/content/.*|src/data/ai-landscape\.json|src/pages/learning(/[^/]+)?\.astro|REVIEW_NOTES\.md)$'
 
       - name: Build
         run: npm run build

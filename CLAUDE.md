@@ -89,7 +89,10 @@ Run this when the weekly workflow fires, or when asked to "review GrabStack".
    - Re-check each debate against the past few weeks' events. Update its text and its `heat` (real-world momentum) where the evidence moved it, and change lens scores only where a debate has clearly become more or less central.
    - Add a debate only if a major new one has emerged, and keep the same keys and structure.
    - Update `meta.sources` to name what you used.
-5. **First Monday of the month only:** re-check the Learning pages (`src/pages/learning/*.astro`) for out-of-date facts, figures, model names and dates. Change only the text and data inside them, never the page structure or imports.
+5. **On the first Monday of the month, or whenever the run's focus asks for it:** re-check the Learning pages (`src/pages/learning/*.astro`, and their cards on `src/pages/learning.astro`).
+   - Look for out-of-date facts, figures, model names and dates, and update them.
+   - Keep the original byline date, add "· Reviewed <today>" after it, and move any "Review by" date three months ahead.
+   - Change only the text and data inside the pages, never the page structure or imports.
 6. **Build:** run `npm run build` and fix anything that fails.
 7. **Notes:** overwrite `REVIEW_NOTES.md` with what was re-checked, what changed, what was added, and anything you could not verify.
 
