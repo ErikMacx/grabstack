@@ -84,12 +84,20 @@ Run this when the weekly workflow fires, or when asked to "review GrabStack".
    - If you found no change after a real check, keep the claim. Still set `updated` and `reviewed`, and add "No material change found since <previous updated date>." to the body.
 3. **Look for gaps in Frontier.** Add at most 3 new tool files for major products that pass the Dynamite Test and are missing.
    - Mark as `deprecated` anything that has shut down.
-4. **Build:** run `npm run build` and fix anything that fails.
-5. **Notes:** overwrite `REVIEW_NOTES.md` with what was re-checked, what changed, what was added, and anything you could not verify.
+4. **Refresh the Landscape** (`src/data/ai-landscape.json`, the ranked debates on the home page):
+   - Set `meta.asOf` and the "As of …" wording in `meta.subtitle` to this month.
+   - Re-check each debate against the past few weeks' events. Update its text and its `heat` (real-world momentum) where the evidence moved it, and change lens scores only where a debate has clearly become more or less central.
+   - Add a debate only if a major new one has emerged, and keep the same keys and structure.
+   - Update `meta.sources` to name what you used.
+5. **First Monday of the month only:** re-check the Learning pages (`src/pages/learning/*.astro`) for out-of-date facts, figures, model names and dates. Change only the text and data inside them, never the page structure or imports.
+6. **Build:** run `npm run build` and fix anything that fails.
+7. **Notes:** overwrite `REVIEW_NOTES.md` with what was re-checked, what changed, what was added, and anything you could not verify.
 
 ## Publishing
 
 The workflows publish automatically.
-- They commit to `main` and deploy to Cloudflare Pages, but only when the build passes and the run touched nothing outside `src/content/` and its notes file.
+- They commit to `main` and deploy to Cloudflare Pages, but only when the build passes and the run touched nothing outside what it is allowed to touch:
+  - daily: `src/content/` and `WIRE_NOTES.md`;
+  - weekly: those plus `src/data/ai-landscape.json` and `src/pages/learning/`.
 - If anything fails, nothing is published and GitHub emails the failure.
 - **Never commit or push yourself** during an automatic run.

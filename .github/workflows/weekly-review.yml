@@ -1,6 +1,7 @@
 name: Weekly review of GrabStack
 
-# Every Monday at 06:37 UTC, Claude re-checks the tool entries and stacks past their review-by date and fills gaps in Frontier,
+# Every Monday at 06:37 UTC, Claude re-checks the tool entries and stacks past their review-by date, fills gaps in Frontier,
+# refreshes the Landscape and, on the first Monday of the month, the Learning pages,
 # following CLAUDE.md's "Weekly review procedure". If the build passes and the run touched only content,
 # it is committed to main and deployed to Cloudflare Pages straight away. If anything fails,
 # nothing is published and GitHub emails the failure. Run it by hand from the Actions tab.
@@ -46,7 +47,7 @@ jobs:
           prompt: |
             You are maintaining GrabStack in this repository. Today is ${{ steps.today.outputs.label }} (${{ steps.today.outputs.iso }}).
             Read CLAUDE.md in full, then carry out the "Weekly review procedure" exactly, obeying every editorial rule.
-            Touch only files under src/content/ and REVIEW_NOTES.md.
+            Touch only files under src/content/, src/data/ai-landscape.json, src/pages/learning/ (first Monday of the month only) and REVIEW_NOTES.md.
             Finish by running `npm run build` until it passes.
             Do not commit or push; the workflow does that.
           claude_args: |
@@ -64,7 +65,7 @@ jobs:
           fi
 
       - name: Only content changed
-        run: scripts/guard_changes.sh '^(src/content/.*|REVIEW_NOTES.md)$'
+        run: scripts/guard_changes.sh '^(src/content/.*|src/data/ai-landscape\.json|src/pages/learning/[^/]+\.astro|REVIEW_NOTES\.md)$'
 
       - name: Build
         run: npm run build
