@@ -2,7 +2,7 @@
 /**
  * GrabStack freshness gate.
  *
- * Every tool and stack entry carries a `reviewed:` date — the date by which a
+ * Every tool and stack entry carries a `reviewed:` date (and the Landscape and Learning pages one in src/data/) — the date by which a
  * human said the claim should be looked at again. Once that date passes, the
  * entry is making an unverified claim on a site whose whole promise is honesty.
  *
@@ -75,7 +75,35 @@ async function readCollection(name) {
   return entries;
 }
 
-const all = (await Promise.all(Object.keys(REVIEW_DAYS).map(readCollection))).flat();
+// Hand-made pages carry their dates in data files: the Landscape (re-checked weekly, overdue two weeks
+// after its last check) and the Learning articles (each has its own review-by date).
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const isoOf = (s) => {
+  if (!s) return null;
+  let m = String(s).match(/^(\d{4}-\d{2}-\d{2})/);
+  if (m) return m[1];
+  m = String(s).match(/^([A-Z][a-z]+) (\d{4})$/);
+  return m && MONTHS.includes(m[1]) ? `${m[2]}-${String(MONTHS.indexOf(m[1]) + 1).padStart(2, "0")}-01` : null;
+};
+async function readPages() {
+  const data = new URL("../src/data/", import.meta.url).pathname;
+  const out = [];
+  try {
+    const land = JSON.parse(await readFile(join(data, "ai-landscape.json"), "utf8")).meta;
+    const updated = isoOf(land.updated || land.asOf);
+    const reviewed = updated && new Date(Date.parse(updated) + 14 * 86400000).toISOString().slice(0, 10);
+    out.push({ collection: "pages", slug: "landscape", title: "The Landscape (src/data/ai-landscape.json)", status: null, updated, reviewed, overdueDays: reviewed ? daysBetween(reviewed, TODAY) : null });
+  } catch {}
+  try {
+    const learning = JSON.parse(await readFile(join(data, "learning.json"), "utf8"));
+    for (const [slug, a] of Object.entries(learning)) {
+      out.push({ collection: "pages", slug: `learning/${slug}`, title: `${a.title} (src/pages/learning/${slug}.astro)`, status: null, updated: a.reviewed || a.published, reviewed: a.reviewBy, overdueDays: a.reviewBy ? daysBetween(a.reviewBy, TODAY) : null });
+    }
+  } catch {}
+  return out;
+}
+
+const all = [...(await Promise.all(Object.keys(REVIEW_DAYS).map(readCollection))).flat(), ...(await readPages())];
 const overdue = all
   .filter((e) => e.overdueDays !== null && e.overdueDays > 0)
   .sort((a, b) => b.overdueDays - a.overdueDays);
@@ -87,7 +115,7 @@ if (process.argv.includes("--json")) {
   console.log(JSON.stringify({ today: TODAY, total: all.length, overdue, fresh }, null, 2));
 } else {
   console.log(`GrabStack freshness — ${TODAY}\n`);
-  for (const name of Object.keys(REVIEW_DAYS)) {
+  for (const name of [...Object.keys(REVIEW_DAYS), "pages"]) {
     const inCollection = all.filter((e) => e.collection === name);
     if (!inCollection.length) continue;
     const bad = overdue.filter((e) => e.collection === name);

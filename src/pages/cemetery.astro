@@ -1,15 +1,17 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { latest } from "../lib/dates";
 import { REGION_STATUSES, STATUS_DEFINITIONS, appendRef } from "../lib/constants";
 
 const allTools = await getCollection("tools");
 const tools = allTools
   .filter((t) => (REGION_STATUSES.cemetery as readonly string[]).includes(t.data.status))
   .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const pageDate = latest(...tools.map((t) => t.data.updated));
 ---
 
-<Base title="The Cemetery — GrabStack" description="The dead and the zombies — tools that died or quietly stopped mattering.">
+<Base updated={pageDate} title="The Cemetery — GrabStack" description="The dead and the zombies — tools that died or quietly stopped mattering.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       The Cemetery<span class="text-accent">.</span>

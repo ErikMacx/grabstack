@@ -7,10 +7,10 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/check-dates.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "astro build && wrangler pages deploy",
+    "deploy": "npm run build && wrangler pages deploy",
     "freshness": "node scripts/freshness.mjs",
     "freshness:strict": "node scripts/freshness.mjs --strict",
     "social:generate": "node scripts/social-generate.mjs",

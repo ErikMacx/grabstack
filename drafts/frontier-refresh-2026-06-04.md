@@ -1,5 +1,7 @@
 # Frontier Refresh — 2026-06-04 (weekly)
 
+_Last updated 4 June 2026. An old draft, kept for the record; the daily and weekly runs have replaced this process._
+
 **Period:** May 28 – June 4, 2026
 **Cadence:** Weekly (Steps 1, 2, 4, 5 — category briefs skipped)
 **Status:** DRAFT — pending editorial sign-off. Nothing auto-publishes.

@@ -3,6 +3,9 @@ import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 import { REGION_STATUSES, STATUS_DEFINITIONS } from "../lib/constants";
 import landscapeData from "../data/ai-landscape.json";
+import learningData from "../data/learning.json";
+import DateLine from "../components/DateLine.astro";
+import { latest, addDays } from "../lib/dates";
 
 const allTools = await getCollection("tools");
 const allUpdates = await getCollection("updates");
@@ -37,9 +40,18 @@ const topApps = allTools
   .slice(0, 6);
 
 const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
+
+// every section carries its own date; the page carries the newest
+const lmeta = landscapeData.meta as { updated?: string; asOf: string };
+const landscapeChecked = lmeta.updated || lmeta.asOf;
+const toolsDate = latest(...allTools.map((t) => t.data.updated));
+const wireDate = latest(...allUpdates.map((u) => u.data.date));
+const stacksDate = latest(...allStacks.map((s) => s.data.updated));
+const learningDate = latest(...Object.values(learningData).flatMap((x: any) => [x.published, x.reviewed]));
+const pageDate = latest(toolsDate, wireDate, stacksDate, (lmeta as any).updated);
 ---
 
-<Base>
+<Base updated={pageDate}>
   <!-- Hero -->
   <section class="py-14 sm:py-24 text-center">
     <a href="/" aria-label="GrabStack home" class="inline-block">
@@ -72,6 +84,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
         <a href="/frontier" class="font-sans text-sm text-accent hover:underline">Full frontier →</a>
       </div>
       <p class="mt-1 text-base text-muted">The live edge — what's cutting edge right now.</p>
+      <DateLine date={toolsDate} class="mt-1" />
       <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {frontierTools.map((t) => (
           <div class="rounded-lg border border-white/10 bg-surface p-4">
@@ -100,9 +113,10 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
   <section class="mb-14">
     <div class="flex items-baseline justify-between">
       <h2 class="font-sans text-lg font-semibold text-paper">The Landscape</h2>
-      <a href="/landscape" class="font-sans text-sm text-accent hover:underline">All 16 debates →</a>
+      <a href="/landscape" class="font-sans text-sm text-accent hover:underline">All {landscapeData.debates.length} debates →</a>
     </div>
     <p class="mt-1 text-base text-muted">The forces shaping AI — ranked by Overall importance.</p>
+    <DateLine date={landscapeChecked} label="Checked" reviewBy={addDays(landscapeChecked, 14)} class="mt-1" />
     <div class="mt-4 space-y-2">
       {topDebates.map((d, i) => (
         <a href="/landscape" class="group flex items-start gap-3 rounded-lg border border-white/[.08] bg-surface px-4 py-3 transition-colors hover:border-white/20">
@@ -142,6 +156,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
         <h2 class="font-sans text-lg font-semibold text-paper">From The Wire</h2>
         <a href="/wire" class="font-sans text-sm text-accent hover:underline">All dispatches →</a>
       </div>
+      <DateLine date={wireDate} class="mt-1" />
       <div class="mt-4 space-y-3">
         {wireEntries.map((entry) => (
           <article class="rounded-lg border border-white/10 bg-surface p-4">
@@ -163,6 +178,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
       <a href="/apps" class="font-sans text-sm text-accent hover:underline">All {appsCount} apps →</a>
     </div>
     <p class="mt-1 text-base text-muted">The full, searchable list of every major AI application.</p>
+    <DateLine date={toolsDate} class="mt-1" />
     <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {topApps.map((t) => (
         <div class="rounded-lg border border-white/10 bg-surface p-4">
@@ -193,6 +209,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
       <a href="/stacks" class="font-sans text-sm text-accent hover:underline">All {stacksCount} stacks →</a>
     </div>
     <p class="mt-1 text-base text-muted">Tool combinations that work together — curated by profession and industry.</p>
+    <DateLine date={stacksDate} class="mt-1" />
     <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {allStacks.slice(0, 3).map((s) => (
         <a href={`/stacks/${s.id}`} class="group rounded-lg border border-white/10 bg-surface p-4 transition-colors hover:border-white/20">
@@ -213,6 +230,7 @@ const battlegrounds: Record<string, string> = landscapeData.battlegrounds;
       <a href="/learning" class="font-sans text-sm text-accent hover:underline">All learning →</a>
     </div>
     <p class="mt-1 text-base text-muted">What to learn, and in what order — courses, programmes and concepts mapped to the competency you need.</p>
+    <DateLine date={learningDate} class="mt-1" />
   </section>
 
   <!-- Curated by -->

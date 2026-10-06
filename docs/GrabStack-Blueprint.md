@@ -1,5 +1,7 @@
 # GrabStack — Build Blueprint
 
+_Last updated 2 June 2026_
+
 > **GrabStack** — the honest, always-current field guide to AI tools, agents and stacks.
 > For builders, operators and founders (and a Learn track for students, coders and researchers).
 > Snapshot-dated, citable, filterable. *Signal, not noise.*

@@ -15,6 +15,7 @@ const { Content } = await render(entry);
 ---
 
 <Base
+  updated={entry.data.updated}
   title={`${entry.data.term} — Glossary — GrabStack`}
   description={entry.data.definition}
 >

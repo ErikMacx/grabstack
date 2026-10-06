@@ -1,11 +1,19 @@
 ---
 import Base from "../layouts/Base.astro";
 import AILandscape from "../components/AILandscape.tsx";
+import landscapeData from "../data/ai-landscape.json";
+import { addDays } from "../lib/dates";
+
+const meta = landscapeData.meta as { updated?: string; asOf: string };
+const checked = meta.updated || meta.asOf;
 ---
 
 <Base
+  updated={checked}
+  dateLabel="Checked"
+  reviewBy={addDays(checked, 14)}
   title="The Landscape — AI debates ranked & re-rankable | GrabStack"
-  description="16 live AI-industry debates, scored under 8 lenses and re-rankable on click. Signal, not noise."
+  description={`${landscapeData.debates.length} live AI-industry debates, scored under 8 lenses and re-rankable on click. Signal, not noise.`}
 >
   <AILandscape client:load />
 </Base>

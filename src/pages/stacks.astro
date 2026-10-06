@@ -1,12 +1,14 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { latest } from "../lib/dates";
 
 const allStacks = await getCollection("stacks");
 const stacks = allStacks.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const pageDate = latest(...allStacks.map((s) => s.data.updated));
 ---
 
-<Base title="Stacks — GrabStack" description="Tool combinations that work together — curated by profession and industry.">
+<Base updated={pageDate} title="Stacks — GrabStack" description="Tool combinations that work together — curated by profession and industry.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       Stacks<span class="text-accent">.</span>

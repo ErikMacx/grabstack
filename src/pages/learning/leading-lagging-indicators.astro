@@ -1,8 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
+import learning from "../../data/learning.json";
+import { fmtDate } from "../../lib/dates";
+
+const a = (learning as Record<string, { published: string; reviewed: string | null; reviewBy: string }>)["leading-lagging-indicators"];
+const byline = `By Eric McLean · ${fmtDate(a.published)}${a.reviewed ? ` · Reviewed ${fmtDate(a.reviewed)}` : ""}`;
 ---
 
-<Base title="Leading and Lagging Indicators in AI — Learning — GrabStack" description="Most people read the AI industry through the wrong instruments. The fix is knowing the difference between a leading and a lagging indicator.">
+<Base updated={a.reviewed || a.published} dateLabel={a.reviewed ? "Reviewed" : "Published"} reviewBy={a.reviewBy} title="Leading and Lagging Indicators in AI — Learning — GrabStack" description="Most people read the AI industry through the wrong instruments. The fix is knowing the difference between a leading and a lagging indicator.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       Leading and Lagging Indicators in AI<span class="text-accent">.</span>
@@ -11,7 +16,7 @@ import Base from "../../layouts/Base.astro";
       Most people read the AI industry through the wrong instruments. The fix is an old idea from strategy and economics.
     </p>
     <p class="mt-1 font-mono text-xs text-muted">
-      By Eric McLean · 3 June 2026 · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
+      {byline} · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
     </p>
   </section>
 
@@ -79,7 +84,7 @@ import Base from "../../layouts/Base.astro";
     </section>
 
     <p class="font-mono text-xs text-muted">
-      3 June 2026 · Review by 3 September 2026.
+      {fmtDate(a.published)}{a.reviewed && ` · Reviewed ${fmtDate(a.reviewed)}`} · Review by {fmtDate(a.reviewBy)}.
     </p>
   </div>
 </Base>

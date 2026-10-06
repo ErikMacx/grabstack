@@ -1,7 +1,7 @@
 name: Daily Wire
 
-# Every morning at 06:07 UTC, Claude adds the latest AI news to The Wire and updates any tool entry it affects,
-# following CLAUDE.md's "Daily Wire procedure". If the build passes and the run touched only content,
+# Every morning at 06:07 UTC, Claude adds the latest AI news to The Wire, updates any tool entry it affects,
+# and re-checks the most overdue page or entry, following CLAUDE.md's "Daily Wire procedure". If the build passes and the run touched only content,
 # it is committed to main and deployed to Cloudflare Pages straight away. If anything fails,
 # nothing is published and GitHub emails the failure. Run it by hand from the Actions tab.
 
@@ -21,7 +21,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 70
     steps:
       - uses: actions/checkout@v5
 
@@ -46,11 +46,11 @@ jobs:
           prompt: |
             You are maintaining GrabStack in this repository. Today is ${{ steps.today.outputs.label }} (${{ steps.today.outputs.iso }}).
             Read CLAUDE.md in full, then carry out the "Daily Wire procedure" exactly, obeying every editorial rule.
-            Touch only files under src/content/ and WIRE_NOTES.md.
+            Touch only files under src/content/, src/data/ai-landscape.json, src/data/learning.json, src/pages/learning/ and WIRE_NOTES.md.
             Finish by running `npm run build` until it passes.
             Do not commit or push; the workflow does that.
           claude_args: |
-            --max-turns 80
+            --max-turns 130
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,TodoWrite,Bash(date:*),Bash(npm run build:*),Bash(npm run freshness:*),Bash(node scripts/freshness.mjs:*),Bash(git diff:*),Bash(git status:*),Bash(ls:*),Bash(wc:*)"
 
       - name: Show why Claude stopped
@@ -64,7 +64,7 @@ jobs:
           fi
 
       - name: Only content changed
-        run: scripts/guard_changes.sh '^(src/content/.*|WIRE_NOTES.md)$'
+        run: scripts/guard_changes.sh '^(src/content/.*|src/data/(ai-landscape|learning)\.json|src/pages/learning(/[^/]+)?\.astro|WIRE_NOTES\.md)$'
 
       - name: Build
         run: npm run build

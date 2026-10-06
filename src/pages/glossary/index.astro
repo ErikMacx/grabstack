@@ -1,14 +1,16 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { latest } from "../../lib/dates";
 
 const allTerms = await getCollection("glossary");
+const pageDate = latest(...allTerms.map((g) => g.data.updated));
 const terms = allTerms.sort((a, b) =>
   a.data.term.localeCompare(b.data.term, "en", { sensitivity: "base" }),
 );
 ---
 
-<Base title="Glossary — GrabStack" description="A living glossary of AI terms, linked to the tools that use them.">
+<Base updated={pageDate} title="Glossary — GrabStack" description="A living glossary of AI terms, linked to the tools that use them.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       Glossary<span class="text-accent">.</span>

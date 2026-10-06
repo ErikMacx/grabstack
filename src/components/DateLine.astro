@@ -1,0 +1,22 @@
+---
+// One dated line: "Updated 6 October 2026", with "review overdue" when its review-by date has passed.
+import { fmtDate, isOverdue, toISO } from "../lib/dates";
+
+interface Props {
+  date?: string;
+  label?: string;
+  reviewBy?: string;
+  class?: string;
+}
+
+const { date, label = "Updated", reviewBy, class: cls = "" } = Astro.props;
+const overdue = isOverdue(reviewBy);
+// a bare month ("June 2026") gets a month-only machine date
+const dt = date ? (/^[A-Z][a-z]+ \d{4}$/.test(date.trim()) ? toISO(date)?.slice(0, 7) : toISO(date)) : undefined;
+---
+
+{date && (
+  <p class:list={["font-mono text-[11px] uppercase tracking-wider text-muted", cls]} data-dated={date}>
+    {`${label} `}<time datetime={dt}>{fmtDate(date)}</time>{overdue && <span class="text-accent"> · review overdue</span>}
+  </p>
+)}

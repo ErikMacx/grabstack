@@ -1,8 +1,10 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { latest } from "../../lib/dates";
 
 const allUpdates = await getCollection("updates");
+const pageDate = latest(...allUpdates.map((u) => u.data.date));
 const updates = allUpdates.sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
 );
@@ -16,7 +18,7 @@ function isDueForReview(reviewBy: string): boolean {
 }
 ---
 
-<Base title="The Wire — GrabStack" description="Dated AI news — what just launched, shipped, or shut down.">
+<Base updated={pageDate} title="The Wire — GrabStack" description="Dated AI news — what just launched, shipped, or shut down.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       The Wire<span class="text-accent">.</span>

@@ -1,5 +1,7 @@
 # GrabStack: maintenance guide for Claude
 
+_Last updated 6 October 2026_
+
 GrabStack (grabstack.com) is the honest, always-current field guide to AI tools, models and agents. Its promise is honesty: **an invented or stale claim is worse than silence.** This file tells Claude how to keep it current. The automatic runs in `.github/workflows/` follow it.
 
 - Astro site. Content lives in `src/content/`:
@@ -27,6 +29,13 @@ GrabStack (grabstack.com) is the honest, always-current field guide to AI tools,
 6. **Dates:**
    - Tools: `updated` is the day you checked it, and `reviewed` is the review-by date, 30 days later.
    - Wire items: `date` is when the event happened, and `reviewBy` is a year later.
+   - Stacks: `updated` is the day you checked it, and `reviewed` is 90 days later. Glossary: `updated` is the day you checked it.
+7. **Every page is dated.** Each page shows "Updated …" (or "Checked …", "Published …", "Reviewed …") at the top, and "review overdue" once its review-by date has passed. The footer shows the newest date on the site. The dates come from the content, so keeping the content's dates right keeps the pages right:
+   - Frontier, Apps, Capitals, Cemetery: the newest `updated` among their tools. The Wire: the newest item's `date`. Stacks and Glossary: the newest `updated`; each stack or term page shows its own.
+   - The Landscape: `meta.updated` in `src/data/ai-landscape.json` (falls back to `meta.asOf`). It shows "review overdue" 14 days after that date.
+   - Learning: `src/data/learning.json` holds each article's `published`, `reviewed` and `reviewBy`. The bylines, the review notes at the foot of each article and the Learning page's cards are all built from it, so never type those dates into the pages.
+   - About and any other hand-made page: the `updated` prop on `<Base>`. Set it to today when you change the page's text.
+   - Never set a date on something you did not check. `npm run build` fails if any page shows no date.
 
 ### Tool frontmatter
 
@@ -71,8 +80,13 @@ Run this when the daily workflow fires, or when asked to "add today's AI news".
 3. **Add one Wire item per real event.** Usually 0–6 a day. Don't pad: a quiet day gets no items.
 4. **Update affected tool entries.** If an event changes a tool entry (a new version, a price change, a shutdown, an acquisition), update that file in the same run, with a new `source`, `updated` and `reviewed`.
 5. **New products:** create a tool file only for a major new product that clearly passes the Dynamite Test, at most one a day.
-6. **Build:** run `npm run build` and fix anything that fails.
-7. **Notes:** overwrite `WIRE_NOTES.md` with 3–6 bullets: what was added or changed, and anything you could not verify.
+6. **Rolling refresh** (so nothing on the site stays stale for long): run `node scripts/freshness.mjs --json` and take the most overdue entry that is not a Wire item (`updates`). Re-check it fully against current sources and update it under the rules above, including its dates:
+   - a tool, stack or glossary term: its file in `src/content/`;
+   - `pages/landscape`: the Landscape, as in step 4 of the weekly procedure;
+   - `pages/learning/<slug>`: that Learning article, as in step 5 of the weekly procedure.
+   If nothing is overdue, take the entry whose review-by date is nearest.
+7. **Build:** run `npm run build` and fix anything that fails.
+8. **Notes:** overwrite `WIRE_NOTES.md`, starting with the heading `# Wire notes, <today>`, then 3–6 bullets: what was added or changed, what the rolling refresh re-checked, and anything you could not verify.
 
 ## Weekly review procedure
 
@@ -85,22 +99,22 @@ Run this when the weekly workflow fires, or when asked to "review GrabStack".
 3. **Look for gaps in Frontier.** Add at most 3 new tool files for major products that pass the Dynamite Test and are missing.
    - Mark as `deprecated` anything that has shut down.
 4. **Refresh the Landscape** (`src/data/ai-landscape.json`, the ranked debates on the home page):
-   - Set `meta.asOf` and the "As of …" wording in `meta.subtitle` to this month.
+   - Set `meta.updated` to today (`YYYY-MM-DD`), and `meta.asOf` and the "As of …" wording in `meta.subtitle` to this month.
    - Re-check each debate against the past few weeks' events. Update its text and its `heat` (real-world momentum) where the evidence moved it, and change lens scores only where a debate has clearly become more or less central.
    - Add a debate only if a major new one has emerged, and keep the same keys and structure.
    - Update `meta.sources` to name what you used.
-5. **On the first Monday of the month, or whenever the run's focus asks for it:** re-check the Learning pages (`src/pages/learning/*.astro`, and their cards on `src/pages/learning.astro`).
+5. **On the first Monday of the month, whenever an article is past its `reviewBy` date, or whenever the run's focus asks for it:** re-check the Learning pages (`src/pages/learning/*.astro`, and their cards on `src/pages/learning.astro`).
    - Look for out-of-date facts, figures, model names and dates, and update them.
-   - Keep the original byline date, add "· Reviewed <today>" after it, and move any "Review by" date three months ahead.
+   - In `src/data/learning.json`, set that article's `reviewed` to today and `reviewBy` to three months ahead. Keep `published` as it is. The bylines and review notes update themselves.
    - Change only the text and data inside the pages, never the page structure or imports.
 6. **Build:** run `npm run build` and fix anything that fails.
-7. **Notes:** overwrite `REVIEW_NOTES.md` with what was re-checked, what changed, what was added, and anything you could not verify.
+7. **Notes:** overwrite `REVIEW_NOTES.md`, starting with the heading `# Weekly review notes, <today>`, with what was re-checked, what changed, what was added, and anything you could not verify.
 
 ## Publishing
 
 The workflows publish automatically.
 - They commit to `main` and deploy to Cloudflare Pages, but only when the build passes and the run touched nothing outside what it is allowed to touch:
-  - daily: `src/content/` and `WIRE_NOTES.md`;
-  - weekly: those plus `src/data/ai-landscape.json` and `src/pages/learning/`.
+  - daily: `src/content/`, `src/data/ai-landscape.json`, `src/data/learning.json`, `src/pages/learning/` and `WIRE_NOTES.md`;
+  - weekly: the same, with `REVIEW_NOTES.md` instead of `WIRE_NOTES.md`.
 - If anything fails, nothing is published and GitHub emails the failure.
 - **Never commit or push yourself** during an automatic run.

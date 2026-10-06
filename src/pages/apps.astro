@@ -2,8 +2,10 @@
 import Base from "../layouts/Base.astro";
 import ToolMap from "../components/ToolMap";
 import { getCollection } from "astro:content";
+import { latest } from "../lib/dates";
 
 const allTools = await getCollection("tools");
+const pageDate = latest(...allTools.map((t) => t.data.updated));
 
 const tools = allTools.map((t) => ({
   id: t.id,
@@ -19,7 +21,7 @@ const tools = allTools.map((t) => ({
 }));
 ---
 
-<Base title="Apps — GrabStack" description="The full, searchable list of every major AI application.">
+<Base updated={pageDate} title="Apps — GrabStack" description="The full, searchable list of every major AI application.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       Apps<span class="text-accent">.</span>

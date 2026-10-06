@@ -6,7 +6,7 @@ set -euo pipefail
 msg="$1"
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add -A src/content src/data/ai-landscape.json src/pages/learning src/pages/learning.astro WIRE_NOTES.md REVIEW_NOTES.md 2>/dev/null || true
+git add -A src/content src/data/ai-landscape.json src/data/learning.json src/pages/learning src/pages/learning.astro WIRE_NOTES.md REVIEW_NOTES.md 2>/dev/null || true
 if git diff --cached --quiet; then
   echo "Nothing changed, so nothing to publish."
   echo "published=false" >> "${GITHUB_OUTPUT:-/dev/null}"

@@ -1,6 +1,8 @@
 # GrabStack operations
 
-How the site stays current, and what to do when it doesn't.
+_Last updated 6 October 2026_
+
+How the site stays current, and what to do when it doesn't. `CLAUDE.md` holds the step-by-step procedures the automatic runs follow.
 
 ## Why it stagnated (June to September 2026)
 
@@ -23,25 +25,35 @@ Worth recording, because three of the four faults were invisible.
 
 Every mechanism below exists to make one of those four impossible.
 
-## The loop
+## The loop (since 6 October 2026)
+
+Everything runs on GitHub Actions, so nothing depends on the Mac being awake.
 
 ```
-trawl (weekly)  ->  PR  ->  you merge  ->  GitHub Actions builds + deploys
-                                                      |
-                                      freshness gate reports staleness
-                                                      |
-                              social generator draws ONLY from fresh content
-                                                      |
-                                  queue  ->  veto window  ->  auto-publish
+daily 06:07 UTC   Daily Wire: today's AI news, affected tool entries, and a
+                  rolling re-check of the most overdue page or entry
+weekly Mon 06:37  Weekly review: up to 25 overdue tools, stacks, Frontier gaps,
+                  the Landscape, and the Learning pages when due
+                        |
+         guard (only content paths changed) -> build (incl. date check)
+                        |
+          commit to main -> deploy to Cloudflare Pages (project grabstack)
 ```
+
+- Each run publishes only if the build passes and it touched nothing outside its allowed paths. Otherwise nothing is published and GitHub emails the failure.
+- Every page shows its date, and "review overdue" once its review-by date has passed. `npm run build` fails if a page has no date.
+- `freshness.yml` reports what is overdue; it no longer fails the build.
+- The weekly review can be run by hand with a focus: `gh workflow run weekly-review.yml -f focus="..."`.
+- The old local trawl (`npm run trawl`, `drafts/`) is superseded.
 
 ## Commands
 
 | Command | What it does |
 |---|---|
-| `npm run freshness` | What is past its review date, worst first |
-| `npm run freshness:strict` | Same, exits 1 if anything is overdue (used by CI) |
-| `npm run trawl` | Research pass, applies content edits, opens a PR |
+| `npm run freshness` | What is past its review date, worst first (tools, stacks, glossary, Wire, and the Landscape and Learning pages) |
+| `npm run freshness:strict` | Same, exits 1 if anything is overdue |
+| `npm run trawl` | Old local research pass (superseded by the daily and weekly runs) |
+| `npm run build` | Build, then check every page is dated |
 | `npm run deploy` | Manual build and deploy (the fallback path) |
 | `npm run social:generate` | Top up `social/queue.json` from fresh content |
 | `npm run social:preview` | Show every queued post as each platform will render it |
@@ -53,7 +65,7 @@ trawl (weekly)  ->  PR  ->  you merge  ->  GitHub Actions builds + deploys
 
 Each entry carries a `reviewed:` date. Once it passes, the entry is making an
 unverified claim on a site whose entire promise is honesty. Review intervals:
-tools 30 days, stacks 90, glossary 180.
+tools 30 days, stacks 90, glossary 180. The Landscape is due 14 days after its last check, and each Learning article has its own `reviewBy` in `src/data/learning.json`.
 
 The freshness data does double duty: it tells the trawl what to prioritise, and
 it tells the social generator what it may not talk about.
@@ -81,20 +93,15 @@ Control chain, tightest first:
 `social/queue.json` is committed deliberately, so the queue is reviewable in
 git and in a PR before anything reaches the public.
 
-## Setup still required
+## Setup
 
-1. **Repository secrets** for auto-deploy (Settings > Secrets > Actions):
-   `CLOUDFLARE_API_TOKEN` (needs the "Cloudflare Pages: Edit" permission) and
-   `CLOUDFLARE_ACCOUNT_ID` = `efba1784f17b3aba846d602160003746`.
-2. **`~/.env.anthropic`** containing `ANTHROPIC_API_KEY=...` so the trawl can
-   run unattended. Headless Claude cannot use the keychain under cron.
-3. **Social accounts and credentials** — see `social/credentials.example`.
+Done (October 2026): the repository secrets `CLAUDE_CODE_OAUTH_TOKEN`, `CLOUDFLARE_API_TOKEN` (with "Cloudflare Pages: Edit") and `CLOUDFLARE_ACCOUNT_ID` = `efba1784f17b3aba846d602160003746`.
+
+Still to do, only if social posting is wanted:
+
+1. **Social accounts and credentials** — see `social/credentials.example`.
    Then `npm run social:resume`.
 
 ## Known weakness
 
-The trawl and publisher run from local crontab, so they need this Mac awake and
-online. That is the wrong host for anything that must happen reliably. The
-better home is a Cloudflare Worker on a cron trigger (there is an unfinished
-skeleton in `worker/frontier-refresh/`), which is always on and has no keychain
-problem. Worth doing once the loop has proved itself.
+The social publisher, if scheduled, still runs from local crontab, so it needs the Mac awake and online. Moving it to GitHub Actions, like the content runs, would remove that dependency.

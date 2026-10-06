@@ -2,15 +2,25 @@
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import DateLine from "../components/DateLine.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  /** When this page's content was last updated or checked: ISO date, or a bare month. Every page passes one. */
+  updated?: string;
+  /** The word before the date, e.g. "Updated", "Checked", "Reviewed". */
+  dateLabel?: string;
+  /** The page's review-by date; once past, the page says "review overdue". */
+  reviewBy?: string;
 }
 
 const {
   title = "GrabStack — the honest field guide to AI tools, agents & stacks",
   description = "Snapshot-dated, citable, filterable. Signal, not noise.",
+  updated,
+  dateLabel = "Updated",
+  reviewBy,
 } = Astro.props;
 ---
 
@@ -30,6 +40,7 @@ const {
   <body class="flex min-h-svh flex-col">
     <Nav />
     <main class="mx-auto w-full max-w-6xl flex-1 px-5 py-8">
+      <DateLine date={updated} label={dateLabel} reviewBy={reviewBy} class="page-date" />
       <slot />
     </main>
     <Footer />

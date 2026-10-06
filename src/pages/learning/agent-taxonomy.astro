@@ -1,8 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
+import learning from "../../data/learning.json";
+import { fmtDate } from "../../lib/dates";
+
+const a = (learning as Record<string, { published: string; reviewed: string | null; reviewBy: string }>)["agent-taxonomy"];
+const byline = `By Eric McLean · ${fmtDate(a.published)}${a.reviewed ? ` · Reviewed ${fmtDate(a.reviewed)}` : ""}`;
 ---
 
-<Base title="A Taxonomy of AI Agents — Learning — GrabStack" description="Seven axes that locate any AI agent — autonomy, initiative, loop, reach, scope, social and role.">
+<Base updated={a.reviewed || a.published} dateLabel={a.reviewed ? "Reviewed" : "Published"} reviewBy={a.reviewBy} title="A Taxonomy of AI Agents — Learning — GrabStack" description="Seven axes that locate any AI agent — autonomy, initiative, loop, reach, scope, social and role.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       A Taxonomy of AI Agents<span class="text-accent">.</span>
@@ -11,7 +16,7 @@ import Base from "../../layouts/Base.astro";
       Seven axes that locate any AI agent — autonomy, initiative, loop, reach, scope, social and role.
     </p>
     <p class="mt-1 font-mono text-xs text-muted">
-      By Eric McLean · 2 June 2026 · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
+      {byline} · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
     </p>
   </section>
 
@@ -169,7 +174,7 @@ import Base from "../../layouts/Base.astro";
     </section>
 
     <p class="font-mono text-xs text-muted">
-      First published 2 June 2026. Review by September 2026 — agent capabilities move fast. The axes are durable; the examples are dated on purpose.
+      First published {fmtDate(a.published)}{a.reviewed && `, reviewed ${fmtDate(a.reviewed)}`}. Review by {fmtDate(a.reviewBy)} — agent capabilities move fast. The axes are durable; the examples are dated on purpose.
     </p>
   </div>
 </Base>

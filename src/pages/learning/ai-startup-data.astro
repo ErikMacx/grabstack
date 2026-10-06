@@ -1,8 +1,13 @@
 ---
 import Base from "../../layouts/Base.astro";
+import learning from "../../data/learning.json";
+import { fmtDate } from "../../lib/dates";
+
+const a = (learning as Record<string, { published: string; reviewed: string | null; reviewBy: string }>)["ai-startup-data"];
+const byline = `By Eric McLean · ${fmtDate(a.published)}${a.reviewed ? ` · Reviewed ${fmtDate(a.reviewed)}` : ""}`;
 ---
 
-<Base title="What AI Is Doing to Startups: The Data So Far — Learning — GrabStack" description="AI has barely moved the headline rate at which startups fail. What it has changed is the speed, the team size, and where the money sits.">
+<Base updated={a.reviewed || a.published} dateLabel={a.reviewed ? "Reviewed" : "Published"} reviewBy={a.reviewBy} title="What AI Is Doing to Startups: The Data So Far — Learning — GrabStack" description="AI has barely moved the headline rate at which startups fail. What it has changed is the speed, the team size, and where the money sits.">
   <section class="py-6 sm:py-10">
     <h1 class="font-sans text-2xl font-bold tracking-tight sm:text-4xl">
       What AI Is Doing to Startups: The Data So Far<span class="text-accent">.</span>
@@ -11,7 +16,7 @@ import Base from "../../layouts/Base.astro";
       AI has barely moved the headline rate at which startups fail. What it has changed is the speed of everything, the size of the team it takes, and where the money and the risk now sit.
     </p>
     <p class="mt-1 font-mono text-xs text-muted">
-      By Eric McLean · 3 June 2026 · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
+      {byline} · Part of <a href="/learning" class="text-accent hover:underline">Learning</a>
     </p>
   </section>
 
@@ -89,7 +94,7 @@ import Base from "../../layouts/Base.astro";
     </section>
 
     <p class="font-mono text-xs text-muted">
-      3 June 2026 · Review by 3 September 2026.
+      {fmtDate(a.published)}{a.reviewed && ` · Reviewed ${fmtDate(a.reviewed)}`} · Review by {fmtDate(a.reviewBy)}.
     </p>
   </div>
 </Base>
