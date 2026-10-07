@@ -1,1 +1,10 @@
-Weekly review notes are written here by the weekly run.
+# Weekly review notes, 2026-10-07
+
+Focus for this run: bring the Landscape and all three Learning pages up to date, then the overdue tools and all stacks.
+
+- **Landscape:** `meta.updated` and `asOf` are now October 2026. Updated the "reality", "signal" and some bull/bear text for debates 1, 3, 5, 8, 9, 10, 11, 12, 13 and 14, using the IEA, hyperscaler earnings guidance, Stanford and CESifo, the EU AI Omnibus, the stalled US preemption bill, the GUARD Act committee vote, the Penske v. Google dismissal and recent Wire items. Debate 12 heat is now "hot". Lens scores are unchanged. Debates 2, 4, 6, 7, 15 and 16 were not re-researched this run, so their June figures stand. Sources are named in `meta.sources`.
+- **Learning:** `agent-taxonomy` got light text edits (a dated intro, a footnote on Manus 2.0 and Cue). `ai-startup-data` had its figures refreshed (Census business applications, Crunchbase funding, ICONIQ margins), and unsourced tiles and a CB Insights claim were removed. `leading-lagging-indicators` has no dated facts, so only its `reviewed` and `reviewBy` changed. All three now have `reviewed` 2026-10-07 and `reviewBy` 2027-01-07.
+- **Tools:** re-checked the six overdue entries (Beam AI / Hebbia, BrowserOS / Simular, Microsoft 365 Copilot / Copilot Cowork, MAI-Thinking-1, Microsoft Scout, Resemble AI / Descript). Each now has a source and fresh dates; unconfirmed claims were removed. Resemble AI has moved to deepfake detection.
+- **Stacks:** all 16 re-checked. Cowork references changed in the Consultants and Operations stacks (it merged into Claude on 16 September). The Tech & AI stack notes Cursor's acquisition. The Strategy stack notes Opus 5.5. The others say "No material change found since 2026-06-03."
+- **Not done:** no gap search for new Frontier tools this run.
+- **Could not verify:** MAI-Thinking-1 AIME scores (search summaries only); Scout (a news source, no Microsoft primary page); Play.ht's shutdown (secondary sources); ICONIQ figures (through SaaStr summaries); the Landscape's H200 shipment numbers and the Stanford 19% figure (secondary reports).

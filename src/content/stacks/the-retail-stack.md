@@ -3,8 +3,8 @@ title: "The Retail Stack"
 profession: "commerce"
 summary: "product content and service automation are the immediate wins; personalisation is the bigger prize."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -21,4 +21,4 @@ product content and service automation are the immediate wins; personalisation i
 
 ## Gotchas
 
-don't misrepresent products in AI imagery; support bots need a human escalation path; accuracy drives returns.
+don't misrepresent products in AI imagery; support bots need a human escalation path; accuracy drives returns. No material change found since 2026-06-03.

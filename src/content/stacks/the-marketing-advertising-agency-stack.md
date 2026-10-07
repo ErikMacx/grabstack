@@ -3,8 +3,8 @@ title: "The Marketing & Advertising Agency Stack"
 profession: "creative and content at scale"
 summary: "production cost has collapsed; differentiation moves entirely to ideas and taste."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -21,4 +21,4 @@ production cost has collapsed; differentiation moves entirely to ideas and taste
 
 ## Gotchas
 
-commercial rights matter — use commercially-safe tools for client work; disclose AI where required; mind brand safety.
+commercial rights matter — use commercially-safe tools for client work; disclose AI where required; mind brand safety. No material change found since 2026-06-03.

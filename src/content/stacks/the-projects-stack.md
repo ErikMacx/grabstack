@@ -3,8 +3,8 @@ title: "The Projects Stack"
 profession: "delivery and project management"
 summary: "meeting-to-action capture and doc drafting are the immediate wins; planning is assisted, not automated."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -21,4 +21,4 @@ meeting-to-action capture and doc drafting are the immediate wins; planning is a
 
 ## Gotchas
 
-AI plans miss tacit dependencies — the PM owns the critical path.
+AI plans miss tacit dependencies — the PM owns the critical path. No material change found since 2026-06-03.

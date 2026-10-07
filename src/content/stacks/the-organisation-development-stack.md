@@ -3,8 +3,8 @@ title: "The Organisation Development Stack"
 profession: "culture, change and capability work"
 summary: "the biggest OD win is making sense of qualitative feedback at scale; the human stays central to trust and judgement."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -21,4 +21,4 @@ the biggest OD win is making sense of qualitative feedback at scale; the human s
 
 ## Gotchas
 
-don't let AI depersonalise change comms; staff feedback is sensitive — mind confidentiality and data terms.
+don't let AI depersonalise change comms; staff feedback is sensitive — mind confidentiality and data terms. No material change found since 2026-06-03.

@@ -3,8 +3,8 @@ title: "The Legal Stack"
 profession: "legal practice"
 summary: "drafting and review are major time-savers; legal *research* needs purpose-built, citation-backed tools."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -22,3 +22,5 @@ drafting and review are major time-savers; legal *research* needs purpose-built,
 ## Gotchas
 
 general AI invents case law — verify every citation (lawyers have been sanctioned for this); privilege and confidentiality; professional duties.
+
+No material change found since 2026-06-03.

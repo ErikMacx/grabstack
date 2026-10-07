@@ -3,8 +3,8 @@ title: "The Growth Stack"
 profession: "marketing and revenue growth"
 summary: "AI collapses the research-and-content cycle; the moat is positioning and taste, which AI won't hand you."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -22,3 +22,5 @@ AI collapses the research-and-content cycle; the moat is positioning and taste, 
 ## Gotchas
 
 generic AI content tanks — voice and originality still win; verify every claim in copy.
+
+No material change found since 2026-06-03.

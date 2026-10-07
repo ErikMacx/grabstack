@@ -3,8 +3,8 @@ title: "The Manufacturing Stack"
 profession: "industrial operations"
 summary: "the win is knowledge capture and data analysis, not the shop floor (yet) — start with documentation and quality data."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -22,3 +22,5 @@ the win is knowledge capture and data analysis, not the shop floor (yet) — sta
 ## Gotchas
 
 safety-critical decisions stay human; never trust AI on engineering specs unverified.
+
+No material change found since 2026-06-03.

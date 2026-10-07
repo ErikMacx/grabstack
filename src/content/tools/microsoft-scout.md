@@ -3,12 +3,11 @@ name: Microsoft Scout
 maker: Microsoft
 category: work-agents
 status: beta
-claim: "Always-on personal agent across M365 \u2014 proactive meeting prep, scheduling,\
-  \ routine tasks."
+claim: 'Microsoft''s first "Autopilot", an always-on agent in Microsoft 365 that prepares meetings and schedules work. Experimental, for Frontier customers.'
 metrics: []
-source: ''
-updated: '2026-06-04'
-reviewed: '2026-07-04'
+source: https://itdaily.com/news/software/microsoft-scout-autopilot/
+updated: '2026-10-07'
+reviewed: '2026-11-06'
 ---
 
-Always-on personal agent ("Autopilot") across M365, built on OpenClaw + Work IQ. Proactive meeting prep, scheduling, routine tasks. Requires Frontier enrolment + Intune + Copilot licence. Launched June 2 at Build.
+Scout was introduced at Build 2026 as a new kind of always-on agent. It works across Teams, Outlook, OneDrive and SharePoint, using Work IQ for context. It prepares meetings, coordinates schedules and acts within permissions set by administrators. It is built on OpenClaw. Availability is an experimental release for Microsoft Frontier customers only. The earlier Intune and licence requirements were not confirmed in the sources we opened and were removed.

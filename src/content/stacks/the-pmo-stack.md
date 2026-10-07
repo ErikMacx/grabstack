@@ -3,8 +3,8 @@ title: "The PMO Stack"
 profession: "portfolio oversight and governance"
 summary: "the PMO win is turning scattered project data into a clear portfolio view; AI drafts, the PMO governs."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -21,4 +21,4 @@ the PMO win is turning scattered project data into a clear portfolio view; AI dr
 
 ## Gotchas
 
-AI summaries smooth over red flags — keep the human read on risk and dependencies.
+AI summaries smooth over red flags — keep the human read on risk and dependencies. No material change found since 2026-06-03.

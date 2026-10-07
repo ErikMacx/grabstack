@@ -3,8 +3,8 @@ title: "The Estate Agent Stack"
 profession: "estate and letting agents"
 summary: "the real wins are faster, more personal follow-up and listing copy that isn't boilerplate."
 tools: []
-updated: "2026-06-03"
-reviewed: "2026-09-03"
+updated: "2026-10-07"
+reviewed: "2027-01-05"
 ---
 
 ## Workflow
@@ -22,3 +22,5 @@ the real wins are faster, more personal follow-up and listing copy that isn't bo
 ## Gotchas
 
 never AI-fake property photos — misrepresentation is a legal and reputational landmine; verify every local-market claim.
+
+No material change found since 2026-06-03.

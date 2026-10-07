@@ -2,19 +2,19 @@
   "agent-taxonomy": {
     "title": "A Taxonomy of AI Agents",
     "published": "2026-06-02",
-    "reviewed": null,
-    "reviewBy": "2026-09-30"
+    "reviewed": "2026-10-07",
+    "reviewBy": "2027-01-07"
   },
   "leading-lagging-indicators": {
     "title": "Leading and Lagging Indicators in AI",
     "published": "2026-06-03",
-    "reviewed": null,
-    "reviewBy": "2026-09-03"
+    "reviewed": "2026-10-07",
+    "reviewBy": "2027-01-07"
   },
   "ai-startup-data": {
     "title": "What AI Is Doing to Startups: The Data So Far",
     "published": "2026-06-03",
-    "reviewed": null,
-    "reviewBy": "2026-09-03"
+    "reviewed": "2026-10-07",
+    "reviewBy": "2027-01-07"
   }
 }
