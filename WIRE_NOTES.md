@@ -1,8 +1,7 @@
-# Wire notes, 2026-10-10
+# Wire notes, 2026-10-11
 
-- Added one Wire item: Anthropic's 2026 Usage Policy update (8 October, effective 12 November). I opened the announcement itself, so the details come from Anthropic's own text.
+- No Wire items added. Anthropic's news page shows nothing newer than 8 October, and searches found no confirmed events dated 9–11 October.
 - No tool files were created or changed.
-- Rolling refresh: nothing is overdue and the nearest review-by dates are weeks away, so I did not re-check any entry.
-- Not added, unverified: "Building on our commitment to American scientific discovery" (Anthropic, 8 October). I saw only the title.
-- Google's blog lists "Gemini 3.8 Live" and "3.5 Transcribe" developer posts, but the page shows no dates, so I did not add them.
-- Web search found nothing dated 9–10 October, so other labs' news for that window is unchecked.
+- Rolling refresh: nothing is overdue. The nearest review-by date is 2026-11-05 (shared by many tools, for example GPT-6 Astra, updated 6 October), so I did not re-check any entry.
+- Could not verify: openai.com/news returned HTTP 403, so OpenAI's news for the window is unchecked. Searches returned only undated or unreliable roundups (prediction markets, forum posts), which I did not use.
+- Google, Mistral, Meta and the Chinese labs were not checked at primary sources, so there may be news for 9–11 October that I missed.
