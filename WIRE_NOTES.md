@@ -1,7 +1,7 @@
-# Wire notes, 2026-10-14
+# Wire notes, 2026-10-15
 
-- Added one Wire item: Meta's Muse Wonder and Muse Wonder Full (12 October). Checked against Meta's research post and API pricing page; the Artificial Analysis score is as reported by VentureBeat.
-- Updated `muse-spark` with the Wonder release (dates 2026-10-14 / 2026-11-13). Its `source` is unchanged, because the Wonder facts are cited in the Wire item.
-- Rolling refresh: nothing is overdue; `muse-spark` was the entry re-checked, as it was affected by the news.
-- Not added: Anthropic's 14 October Singapore office post. Its page was not opened (my guessed URL returned 404), and searches found no confirmation of the MOU. Anthropic's 8 October "American scientific discovery" post still has no Wire item.
-- Could not verify: OpenAI's news page returned HTTP 403. Search turned up unconfirmed claims about OpenAI (a shelved GPT-6.1 Astra, a training pause) from aggregators only, so I left them out. Chinese labs were not checked at primary sources.
+- Added one Wire item: Google opens Gemini 4 Argon to paid Gemini API developers (13 October), from Google's developer post.
+- Updated `gemini-3-1-pro` (the Gemini 4 Argon entry): status `unreleased` to `active`, new source, dates 2026-10-15 / 2026-11-14. Prices are the 30 September launch figures; the new post gives none.
+- Rolling refresh: nothing is overdue; the Argon entry was the one re-checked, as it was affected by the news.
+- Not added: Anthropic's 14 October Singapore office/MOU and US midterms posts. They appear on Anthropic's news list, but I could not open the posts themselves (guessed URL gave 404). Also not added: "Gemini 4 in the Gemini app", seen only as a headline on Google's blog index, with no date or detail.
+- Could not verify: OpenAI and Chinese labs at primary sources; searches returned only aggregators and rumours.
