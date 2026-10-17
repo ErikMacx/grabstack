@@ -1,7 +1,7 @@
-# Wire notes, 2026-10-16
+# Wire notes, 2026-10-17
 
-- Added two Wire items, both from Anthropic's own posts, which I opened: the Singapore office and MOU (14 October) and the independent evaluators update with METR (15 October). These were the two items I could not open yesterday.
-- No tool entries changed. Neither item alters a tool's version, price or status.
+- No Wire items added. Anthropic's news page (opened) shows nothing dated 16 or 17 October; its newest post, 15 October, is already on the Wire.
+- No tool entries changed.
 - Rolling refresh: nothing is overdue, so I took no entry. The nearest review-by dates are in early November.
 - Not added: Anthropic's 14 October US midterms post, which I did not open.
-- Could not verify: OpenAI and Chinese labs. Searches returned only prediction markets and aggregators, including unconfirmed reports of an OpenAI training pause, so I left them out.
+- Could not verify: OpenAI and the Chinese labs. openai.com/news returned 403, and searches returned only aggregators and prediction markets. They carried conflicting claims about GPT-6 and an "Astra" model, so I left them out.
