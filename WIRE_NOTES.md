@@ -1,7 +1,7 @@
-# Wire notes, 2026-10-17
+# Wire notes, 2026-10-18
 
-- No Wire items added. Anthropic's news page (opened) shows nothing dated 16 or 17 October; its newest post, 15 October, is already on the Wire.
-- No tool entries changed.
-- Rolling refresh: nothing is overdue, so I took no entry. The nearest review-by dates are in early November.
-- Not added: Anthropic's 14 October US midterms post, which I did not open.
-- Could not verify: OpenAI and the Chinese labs. openai.com/news returned 403, and searches returned only aggregators and prediction markets. They carried conflicting claims about GPT-6 and an "Astra" model, so I left them out.
+- Added two Wire items: Meta's Muse Spark Open (15 October; Meta's research blog opened) and DeepSeek's V4.1-Flash-1017 (Hugging Face model card opened).
+- Updated the `muse-spark` and `deepseek-v4` tool entries with the new sources and dates.
+- Rolling refresh: nothing is overdue, so I took no entry.
+- Could not verify: the DeepSeek card states no release date, so 17 October comes from the listing and a secondary tracker. Trackers gave 552B parameters while the card shows 763B, so I left the size out.
+- Not added: Reflection AI's Beam and other items seen only in aggregators. Anthropic's news page has nothing new since 15 October.

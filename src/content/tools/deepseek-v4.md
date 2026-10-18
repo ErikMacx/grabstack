@@ -9,9 +9,9 @@ metrics:
 - V4.1-Flash DeepSWE v1.1 74.2
 - V4-Pro SWE-bench Verified 80.6
 - $0.30/$1.20 per 1M tokens (V4.1-Flash, peak)
-source: https://api-docs.deepseek.com/news/news260910
-updated: '2026-10-06'
-reviewed: '2026-11-05'
+source: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
+updated: '2026-10-18'
+reviewed: '2026-11-17'
 ---
 
-DeepSeek's V4 line reached its API on 24 April 2026; V4-Pro (1.6T parameters, 49B active) went generally available on 13 August with low, high and max thinking effort and half-price off-peak hours. On 10 September DeepSeek released V4.1-Flash, a 552B mixture-of-experts model with native image input and a new encoder-decoder design that needs a quarter of the HBM for its KV cache, and DeepSeek says tests by multiple parties put it ahead of V4-Pro on performance, cost and speed. Both models have 1M-token contexts and MIT-licensed weights on Hugging Face, and V4.1-Flash now answers to the `deepseek-flash` API name at $0.30/$1.20 per million tokens at peak. For builders this is one of the cheapest near-frontier options, and it can be self-hosted.
+DeepSeek's V4 line reached its API on 24 April 2026; V4-Pro (1.6T parameters, 49B active) went generally available on 13 August with low, high and max thinking effort and half-price off-peak hours. On 10 September DeepSeek released V4.1-Flash, a 552B mixture-of-experts model with native image input and a new encoder-decoder design that needs a quarter of the HBM for its KV cache, and DeepSeek says tests by multiple parties put it ahead of V4-Pro on performance, cost and speed. Both models have 1M-token contexts and MIT-licensed weights on Hugging Face, and V4.1-Flash now answers to the `deepseek-flash` API name at $0.30/$1.20 per million tokens at peak. In mid-October DeepSeek published V4.1-Flash-1017, which its model card calls a minor update, also under the MIT licence. For builders this is one of the cheapest near-frontier options, and it can be self-hosted.

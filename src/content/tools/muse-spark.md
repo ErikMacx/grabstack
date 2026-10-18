@@ -7,9 +7,9 @@ claim: Meta's proprietary frontier model, tuned for agentic coding, with a 1M-to
 metrics:
 - 1M-token context
 - $1.25/$4.25 per 1M tokens
-source: https://dev.meta.ai/models/muse-spark
-updated: '2026-10-14'
-reviewed: '2026-11-13'
+source: https://research.meta.ai/blog/muse-spark-open
+updated: '2026-10-18'
+reviewed: '2026-11-17'
 ---
 
-Meta has updated Muse Spark three times since June: 1.1 on 9 July, alongside a public preview of the Meta Model API; 1.2 in August with Muse Code, Meta's first coding agent; and 1.3 on 4 September. Meta says 1.3 is competitive with Claude Fable 5.1, while Artificial Analysis scored it 61 on its Intelligence Index against 66 for Fable 5.1, according to TechRepublic. At Meta Connect in September the Model API became generally available worldwide and Meta released Muse Glimmer, a separate 30B open-weights model. Muse Spark itself is not open-weight, but it is now a real, self-serve API option rather than a model locked inside Meta's apps. On 12 October Meta added a larger model class above it, Muse Wonder (muse-wonder-1.0, $4/$20 per 1M tokens on the API), and Muse Wonder Full, which is only for Muse Code subscribers. Spark is now Meta's lower-priced option.
+Meta has updated Muse Spark three times since June: 1.1 on 9 July, alongside a public preview of the Meta Model API; 1.2 in August with Muse Code, Meta's first coding agent; and 1.3 on 4 September. Meta says 1.3 is competitive with Claude Fable 5.1, while Artificial Analysis scored it 61 on its Intelligence Index against 66 for Fable 5.1, according to TechRepublic. At Meta Connect in September the Model API became generally available worldwide and Meta released Muse Glimmer, a separate 30B open-weights model. Muse Spark itself is not open-weight, but it is now a real, self-serve API option rather than a model locked inside Meta's apps. On 12 October Meta added a larger model class above it, Muse Wonder (muse-wonder-1.0, $4/$20 per 1M tokens on the API), and Muse Wonder Full, which is only for Muse Code subscribers. Spark is now Meta's lower-priced option. On 15 October Meta also released Muse Spark Open, a separate 816B open-weight model under the Muse Model License.
