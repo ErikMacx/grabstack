@@ -2,12 +2,12 @@
   "meta": {
     "title": "AI Landscape",
     "section": "The Landscape",
-    "updated": "2026-10-12",
+    "updated": "2026-10-19",
     "subtitle": "As of October 2026, these are the debates shaping AI — ranked, and re-rankable. Change the lens to see which questions rise to the top through each set of eyes.",
     "asOf": "October 2026",
     "tagline": "Signal, not noise",
     "howItWorks": "Each debate carries a score from 0–100 under every lens — an editorial weighting of how central that question is when viewed through that set of priorities. Switch lenses and the table re-sorts; the chip beside each rank shows how far a debate climbs or falls against its Overall position, so you can see exactly what a perspective elevates. Heat is our read on real-world momentum, not rank movement.",
-    "sources": "Built from reporting to early October 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, court reports on the Penske v. Google ruling, and the sources behind GrabStack's Wire items from July to October 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
+    "sources": "Built from reporting to mid-October 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, the California governor's 18 September executive order, court reports on the Penske v. Google ruling, and the sources behind GrabStack's Wire items from July to October 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
   },
   "battlegrounds": {
     "A": "Money & Physics",
@@ -144,7 +144,7 @@
       "matters": "Compliance cost and legal uncertainty now shape where and how products can ship. The open question for every builder: which obligations will survive the courts and the politics?",
       "signal": "A US federal preemption statute passing; the EU's first major GPAI enforcement action.",
       "reality": "The EU's AI Omnibus, in force since 27 July, pushed the high-risk rules back to December 2027 and August 2028, while transparency duties applied from 2 August. In the US, a preemption bill has stalled since June despite the March White House framework.",
-      "also": "The US prefers voluntary commitments: on 29 September AI chiefs signed a non-binding White House accord with no penalties. Preemption carve-outs preserve state authority over child safety, infrastructure and procurement.",
+      "also": "The US prefers voluntary commitments: on 29 September AI chiefs signed a non-binding White House accord with no penalties. Preemption carve-outs preserve state authority over child safety, infrastructure and procurement. States are moving too: on 18 September California's governor ordered work on independent verification of frontier labs and an AI 'kill switch', framed as proposals for officials to develop rather than finished rules.",
       "scores": { "overall": 84, "business": 85, "agents": 78, "economy": 72, "geo": 90, "safety": 82, "climate": 55, "society": 78 }
     },
     {
