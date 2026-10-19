@@ -1,7 +1,6 @@
-# Wire notes, 2026-10-18
+# Wire notes, 2026-10-19
 
-- Added two Wire items: Meta's Muse Spark Open (15 October; Meta's research blog opened) and DeepSeek's V4.1-Flash-1017 (Hugging Face model card opened).
-- Updated the `muse-spark` and `deepseek-v4` tool entries with the new sources and dates.
-- Rolling refresh: nothing is overdue, so I took no entry.
-- Could not verify: the DeepSeek card states no release date, so 17 October comes from the listing and a secondary tracker. Trackers gave 552B parameters while the card shows 763B, so I left the size out.
-- Not added: Reflection AI's Beam and other items seen only in aggregators. Anthropic's news page has nothing new since 15 October.
+- No Wire items added: I found no new event since 17 October that I could verify against a primary source.
+- Rolling refresh: nothing is overdue, so I took the entry nearest its review-by date, `adobe-firefly`. Adobe's page still lists Firefly Image 5 and the same partner models. No material change, so I only reset its dates.
+- Could not verify: Anthropic's news page lists "Investing in the public benefit" (18 October), but the post returned a 404 and searches did not find it, so I left it out. Third-party trackers' claims about other launches were not confirmed against makers' pages. OpenAI's news page returned 403.
+- The Adobe page showed euro prices from the NL locale, so I could not re-confirm the $9.99 US price and left it unchanged.
