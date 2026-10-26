@@ -2,12 +2,12 @@
   "meta": {
     "title": "AI Landscape",
     "section": "The Landscape",
-    "updated": "2026-10-19",
+    "updated": "2026-10-26",
     "subtitle": "As of October 2026, these are the debates shaping AI — ranked, and re-rankable. Change the lens to see which questions rise to the top through each set of eyes.",
     "asOf": "October 2026",
     "tagline": "Signal, not noise",
     "howItWorks": "Each debate carries a score from 0–100 under every lens — an editorial weighting of how central that question is when viewed through that set of priorities. Switch lenses and the table re-sorts; the chip beside each rank shows how far a debate climbs or falls against its Overall position, so you can see exactly what a perspective elevates. Heat is our read on real-world momentum, not rank movement.",
-    "sources": "Built from reporting to mid-October 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, the California governor's 18 September executive order, court reports on the Penske v. Google ruling, and the sources behind GrabStack's Wire items from July to October 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
+    "sources": "Built from reporting to late October 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, the California governor's 18 September executive order, court reports on the Penske v. Google ruling, and the sources behind GrabStack's Wire items from July to October 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
   },
   "battlegrounds": {
     "A": "Money & Physics",
@@ -119,7 +119,7 @@
       "bear": { "label": "Closed labs keep the edge", "text": "The true frontier, safety controls and best products stay proprietary." },
       "matters": "If models commoditise, durable value migrates away from the model toward applications, data, distribution and trust.",
       "signal": "Incumbent price cuts after each wave of open-weight releases; what Nvidia's Hugging Face deal does to openness.",
-      "reality": "Moonshot's Kimi K3, a 2.8-trillion-parameter open-weight model, ranked fourth on Artificial Analysis's index at its July launch, though its weights come under a licence with commercial limits. In September Nvidia agreed to buy Hugging Face, the main hub for open models.",
+      "reality": "Moonshot's Kimi K3, a 2.8-trillion-parameter open-weight model, ranked fourth on Artificial Analysis's index at its July launch, though its weights come under a licence with commercial limits. In September Nvidia agreed to buy Hugging Face, the main hub for open models. On 15 October Meta released Muse Spark Open (816B parameters), which it calls the most capable US open-weight model; its weights also carry limited commercial terms.",
       "also": "",
       "scores": { "overall": 76, "business": 75, "agents": 85, "economy": 60, "geo": 82, "safety": 70, "climate": 58, "society": 45 }
     },
