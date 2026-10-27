@@ -1,7 +1,6 @@
-# Wire notes, 2026-10-26
+# Wire notes, 2026-10-27
 
-- Added one Wire item: Anthropic donating the Agent Skills standard to the Agentic AI Foundation (22 October). Checked against Anthropic's own post; the adoption figures are Anthropic's.
-- Other searches for 21–26 October found only trackers, digests and rumours, with no primary source for another event, so I added nothing else.
-- No new tool was created.
-- Rolling refresh: nothing is overdue. Several entries share the nearest review-by date (5 November), and I took `claude-code`. Its model-config docs still show Opus 5.5 as the default. I added the Haiku 5.5 alias (docs say it needs v2.1.293+) and the latest version, 2.1.310 (23 October), from the changelog.
-- Not verified: the changelog page was truncated, so later entries may exist. The Agent Skills post does not state the specification's licence.
+- No Wire items added. Searches for 26–27 October returned only older articles and digests, with no primary source for a new event. A quiet day gets no items.
+- No tool entry changed and no new tool was created.
+- Rolling refresh: nothing is overdue. Many entries share the nearest review-by date (5 November), and I took `cursor`. Cursor's own post (14 August 2026) confirms it was acquired by SpaceX, but it gives no price, so the "reported $60 billion" wording stays attributed to press reports.
+- Not verified: the pricing page fetch returned Grok plan prices (Plus $8, Premium $30, Super $100, Ultra $200), which look like the wrong page. I could not confirm Cursor's current plans, so I left `cursor.md` untouched, including its dates. It needs a proper pricing check.
