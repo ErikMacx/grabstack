@@ -3,14 +3,14 @@ name: Cursor
 maker: Cursor (SpaceX)
 category: coding-agents
 status: acquired
-claim: Cursor became part of SpaceX on 14 Aug 2026; its in-house model is now Grok 4.7, built with SpaceXAI and included on every paid plan. Pro $20/mo, Teams $40/user/mo.
+claim: Cursor was acquired by SpaceX; the deal was announced on 14 Aug 2026. Its pricing page now lists Plus $8/mo, Premium $30/mo, Super $100/mo and Ultra $200/mo, and Teams from $30/user/mo.
 metrics:
-- Pro $20/mo
-- Teams $40/user/mo
-- Grok 4.7 256K context (500K long)
-source: https://cursor.com/blog/joining-spacex
-updated: '2026-10-06'
-reviewed: '2026-11-05'
+- Plus $8/mo (Grok models only)
+- Premium $30/mo
+- Teams from $30/user/mo
+source: https://cursor.com/pricing
+updated: '2026-10-31'
+reviewed: '2026-11-30'
 ---
 
-Cursor, the AI code editor and agent platform from Anysphere, became part of SpaceX on 14 August 2026, in what was reported as a $60 billion all-stock deal. Its own models now include Grok 4.7, which Cursor calls a first-party model built with SpaceXAI, alongside Composer 2.5 and third-party models such as Claude Opus 5.5 and Fable 5.1; on Teams plans a Cursor Router picks a model for each request by default. Since June it has also launched Origin, its own Git hosting service, Projects, and cloud agents that run on machines you manage. Current pricing is Pro $20 a month, Pro Plus $60, Ultra $200 and Teams $40 per user, with heavy agent users typically paying more in usage.
+Cursor, the AI code editor and agent platform from Anysphere, was acquired by SpaceX. Its own blog post of 14 August 2026 says the acquisition is complete and follows a partnership with SpaceXAI announced in April. The post gives no deal terms, so the earlier reported price is left out. The pricing page now lists Free, Plus $8 a month (Grok models only), Premium $30, Super $100, Ultra $200, Teams from $30 per user and Enterprise. Premium and above include third-party models at API list price, billed by usage; the page names "latest Grok models" but no version. This replaces the older Pro $20 and Pro Plus $60 plans, so check the pricing page before budgeting.
