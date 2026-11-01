@@ -1,7 +1,6 @@
-# Wire notes, 2026-10-31
+# Wire notes, 2026-11-01
 
-- No Wire items added. Anthropic's news page shows nothing dated 29–31 October. Searches found no confirmed launch, shutdown, acquisition or major funding round in the window that I could verify against a primary source.
-- Not added: Anthropic's 27 October GSA discount and its AI for Science and drug-development posts (27–28 October). I judged them minor and did not open the individual pages.
-- Rolling refresh: nothing is overdue, so I re-checked the entry with the nearest review-by date, Cursor. Its pricing page now lists Free, Plus $8, Premium $30, Super $100, Ultra $200, Teams from $30 per user and Enterprise. The old Pro $20 and Pro Plus $60 plans are gone. I updated the claim, metrics, source and dates.
-- In the Cursor entry I dropped the "$60 billion" figure (Cursor's post gives no terms) and the Grok 4.7 "every paid plan" claim (the pricing page names no version). The SpaceX acquisition on 14 August is confirmed on Cursor's blog.
-- Not verified: OpenAI's news page returned 403, so OpenAI was only searched, not read. The Claude Opus 5.5 date inconsistency from yesterday is unresolved.
+- No Wire items added. Anthropic's news page has nothing dated after 28 October, and Mistral's newest item is the 29 October Le Chonk release, which is already covered. General searches found no dated, verifiable event in the window.
+- Not added: reports about DeepSeek pausing a funding round and a Firmus IPO withdrawal. The pages were undated or secondary, and I did not open a primary source.
+- Rolling refresh: nothing is overdue, so I re-checked the entry with the nearest review-by date, Beam AI / Hebbia. Beam's site (page dated 30 October) lists 1,000+ integrations, flexible deployment and SOC 2 Type II and GDPR compliance, with no pricing or funding. Hebbia's page shows no funding or news. I updated the text and dates; the 2024 Series B remains the latest round we can confirm.
+- Not verified: OpenAI, Google and Chinese labs were only searched, not read on their own news pages. The Claude Opus 5.5 date inconsistency noted earlier is unresolved.
