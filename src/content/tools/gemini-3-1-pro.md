@@ -10,8 +10,8 @@ metrics:
 - 1M-token output limit
 - $2/$10 per 1M tokens (introductory)
 source: https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/
-updated: '2026-10-15'
-reviewed: '2026-11-14'
+updated: '2026-11-02'
+reviewed: '2026-12-02'
 ---
 
-Google announced Gemini 4 Argon on 30 September 2026 for trusted cyber defenders through its Fairwind Program. On 13 October it opened Argon to developers on the paid Gemini API tier (Google AI Studio and Android Studio); Google AI Ultra subscribers can use it in AI Studio and Google Antigravity. At launch Google said Argon raises the output limit from 64K to 1M tokens and would cost $2/$10 per million tokens at first, rising to $4/$20 later; the 13 October post gives no prices, so check Google's pricing page. Google's other recent model is Gemini 3.8 Flash (2 September), at an introductory $0.75/$3.75 per million tokens until 31 December 2026. Treat Argon's benchmark claims as Google's own until people can test it. The file name keeps the older Gemini 3.1 Pro slug.
+Google announced Gemini 4 Argon on 30 September 2026 for trusted cyber defenders through its Fairwind Program. On 13 October it opened Argon to developers on the paid Gemini API tier (Google AI Studio and Android Studio); Google AI Ultra subscribers can use it in AI Studio and Google Antigravity. At launch Google said Argon raises the output limit from 64K to 1M tokens and would cost $2/$10 per million tokens at first, rising to $4/$20 later; the 13 October post gives no prices, so check Google's pricing page. Google's other recent model is Gemini 3.8 Flash (2 September), at an introductory $0.75/$3.75 per million tokens until 31 December 2026. On 28 October Google announced Gemini 4 Carbon, built on Argon, for a subset of cyber defenders first, with a wider release "coming soon" and no date given. It uses the same introductory price. Treat Argon's and Carbon's benchmark claims as Google's own until people can test them. The file name keeps the older Gemini 3.1 Pro slug.
