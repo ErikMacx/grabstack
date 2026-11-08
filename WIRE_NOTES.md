@@ -1,6 +1,7 @@
-# Wire notes, 7 November 2026
+# Wire notes, 8 November 2026
 
-- No Wire items added. Window was 29 October to 7 November. Anthropic's news page shows nothing dated after 28 October (a 7 November header has no linked article). Web search returned only forecasts, trackers and prediction markets, with no confirmed November launch from a major lab.
+- No Wire items added. Window was 29 October to 8 November. Web search returned only trackers, forecasts and prediction markets, with no lab-confirmed launch in the window.
 - No new tool files and no tool updates caused by events.
-- Rolling refresh: `claude-cowork`, the most overdue entry that could be re-checked against its primary source. Added the Enterprise general-availability update from the source page, dated 23 October with no year shown. Team and Free still have no date. Dates reset.
-- Could not verify: OpenAI, Google, xAI, Meta and Chinese labs' own pages for the window. Tracker reports of a 4 November open-weights release and other November launches were left out as unconfirmed.
+- Rolling refresh: `chatgpt-workspace-agents`, the most overdue entry. Source is now OpenAI's "What's new" page, which dates entries by week, not day: GPT-6.1 Sol (week of 28 Sep), Ultrafast Sol (week of 5 Oct), GPT-6.1 Terra in Work and Codex (week of 26 Oct). Dates reset.
+- Removed the "still a research preview" wording for workspace agents. A search snippet suggested general availability from May, but OpenAI's help pages returned 403, so the current status is left unstated.
+- Could not verify: a Tencent "Hy4" November release listed by one tracker, and forecasts of other November launches. All left out.
