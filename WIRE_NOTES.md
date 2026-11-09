@@ -1,7 +1,7 @@
-# Wire notes, 8 November 2026
+# Wire notes, 9 November 2026
 
-- No Wire items added. Window was 29 October to 8 November. Web search returned only trackers, forecasts and prediction markets, with no lab-confirmed launch in the window.
-- No new tool files and no tool updates caused by events.
-- Rolling refresh: `chatgpt-workspace-agents`, the most overdue entry. Source is now OpenAI's "What's new" page, which dates entries by week, not day: GPT-6.1 Sol (week of 28 Sep), Ultrafast Sol (week of 5 Oct), GPT-6.1 Terra in Work and Codex (week of 26 Oct). Dates reset.
-- Removed the "still a research preview" wording for workspace agents. A search snippet suggested general availability from May, but OpenAI's help pages returned 403, so the current status is left unstated.
-- Could not verify: a Tencent "Hy4" November release listed by one tracker, and forecasts of other November launches. All left out.
+- No Wire items added. Window was 29 October to 9 November. Anthropic's news page shows nothing newer than 28 October. Searches returned only trackers and forecasts, with no lab-confirmed launch.
+- No new tool files and no event-driven tool updates.
+- Rolling refresh: `cline-aider-openhands`, the most overdue entry. Cline's site now says 11M+ developers and 71k GitHub stars, and lists the desktop app, multi-agent teams and scheduled automations. Dates reset.
+- Could not verify Aider: its GitHub releases page showed v0.86.0 (9 Aug, year not shown), while the entry says v0.86.1. The Aider and OpenHands text is unchanged. Cline's site does not state a licence; the Apache 2.0 wording is from earlier checks.
+- Could not verify: a Tencent "Hy4" November release and forecast launches. Left out.
