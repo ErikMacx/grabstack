@@ -1,7 +1,13 @@
-# Weekly review notes, 2026-11-02
+# Weekly review notes, 2026-11-09
 
-- Overdue entries: none. `scripts/freshness.mjs` reported 0 overdue of 172, so no tool or stack was re-checked for being overdue.
-- Gap found: Google's Gemini 4 Carbon (28 October) was missing from the site. I read Google's launch post and added the Wire item `2026-10-28-google-gemini-4-carbon`. I updated the Gemini 4 Argon entry (`gemini-3-1-pro`) with Carbon's limited rollout and set its dates to 2 November / 2 December. Its `source` still points to the Argon post. Carbon's benchmark and security figures are Google's own. I added no new tool file, since Carbon has no general release yet.
-- Landscape: not refreshed. I did not re-check the debates against recent events, so I left `meta.updated` (26 October), `asOf` and the subtitle unchanged rather than date something unchecked. Gemini 4 Carbon and Mistral Large 4 weights are candidates for the next refresh.
-- Learning pages: it is the first Monday of the month, but I did not re-check them, so `learning.json` is unchanged (last reviewed 7 October, review-by 7 January 2027). Note that the agent-taxonomy page carries a "as of October 2026" snapshot.
-- Could not verify: OpenAI and Chinese-lab news pages, and anything dated after 30 October. General searches returned mostly trackers and speculation.
+This run was partial. 64 tool entries were overdue and only 2 were re-checked, well short of the 25 the procedure allows.
+
+- **Re-checked and updated (2):**
+  - `computer-use`: the docs now list the toolset as stable on the Claude API, Claude Platform on AWS, Amazon Bedrock, Google Cloud and Microsoft Foundry, with Bedrock InvokeModel still in beta and Claude Managed Agents unsupported. The docs page gives no benchmark numbers, so the OSWorld scores were not re-confirmed. The body now says so.
+  - `deepseek-harness`: the GitHub releases page shows v0.2.1 release candidates through October and v0.2.2 pre-releases in early November. The body now mentions this. The licence (MIT) and the macOS and Windows desktop downloads were confirmed on the product page.
+- **Not done:**
+  - The other 62 overdue tool entries were not re-checked and keep their old dates, so they still show as overdue. This is deliberate: no date was set on anything that was not checked.
+  - No new Frontier entries were added, because no gaps were verified.
+  - The Landscape was not refreshed. `meta.updated` (2026-10-26) is unchanged, because there was no new verified evidence.
+  - The Learning pages were not reviewed.
+- **Could not verify:** a general search for November 2026 Anthropic news returned only secondary and conflicting coverage (IPO timing, a rumoured new model). None of it was used.
