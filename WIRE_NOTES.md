@@ -1,7 +1,7 @@
-# Wire notes, 9 November 2026
+# Wire notes, 10 November 2026
 
-- No Wire items added. Window was 29 October to 9 November. Anthropic's news page shows nothing newer than 28 October. Searches returned only trackers and forecasts, with no lab-confirmed launch.
-- No new tool files and no event-driven tool updates.
-- Rolling refresh: `cline-aider-openhands`, the most overdue entry. Cline's site now says 11M+ developers and 71k GitHub stars, and lists the desktop app, multi-agent teams and scheduled automations. Dates reset.
-- Could not verify Aider: its GitHub releases page showed v0.86.0 (9 Aug, year not shown), while the entry says v0.86.1. The Aider and OpenHands text is unchanged. Cline's site does not state a licence; the Apache 2.0 wording is from earlier checks.
-- Could not verify: a Tencent "Hy4" November release and forecast launches. Left out.
+- Added two Wire items: Claude Fable 5.2 and Mythos 5.2 (9 November) and Anthropic's IPO roadshow (10 November). Both are from Anthropic's own pages.
+- Created tool file `claude-fable-5-2` (Anthropic's new top-tier model; benchmarks are Anthropic's own).
+- Rolling refresh: `devin-2-0` (Devin Cloud). Pricing and plans unchanged. Added Cognition's Corridor deal and SWE-2 Flash release; dates reset. SWE-2 Flash is confirmed only from the Cognition blog headline.
+- Did not touch `claude-opus-4-8` (Opus 5.5): not fully re-checked, so its dates are unchanged.
+- Searched for other labs' launches; trackers showed only unverified forecasts, so nothing else added.
