@@ -1,5 +1,5 @@
-# Wire notes, 13 November 2026
+# Wire notes, 14 November 2026
 
-- No Wire items added. Anthropic's news page lists a 13 November entry with no title or text, so nothing could be confirmed. A general search found no dated launch for 12–13 November.
-- Rolling refresh: `exa`. Corrected the valuation to $2.2B (Exa's own Series C post, 20 May 2026; the file said $1.95B). Removed Nvidia and Y Combinator, which that post does not name. Developer count now 900,000+ per exa.ai (Exa's figure). Noted Exa 3.0. Dates reset.
-- Not verified: the untitled 13 November Anthropic entry; Exa 3.0 launch date and pricing.
+- No Wire items added. Searches found no confirmed, dated launch, shutdown, acquisition or ruling for 13–14 November 2026 from a primary or reputable source.
+- Rolling refresh: `even-realities-g2`. TechCrunch (11 July 2026) gives the weight as 35 g, not 36 g, so that is corrected. Price ($599), ring ($249) and funding headline are unchanged. Noted that the two-day battery is the maker's claim, untested. Dates reset.
+- Not verified: the evenrealities.com product page (404), so the investors and the $150M figure rest on a TechCrunch headline link, not the article text.
