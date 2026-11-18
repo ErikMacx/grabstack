@@ -1,5 +1,6 @@
-# Wire notes, 17 November 2026
+# Wire notes, 18 November 2026
 
-- No Wire items added. Anthropic's news page shows nothing newer than the 10 November roadshow item, which is already on the Wire. Aggregator reports (GPT-Image 2.6, GPT-6 Cyber, Kimi K3.1 Pro and others) conflict and have no primary source, so they were left out.
-- Rolling refresh: `gemini-deep-research-max`. Google's docs show both agents still in preview under the same IDs. They no longer name the underlying model, so I removed the "Gemini 3.1 Pro" claim. Source changed to the docs page. Dates reset.
-- Not verified: `fireflies` is still overdue. Its pricing page again showed no prices or free-tier limits.
+- Added a Wire item for Gemini Omni 1.2 Flash (5 November), which was missing. Confirmed on Google's launch post and pricing page.
+- Updated `gemini-omni`: new version, 15 s clips, $0.07/sec at 720p, new source and dates. The Artificial Analysis rank is marked as measured on 1.1.
+- Nothing else added. Aggregator reports (GPT-5.6, Grok 4.8, Kimi K3.1 Pro and others) conflict and have no primary source, so they were left out. OpenAI's news page returned 403.
+- Rolling refresh: `gemini-omni` stood in as it was among the most overdue. `fireflies` is still overdue and was not re-checked.
