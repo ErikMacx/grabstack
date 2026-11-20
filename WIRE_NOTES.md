@@ -1,6 +1,6 @@
-# Wire notes, 19 November 2026
+# Wire notes, 20 November 2026
 
-- Added a Wire item for Gemini 4 Carbon becoming available to paying developers (10 November), confirmed on Google's launch post.
-- Updated `gemini-3-1-pro` (Gemini 4 Argon entry): Carbon's wider release, price rise after 30 November, new source and dates.
-- Rolling refresh: `fireflies` re-checked against its pricing page. The page shows no prices, so the $10 Pro figure and the 20M users metric were removed as unconfirmed. The language claim now says English, Spanish, French, Portuguese and Italian, with 100+ others in beta. `galaxy-ring-ultrahuman-ring-pro-muse-oura` and others are still overdue.
-- Not verified: Anthropic's IPO pricing on 18 November appears on its news page, but I found no final price or listing date, so no item was added. Other items on a release tracker (Meta Muse Ember, xAI Grok Bot 1.0, Claude Sheets and Whiteboards, Gemini Decisions API) have no confirmed dates, so I left them out.
+- Added a Wire item for the close of Anthropic's IPO ($83.00 a share, priced 18 November, closed 20 November), confirmed on Anthropic's pricing and closing pages. This resolves the unverified point in yesterday's notes.
+- No tool entries changed.
+- Rolling refresh: I did not complete one. Genspark's site returned 403, so I could not re-check it against a current source, and I left it and the other overdue entries unchanged rather than set dates I had not earned.
+- Not verified: searches only returned aggregator pages for other November launches (Qwen4 Max, Gemini 4 Hydrogen, Tencent Hy4, DeepSeek). I found no primary source, so I added no items.
