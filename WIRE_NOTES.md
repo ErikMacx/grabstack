@@ -1,6 +1,6 @@
-# Wire notes, 20 November 2026
+# Wire notes, 21 November 2026
 
-- Added a Wire item for the close of Anthropic's IPO ($83.00 a share, priced 18 November, closed 20 November), confirmed on Anthropic's pricing and closing pages. This resolves the unverified point in yesterday's notes.
-- No tool entries changed.
-- Rolling refresh: I did not complete one. Genspark's site returned 403, so I could not re-check it against a current source, and I left it and the other overdue entries unchanged rather than set dates I had not earned.
-- Not verified: searches only returned aggregator pages for other November launches (Qwen4 Max, Gemini 4 Hydrogen, Tencent Hy4, DeepSeek). I found no primary source, so I added no items.
+- Added a Wire item for GPT-6.2 Astra and Sol (17 November), checked against OpenAI's announcement page. That page gives no calendar date, so the date comes from GCN's report.
+- Updated the `gpt-5-5` tool entry (now named GPT-6.2 Astra, same file name) with the new price, source and dates. I dropped the old benchmark metrics, which belonged to GPT-6 Astra.
+- Rolling refresh: not done. I spent the run on the launch above, so the overdue entries (for example Galaxy Ring / Oura, Genspark) are unchanged.
+- Not verified: Microsoft MAI models from Ignite and Cognition SWE-2 Flash appeared only in aggregator snippets, so I added no items.
