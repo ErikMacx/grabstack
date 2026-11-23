@@ -2,12 +2,12 @@
   "meta": {
     "title": "AI Landscape",
     "section": "The Landscape",
-    "updated": "2026-10-26",
-    "subtitle": "As of October 2026, these are the debates shaping AI — ranked, and re-rankable. Change the lens to see which questions rise to the top through each set of eyes.",
-    "asOf": "October 2026",
+    "updated": "2026-11-23",
+    "subtitle": "As of November 2026, these are the debates shaping AI — ranked, and re-rankable. Change the lens to see which questions rise to the top through each set of eyes.",
+    "asOf": "November 2026",
     "tagline": "Signal, not noise",
     "howItWorks": "Each debate carries a score from 0–100 under every lens — an editorial weighting of how central that question is when viewed through that set of priorities. Switch lenses and the table re-sorts; the chip beside each rank shows how far a debate climbs or falls against its Overall position, so you can see exactly what a perspective elevates. Heat is our read on real-world momentum, not rank movement.",
-    "sources": "Built from reporting to late October 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, the California governor's 18 September executive order, court reports on the Penske v. Google ruling, and the sources behind GrabStack's Wire items from July to October 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
+    "sources": "Built from reporting to late November 2026: IEA data-centre energy analysis, hyperscaler earnings guidance, Stanford Digital Economy Lab and CESifo on early-career work, EU AI Act Omnibus coverage, US federal and state AI-policy trackers, Senate GUARD Act committee records, the California governor's 18 September executive order, court reports on the Penske v. Google ruling, Anthropic's IPO announcements of 10 and 20 November, and the sources behind GrabStack's Wire items from July to November 2026. Earlier figures (Stanford AI Index 2026, MIT Project NANDA) are carried over from the June edition. A living snapshot; positions shift fast."
   },
   "battlegrounds": {
     "A": "Money & Physics",
@@ -36,7 +36,7 @@
       "matters": "The largest capital bet in tech history. A disorderly unwind would strand data centres and ripple through credit markets; a justified one re-rates the economy.",
       "signal": "AI revenue from outside the financing circle; whether the next round of earnings guidance keeps rising.",
       "reality": "Microsoft, Meta, Amazon and Alphabet had together guided to roughly $700B of capital spending for 2026 by their late-April earnings, nearly double 2025.",
-      "also": "Bezos's framing: an industrial bubble, not a financial one — even excess leaves productive infrastructure behind.",
+      "also": "Bezos's framing: an industrial bubble, not a financial one — even excess leaves productive infrastructure behind. On 18 November Anthropic priced its IPO at $83, above its $70–$78 range, and sold about $26.0 billion of Class N shares to AMD, Broadcom, Google, Micron, Microsoft, NVIDIA and TSMC Partners: public demand, but with suppliers and partners among the buyers.",
       "scores": { "overall": 95, "business": 78, "agents": 45, "economy": 92, "geo": 60, "safety": 35, "climate": 70, "society": 55 }
     },
     {
